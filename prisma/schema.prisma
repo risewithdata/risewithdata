@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// Section: Catalog / Courses
+// ============================================================================
+
+model Course {
+  id        String   @id @default(cuid())
+  title     String   @unique
+  slug      String   @unique
+  excerpt   String?
+  body      String?
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([slug])
+  @@index([published])
+}
+
+model Program {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  description String?
+  published   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([slug])
+  @@index([published])
+}
