@@ -1,61 +1,89 @@
 'use client';
-import { useState } from 'react';
 import { pricingPlans } from '../homepage.data';
-import { Badge } from '@shared/ui/Badge';
 
 export function PricingSection() {
-  const [yearly, setYearly] = useState(true);
   return (
-    <section id="pricing" className="py-20 lg:py-24 bg-slate-50">
+    <section id="pricing" className="bg-slate-50 py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-violet-700">Pricing</p>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">Flexible plans for individuals and teams.</h2>
-          </div>
-          <div className="inline-flex items-center gap-4 rounded-full bg-white p-2 shadow-sm">
-            <span className={`text-sm font-semibold ${yearly ? 'text-slate-900' : 'text-slate-400'}`}>Monthly</span>
-            <button
-              type="button"
-              onClick={() => setYearly(!yearly)}
-              className="relative inline-flex h-9 w-16 items-center rounded-full bg-gradient-to-r from-violet-600 to-blue-600 p-1"
-            >
-              <span className={`absolute left-1/2 h-7 w-7 -translate-x-1/2 rounded-full bg-white transition ${yearly ? 'translate-x-0' : 'translate-x-7'}`} />
-            </button>
-            <span className={`text-sm font-semibold ${!yearly ? 'text-slate-900' : 'text-slate-400'}`}>Yearly</span>
-          </div>
+
+        {/* Header */}
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+            Pricing
+          </p>
+          <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
+            Simple, transparent pricing
+          </h2>
+          <p className="mt-4 text-lg text-slate-500">
+            One-time payment. Lifetime access to materials. 7-day money-back guarantee.
+          </p>
         </div>
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+
+        {/* Cards */}
+        <div className="mt-14 grid gap-8 lg:grid-cols-3">
           {pricingPlans.map((plan) => (
             <article
               key={plan.name}
-              className={`rounded-[2rem] border p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${plan.popular ? 'border-blue-400 bg-white' : 'border-slate-200 bg-white'}`}
+              className={`relative flex flex-col overflow-hidden rounded-3xl border shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
+                plan.popular
+                  ? 'border-blue-600 bg-blue-600 text-white'
+                  : 'border-slate-200 bg-white'
+              }`}
             >
-              <div className="flex items-center justify-between gap-3">
-                <div>
-                  <h3 className="text-2xl font-semibold text-slate-950">{plan.name}</h3>
-                  <p className="mt-2 text-sm text-slate-500">{plan.description}</p>
+              {plan.popular && (
+                <div className="bg-blue-500 py-2 text-center text-xs font-bold uppercase tracking-widest text-white">
+                  Most Popular
                 </div>
-                {plan.popular ? <Badge>Popular</Badge> : null}
+              )}
+
+              <div className="flex flex-1 flex-col p-8">
+                <h3 className={`text-xl font-bold ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
+                  {plan.name}
+                </h3>
+                <p className={`mt-1 text-sm ${plan.popular ? 'text-blue-100' : 'text-slate-500'}`}>
+                  {plan.description}
+                </p>
+
+                <div className="mt-8">
+                  <span className={`text-5xl font-bold ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
+                    {plan.priceMonthly}
+                  </span>
+                  <span className={`ml-2 text-sm ${plan.popular ? 'text-blue-200' : 'text-slate-400'}`}>
+                    one-time
+                  </span>
+                </div>
+
+                <ul className="mt-8 flex-1 space-y-3">
+                  {plan.perks.map((perk) => (
+                    <li key={perk} className={`flex items-start gap-3 text-sm ${plan.popular ? 'text-blue-100' : 'text-slate-600'}`}>
+                      <span className={`mt-0.5 flex-shrink-0 font-bold ${plan.popular ? 'text-white' : 'text-blue-600'}`}>
+                        ✓
+                      </span>
+                      {perk}
+                    </li>
+                  ))}
+                </ul>
+
+                <a
+                  href="/contact"
+                  className={`mt-10 block rounded-xl py-3.5 text-center text-sm font-semibold transition ${
+                    plan.popular
+                      ? 'bg-white text-blue-600 hover:bg-blue-50'
+                      : 'bg-slate-900 text-white hover:bg-slate-700'
+                  }`}
+                >
+                  {plan.popular ? 'Apply Now' : 'Get Started'}
+                </a>
               </div>
-              <div className="mt-8 flex items-end gap-3">
-                <p className="text-5xl font-semibold text-slate-950">{yearly ? plan.priceYearly : plan.priceMonthly}</p>
-                <span className="pb-1 text-sm text-slate-500">/ {yearly ? 'year' : 'month'}</span>
-              </div>
-              <ul className="mt-8 space-y-4 text-sm text-slate-600">
-                {plan.perks.map((perk) => (
-                  <li key={perk} className="flex items-start gap-3">
-                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-blue-600" />
-                    {perk}
-                  </li>
-                ))}
-              </ul>
-              <a href="#final-cta" className="mt-8 inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:from-violet-500 hover:to-blue-500">
-                Choose Plan
-              </a>
             </article>
           ))}
         </div>
+
+        {/* Guarantee note */}
+        <p className="mt-10 text-center text-sm text-slate-400">
+          All plans include a <span className="font-semibold text-slate-700">7-day full refund guarantee</span> · Secure checkout · No hidden fees
+        </p>
+
       </div>
     </section>
   );

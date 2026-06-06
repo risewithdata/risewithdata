@@ -1,168 +1,245 @@
 export const companyLogos = [
-  'Google',
-  'Microsoft',
-  'Amazon',
-  'Airbnb',
-  'Salesforce',
-  'Spotify',
-  'Adobe',
-  'Tesla',
-  'IBM',
-  'Meta',
-  'Cisco',
-  'Intel'
+  'Microsoft', 'Google', 'Amazon', 'Deloitte', 'PwC',
+  'Accenture', 'KPMG', 'IBM', 'JPMorgan', 'Nike',
+  'Salesforce', 'Adobe',
 ];
 
 export const featuredPrograms = [
   {
-    title: 'Product Leadership Accelerator',
-    duration: '8 weeks',
-    instructor: 'Nina Patel',
+    title: 'Power BI Data Analyst Fellowship',
+    slug: 'power-bi-data-analyst-fellowship',
+    format: 'Live Online',
+    duration: '8 Weeks',
+    startDate: 'Rolling cohorts',
+    level: 'Beginner – Intermediate',
     rating: 4.9,
-    enrollments: '2.3k students'
+    enrollments: '3,400+ enrolled',
+    price: '$1,297',
+    badge: 'Most Popular',
+    desc: 'Master Power BI dashboards, DAX, and data modeling through live instruction and real-world projects.',
   },
   {
-    title: 'Go-to-Market Strategy Lab',
-    duration: '6 weeks',
-    instructor: 'Jordan Kim',
-    rating: 4.8,
-    enrollments: '1.8k students'
+    title: 'Cohort Washington',
+    slug: 'cohort-washington',
+    format: 'Live Online',
+    duration: '8 Weeks',
+    startDate: 'July 4, 2025',
+    level: 'Beginner – Intermediate',
+    rating: 4.9,
+    enrollments: '30 seats available',
+    price: '$1,297',
+    badge: 'Starts July 4',
+    desc: 'Summer cohort of the Power BI fellowship. Intensive, cohort-based, with twice-weekly live sessions.',
   },
   {
-    title: 'Data-Driven Roadmaps',
-    duration: '5 weeks',
-    instructor: 'Amira Shah',
+    title: 'Cohort Lincoln',
+    slug: 'cohort-lincoln',
+    format: 'Live Online',
+    duration: '8 Weeks',
+    startDate: 'September 5, 2025',
+    level: 'Beginner – Intermediate',
     rating: 4.9,
-    enrollments: '1.5k students'
-  }
+    enrollments: '30 seats available',
+    price: '$1,297',
+    badge: 'Starts Sep 5',
+    desc: 'Fall cohort of the Power BI fellowship. Build your analytics portfolio in a structured group setting.',
+  },
 ];
 
 export const journeySteps = [
   {
-    title: 'Discover your path',
-    description: 'Identify the best career levers with expert guidance.',
-    icon: '🔍'
+    step: '01',
+    title: 'Apply & Get Accepted',
+    description: 'Fill out a short application and secure your seat in the next cohort. No prior data experience required.',
+    icon: '📋',
+    cta: 'Apply Now',
   },
   {
-    title: 'Learn with real projects',
-    description: 'Build skills through live case studies and collaborative sprints.',
-    icon: '🎯'
+    step: '02',
+    title: 'Learn with Live Instruction',
+    description: 'Join twice-weekly live sessions with industry experts. Work on real datasets and get feedback every week.',
+    icon: '🎯',
+    cta: 'View Curriculum',
   },
   {
-    title: 'Launch your career',
-    description: 'Land high-impact roles with portfolio-ready achievements.',
-    icon: '🚀'
-  }
+    step: '03',
+    title: 'Launch Your Data Career',
+    description: 'Graduate with a portfolio of 5+ dashboards, a verified certificate, and dedicated career coaching.',
+    icon: '🚀',
+    cta: 'See Outcomes',
+  },
 ];
 
 export const testimonials = [
   {
-    quote: 'The program helped me move from product analyst to director in less than a year.',
-    name: 'Maya Chen',
-    role: 'Director of Product',
-    company: 'Stripe',
-    outcome: '120% salary growth',
-    avatar: 'MC'
+    quote: 'I went from using basic Excel to building executive Power BI dashboards used by our entire C-suite. The live sessions and instructor feedback made all the difference.',
+    name: 'Jordan Kim',
+    role: 'Data Analyst',
+    company: 'Google',
+    outcome: 'Promoted within 3 months',
+    avatar: 'JK',
   },
   {
-    quote: 'I landed my dream role with confidence after the roadmap workshop.',
-    name: 'Leo Grant',
-    role: 'Senior PM',
-    company: 'HubSpot',
-    outcome: '95% faster promotions',
-    avatar: 'LG'
+    quote: 'Zero Power BI experience before this fellowship. Eight weeks later I had 5 production dashboards in my portfolio and a job offer from Accenture.',
+    name: 'Darius Thompson',
+    role: 'Senior Data Analyst',
+    company: 'Accenture',
+    outcome: 'Hired in under 60 days',
+    avatar: 'DT',
   },
   {
-    quote: 'The instructor feedback and community were game changers for my career.',
-    name: 'Tara Singh',
-    role: 'Product Manager',
-    company: 'Asana',
-    outcome: 'Salary increased by 35%',
-    avatar: 'TS'
-  }
+    quote: 'The cohort format kept me accountable. Having real peers and live instructors was nothing like watching recorded videos. My salary jumped 42% after completing.',
+    name: 'Sofia Reyes',
+    role: 'BI Analyst',
+    company: 'Nike',
+    outcome: '42% salary increase',
+    avatar: 'SR',
+  },
+  {
+    quote: 'I was a business analyst who had never touched Power BI. After the fellowship I lead the analytics function for my entire department.',
+    name: 'Priya Shah',
+    role: 'Analytics Manager',
+    company: 'JPMorgan',
+    outcome: 'Moved into leadership role',
+    avatar: 'PS',
+  },
 ];
 
 export const instructors = [
   {
-    name: 'Iman Raza',
-    title: 'VP of Product at FintechX',
-    experience: '15 years',
-    company: 'FintechX',
-    social: { twitter: '#', linkedin: '#' }
+    name: 'Aisha Patel',
+    title: 'Senior Data Analyst',
+    company: 'Microsoft',
+    experience: '10+ years',
+    bio: 'Certified Power BI expert who has built enterprise dashboards at Microsoft and trained 3,000+ analysts globally.',
+    social: { twitter: '#', linkedin: '#' },
   },
   {
-    name: 'Pauline Xie',
-    title: 'Chief Product Officer',
+    name: 'Marcus Williams',
+    title: 'BI Architect',
+    company: 'Deloitte',
     experience: '12 years',
-    company: 'NeoRetail',
-    social: { twitter: '#', linkedin: '#' }
+    bio: 'Led data transformation projects across finance, healthcare, and retail. Specializes in DAX optimization and scalable data modeling.',
+    social: { twitter: '#', linkedin: '#' },
   },
   {
-    name: 'Diego Morales',
-    title: 'Product Strategy Lead',
-    experience: '13 years',
-    company: 'Orbit AI',
-    social: { twitter: '#', linkedin: '#' }
-  }
+    name: 'Priya Nair',
+    title: 'Analytics Manager',
+    company: 'Amazon',
+    experience: '9 years',
+    bio: 'Built Amazon\'s internal analytics training program and is passionate about visual storytelling for non-technical stakeholders.',
+    social: { twitter: '#', linkedin: '#' },
+  },
 ];
 
 export const curriculumModules = [
   {
-    title: 'Strategic Foundations',
-    lessons: ['Market analysis', 'Business model mapping', 'Stakeholder alignment']
+    title: 'Power BI Foundations',
+    lessons: [
+      'Connecting to Excel, CSV & SQL sources',
+      'Building your first interactive report',
+      'Publishing to Power BI Service',
+    ],
   },
   {
-    title: 'Product Execution',
-    lessons: ['Roadmap planning', 'Metrics & OKRs', 'Cross-functional leadership']
+    title: 'Data Modeling & DAX',
+    lessons: [
+      'Star schema design & table relationships',
+      'DAX calculated columns and measures',
+      'Time intelligence: YTD, MoM, rolling averages',
+    ],
   },
   {
-    title: 'Launch & Growth',
-    lessons: ['Go-to-market launch', 'Pricing strategy', 'Growth experimentation']
-  }
+    title: 'Advanced Visualizations',
+    lessons: [
+      'Choosing the right chart for your story',
+      'Drill-through, bookmarks & dynamic titles',
+      'Custom visuals and conditional formatting',
+    ],
+  },
 ];
 
 export const communityStats = [
-  { label: 'Members', value: '22k+' },
-  { label: 'Live events', value: '45/year' },
-  { label: 'Mentors', value: '120+' }
+  { label: 'Fellows Trained', value: '3,400+' },
+  { label: 'Live Sessions / Year', value: '200+' },
+  { label: 'Industry Mentors', value: '45+' },
 ];
 
 export const pricingPlans = [
   {
-    name: 'Starter',
-    priceMonthly: '$79',
-    priceYearly: '$790',
-    description: 'Core training for early-stage careers',
-    perks: ['5 courses', 'Community access', 'Live workshops']
+    name: 'Self-Paced',
+    priceMonthly: '$497',
+    priceYearly: '$497',
+    description: 'Recorded content with lifetime access',
+    perks: [
+      'All 8 recorded modules',
+      'Datasets & project files',
+      'Community Slack access',
+      'Fellowship certificate',
+    ],
+    popular: false,
   },
   {
-    name: 'Growth',
-    priceMonthly: '$149',
-    priceYearly: '$1,490',
-    description: 'Complete program for rising product leaders',
-    perks: ['All courses', 'Mentorship', 'Career coaching'],
-    popular: true
+    name: 'Live Cohort',
+    priceMonthly: '$1,297',
+    priceYearly: '$1,297',
+    description: 'Live instruction with a cohort of 30',
+    perks: [
+      'Everything in Self-Paced',
+      '16 live sessions (recorded)',
+      'Weekly instructor feedback',
+      'Capstone project review',
+      'Career coaching + resume review',
+      'LinkedIn profile optimization',
+    ],
+    popular: true,
   },
   {
-    name: 'Enterprise',
-    priceMonthly: '$299',
-    priceYearly: '$2,990',
-    description: 'Team programs and executive training',
-    perks: ['Team seats', 'Custom workshops', 'Priority support']
-  }
+    name: 'Corporate / Team',
+    priceMonthly: '$2,997',
+    priceYearly: '$2,997',
+    description: 'Three seats for your analytics team',
+    perks: [
+      'Everything in Live Cohort',
+      '3 team seats',
+      'Private cohort option',
+      'Custom dataset track',
+      'Team progress dashboard',
+      'Priority support',
+    ],
+    popular: false,
+  },
 ];
 
 export const faqs = [
   {
-    question: 'What level of experience is this for?',
-    answer: 'Our programs are built for professionals with 1+ years of experience seeking a career step-up.'
+    question: 'Do I need prior data or Power BI experience?',
+    answer:
+      'No. The fellowship starts from the ground up. Basic spreadsheet familiarity (Excel or Google Sheets) is helpful but not required. Week 1 covers all the setup and fundamentals.',
   },
   {
-    question: 'How long do I have access to content?',
-    answer: 'You get lifetime access to course materials and updates, plus live cohort support.'
+    question: 'How many hours per week does this take?',
+    answer:
+      'Plan for 8–10 hours per week: two live 2-hour sessions plus hands-on project work. All sessions are recorded so you can catch up if you miss one.',
   },
   {
-    question: 'Is there a scholarship or payment plan?',
-    answer: 'Yes. We offer flexible payment plans and need-based scholarships for qualified applicants.'
-  }
+    question: 'What do I get when I finish?',
+    answer:
+      'A verified RiseWithData Fellowship Certificate, a shareable portfolio of 5+ real dashboards, career coaching, and access to our alumni network and job board.',
+  },
+  {
+    question: 'Is there a money-back guarantee?',
+    answer:
+      'Yes. We offer a full refund within 7 days of your cohort start date, no questions asked. After that, you can transfer to the next available cohort.',
+  },
+  {
+    question: 'Will this help me get a job?',
+    answer:
+      '87% of our graduates report a promotion or new role within 6 months. We include resume review, LinkedIn optimization, and mock interview prep in every cohort.',
+  },
+  {
+    question: 'What tools do I need?',
+    answer:
+      'Power BI Desktop (free), a Microsoft 365 account (free tier), and access to the provided datasets. All setup is covered step-by-step in Week 1.',
+  },
 ];

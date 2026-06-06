@@ -10,19 +10,22 @@ const navigation = [
       {
         title: 'Core Product Skills',
         items: [
-        {
+          {
             name: 'Power BI Data Analyst Fellowship',
-            meta: '',
+            href: '/fellowships/power-bi-data-analyst-fellowship',
+            meta: 'Most Popular',
             desc: 'Learn Power BI dashboards, data modeling, and real-world analytics workflows.',
-        },
+          },
           {
             name: 'Cohort Washington',
-            meta: 'Starts on July 4th',
+            href: '/fellowships/cohort-washington',
+            meta: 'Starts July 4th',
             desc: 'Learn Power BI dashboards, data modeling, and real-world analytics workflows.',
           },
           {
             name: 'Cohort Lincoln',
-            meta: 'Starts on July 4th',
+            href: '/fellowships/cohort-lincoln',
+            meta: 'Starts Sep 5th',
             desc: 'Hands-on training in business intelligence, reporting, and KPI tracking using Power BI.',
           },
         ],
@@ -39,7 +42,11 @@ const navigation = [
     sections: [
       {
         title: 'Get Involved',
-        items: ['Join as Instructor', 'Volunteer with us', 'Contact Us'],
+        items: [
+          { name: 'Join as Instructor', href: '#' },
+          { name: 'Volunteer with us',  href: '#' },
+          { name: 'Contact Us',         href: '/contact' },
+        ],
       },
     ],
   },
@@ -49,7 +56,7 @@ const navigation = [
   },
   {
     label: 'Apply',
-    href: '/apply',
+    href: '/contact',
   },
 ];
 
@@ -68,7 +75,7 @@ export function NavigationBar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/95 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <a href="#top" className="text-xl font-bold text-slate-900">
+        <a href="/" className="text-xl font-bold text-slate-900">
           RiseWithData
         </a>
 
@@ -113,25 +120,27 @@ export function NavigationBar() {
                       </h3>
 
                       {/* COHORT LIST */}
-                      <div className="space-y-5">
+                      <div className="space-y-3">
                         {item.categories?.[0]?.items?.map((cohort: any) => (
-                          <div
+                          <a
                             key={cohort.name}
-                            className="rounded-xl border border-slate-100 p-4 hover:border-slate-200 hover:bg-slate-50 transition"
+                            href={cohort.href}
+                            className="flex items-start justify-between rounded-xl border border-slate-100 p-4 transition hover:border-blue-200 hover:bg-blue-50 group"
                           >
-                            <div className="flex items-center justify-between">
-                              <h4 className="text-sm font-semibold text-slate-900">
+                            <div>
+                              <h4 className="text-sm font-semibold text-slate-900 group-hover:text-blue-700">
                                 {cohort.name}
                               </h4>
-                              <span className="text-xs text-blue-600 font-medium">
+                              <p className="mt-1 text-xs text-slate-500">
+                                {cohort.desc}
+                              </p>
+                            </div>
+                            {cohort.meta && (
+                              <span className="ml-4 flex-shrink-0 rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-700">
                                 {cohort.meta}
                               </span>
-                            </div>
-
-                            <p className="mt-2 text-xs text-slate-600">
-                              {cohort.desc}
-                            </p>
-                          </div>
+                            )}
+                          </a>
                         ))}
                       </div>
 
@@ -145,13 +154,13 @@ export function NavigationBar() {
                     <div className="rounded-2xl border border-slate-200 bg-white shadow-xl p-4">
                       
                       <div className="space-y-2">
-                        {item.sections?.[0]?.items?.map((i: string) => (
+                        {item.sections?.[0]?.items?.map((i: { name: string; href: string }) => (
                           <a
-                            key={i}
-                            href="#"
+                            key={i.name}
+                            href={i.href}
                             className="block rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
                           >
-                            {i}
+                            {i.name}
                           </a>
                         ))}
                       </div>

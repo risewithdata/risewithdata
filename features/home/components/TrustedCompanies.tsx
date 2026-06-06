@@ -2,18 +2,18 @@ import { companyLogos } from '../homepage.data';
 
 export function TrustedCompanies() {
   return (
-    <section className="border-t border-slate-200 bg-slate-50 py-12">
+    <section className="border-y border-slate-100 bg-slate-50 py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <p className="text-center text-sm font-semibold uppercase tracking-[0.28em] text-slate-500">Trusted by product teams at</p>
-        <div className="mt-8 overflow-hidden rounded-full border border-slate-200 bg-white/90 py-4 shadow-sm">
-          <div className="marquee flex items-center gap-12 whitespace-nowrap px-6">
-            {companyLogos.map((company) => (
-              <span key={company} className="inline-flex h-10 min-w-[120px] items-center justify-center rounded-full bg-slate-100 px-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-600">
-                {company}
-              </span>
-            ))}
-            {companyLogos.map((company) => (
-              <span key={`${company}-copy`} className="inline-flex h-10 min-w-[120px] items-center justify-center rounded-full bg-slate-100 px-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-600">
+        <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
+          Our graduates work at top companies including
+        </p>
+        <div className="mt-8 overflow-hidden">
+          <div className="marquee flex items-center gap-12 whitespace-nowrap">
+            {[...companyLogos, ...companyLogos].map((company, i) => (
+              <span
+                key={`${company}-${i}`}
+                className="inline-flex h-9 min-w-fit items-center justify-center rounded-lg px-5 text-sm font-bold tracking-wide text-slate-400 transition hover:text-slate-700"
+              >
                 {company}
               </span>
             ))}
