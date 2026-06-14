@@ -32,10 +32,10 @@ export function HeroSection() {
         {/* CTAs */}
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href="/contact"
+            href="/apply"
             className="rounded-xl bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition hover:bg-blue-700"
           >
-            Apply Now — Free
+            Apply Now
           </a>
           <a
             href="/fellowships/power-bi-data-analyst-fellowship"

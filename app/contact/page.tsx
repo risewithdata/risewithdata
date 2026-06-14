@@ -1,6 +1,7 @@
 'use client';
 
 import { NavigationBar } from '@features/home/components/NavigationBar.client';
+import { Footer } from '@features/home/components/Footer';
 import { ContactForm } from '@features/contact/components/ContactForm.client';
 
 export default function ContactPage() {
@@ -77,6 +78,7 @@ export default function ContactPage() {
         </section>
 
       </main>
+      <Footer />
     </>
   );
 }
