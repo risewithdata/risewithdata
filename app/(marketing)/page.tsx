@@ -29,16 +29,17 @@ export default function MarketingHomePage() {
       <NavigationBar />
       <main>
         <HeroSection />
+        <FinalCta />
         <TrustedCompanies />
         <FeaturedPrograms />
         <LearningJourney />
-        <SuccessStories />
+        {/* <SuccessStories /> */}
         <InstructorShowcase />
         <CurriculumPreview />
-        <CommunitySection />
-        <PricingSection />
+        {/* <CommunitySection /> */}
+        {/* <PricingSection /> */}
         <FAQSection />
-        <FinalCta />
+        
       </main>
       <Footer />
     </div>

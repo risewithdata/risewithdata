@@ -30,17 +30,52 @@ model Course {
 // ============================================================================
 
 model ContactSubmission {
-  id             String   @id @default(cuid())
-  firstName      String
-  lastName       String
-  email          String
-  resumeFileName String
-  resumeFileType String
-  resumeFileSizeBytes Int
-  termsAccepted  Boolean
-  createdAt      DateTime @default(now())
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
 
   @@index([email])
+  @@index([createdAt])
+}
+
+// ============================================================================
+// Section: Instructor / Volunteer Applications
+// ============================================================================
+
+model VolunteerApplication {
+  id                  String   @id @default(cuid())
+  firstName           String
+  lastName            String
+  address             String
+  zipcode             String
+  linkedinName        String
+  resumeFileName      String
+  resumeFileType      String
+  resumeFileSizeBytes Int
+  createdAt           DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+// ============================================================================
+// Section: Student Applications
+// ============================================================================
+
+model StudentApplication {
+  id                  String   @id @default(cuid())
+  firstName           String
+  lastName            String
+  address             String
+  zipcode             String
+  linkedinName        String
+  resumeFileName      String
+  resumeFileType      String
+  resumeFileSizeBytes Int
+  createdAt           DateTime @default(now())
+
   @@index([createdAt])
 }
 

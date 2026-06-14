@@ -1,90 +1,129 @@
 import { featuredPrograms } from '../homepage.data';
 
 export function FeaturedPrograms() {
+  const [main, ...cohorts] = featuredPrograms;
+
   return (
-    <section id="programs" className="bg-white py-24">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="programs" className="bg-slate-50 py-20">
+      <div className="mx-auto max-w-5xl px-6 lg:px-8">
 
         {/* Header */}
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
-            Our Fellowships
-          </p>
-          <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
-            Live, cohort-based programs built for results
-          </h2>
-          <p className="mt-4 text-lg text-slate-500">
-            Choose your cohort and start building real Power BI skills with a group of
-            analysts who hold each other accountable.
-          </p>
+        <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-blue-600">
+              Our Fellowships
+            </p>
+            <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900">
+              Programs built for results
+            </h2>
+          </div>
+          <a
+            href="/contact"
+            className="self-start rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-600 shadow-sm transition hover:bg-slate-50 sm:self-auto"
+          >
+            Talk to an advisor →
+          </a>
         </div>
 
-        {/* Cards */}
-        <div className="mt-14 grid gap-8 lg:grid-cols-3">
-          {featuredPrograms.map((program) => (
-            <article
-              key={program.slug}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
-            >
-              {/* Top color band */}
-              <div className="h-2 w-full bg-gradient-to-r from-blue-600 to-violet-600" />
+        {/* Main program card — compact horizontal */}
+        <div className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900 shadow-lg">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 px-7 py-6">
 
-              <div className="flex flex-1 flex-col p-8">
-                {/* Badge */}
-                <span className="inline-block self-start rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
-                  {program.badge}
-                </span>
-
-                <h3 className="mt-4 text-xl font-bold text-slate-900">{program.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-500">{program.desc}</p>
-
-                {/* Meta */}
-                <div className="mt-6 space-y-2 border-t border-slate-100 pt-6 text-sm">
-                  {[
-                    { label: 'Format',    value: program.format },
-                    { label: 'Duration',  value: program.duration },
-                    { label: 'Starts',    value: program.startDate },
-                    { label: 'Level',     value: program.level },
-                  ].map((m) => (
-                    <div key={m.label} className="flex items-center justify-between">
-                      <span className="text-slate-400">{m.label}</span>
-                      <span className="font-medium text-slate-700">{m.value}</span>
-                    </div>
-                  ))}
+            {/* Left — title + badges */}
+            <div className="flex items-start gap-4">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-blue-600 text-white text-lg">
+                📊
+              </div>
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="rounded-full bg-blue-500/20 px-2.5 py-0.5 text-xs font-semibold text-blue-300">
+                    Flagship
+                  </span>
+                  <span className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs text-slate-400">
+                    {main.badge}
+                  </span>
                 </div>
-
-                {/* Rating + enrollments */}
-                <div className="mt-5 flex items-center gap-4 text-sm text-slate-500">
-                  <span className="font-semibold text-amber-500">★ {program.rating}</span>
-                  <span>{program.enrollments}</span>
-                </div>
-
-                {/* Price + CTA */}
-                <div className="mt-auto pt-8">
-                  <div className="flex items-center justify-between">
-                    <p className="text-2xl font-bold text-slate-900">{program.price}</p>
-                    <a
-                      href={`/fellowships/${program.slug}`}
-                      className="rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700"
-                    >
-                      View Details
-                    </a>
-                  </div>
+                <h3 className="mt-1.5 text-base font-bold text-white">{main.title}</h3>
+                <div className="mt-1.5 flex flex-wrap gap-3 text-xs text-slate-400">
+                  <span>{main.format}</span>
+                  <span>·</span>
+                  <span>{main.duration}</span>
+                  <span>·</span>
+                  <span>{main.level}</span>
                 </div>
               </div>
-            </article>
+            </div>
+
+            {/* Right — CTA */}
+            <a
+              href={`/fellowships/${main.slug}`}
+              className="flex-shrink-0 self-start rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-500 sm:self-center"
+            >
+              View Fellowship →
+            </a>
+          </div>
+
+          {/* Included tags row */}
+          <div className="flex flex-wrap gap-2 border-t border-white/10 px-7 py-4">
+            {[
+              'Live instruction',
+              'Recorded replays',
+              'Capstone project',
+              'Career coaching',
+              'Certificate',
+              'Alumni network',
+            ].map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-white/5 px-3 py-1 text-xs text-slate-400"
+              >
+                ✓ {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Cohort sub-items */}
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">
+          {cohorts.map((cohort, i) => (
+            <a
+              key={cohort.slug}
+              href={`/fellowships/${cohort.slug}`}
+              className="group relative flex items-center justify-between overflow-hidden rounded-2xl border border-slate-200 bg-white px-6 py-5 shadow-sm transition hover:border-blue-300 hover:shadow-md"
+            >
+              {/* Left connector line */}
+              <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-blue-400 to-violet-400 opacity-0 transition group-hover:opacity-100" />
+
+              <div className="flex items-center gap-4">
+                {/* Sub-indent indicator */}
+                <div className="flex flex-col items-center gap-0.5 self-stretch py-1">
+                  <div className="w-px flex-1 bg-slate-200" />
+                  <div className="h-1.5 w-1.5 rounded-full bg-slate-300 group-hover:bg-blue-500" />
+                  <div className="w-px flex-1 bg-slate-200" />
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-semibold text-blue-600">
+                      {cohort.badge}
+                    </span>
+                  </div>
+                  <p className="mt-1 text-sm font-semibold text-slate-800 group-hover:text-blue-700">
+                    {cohort.title}
+                  </p>
+                  <p className="mt-0.5 text-xs text-slate-400">
+                    Starts {cohort.startDate} · {cohort.duration} · {cohort.format}
+                  </p>
+                </div>
+              </div>
+
+              <span className="ml-3 flex-shrink-0 text-slate-300 transition group-hover:translate-x-1 group-hover:text-blue-500">
+                →
+              </span>
+            </a>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-12 text-center">
-          <a
-            href="/contact"
-            className="inline-block rounded-xl border border-slate-200 bg-white px-8 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-50"
-          >
-            Not sure which cohort? Talk to an advisor →
-          </a>
-        </div>
       </div>
     </section>
   );

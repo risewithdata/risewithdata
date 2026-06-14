@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { Button } from '@shared/ui/Button';
 
 const navigation = [
   {
@@ -43,12 +42,15 @@ const navigation = [
       {
         title: 'Get Involved',
         items: [
-          { name: 'Join as Instructor', href: '#' },
-          { name: 'Volunteer with us',  href: '#' },
-          { name: 'Contact Us',         href: '/contact' },
+          { name: 'Join as Instructor', href: '/instructor' },
+          { name: 'Volunteer with us',  href: '/volunteer' },
         ],
       },
     ],
+  },
+  {
+    label: 'Contact Us',
+    href: '/contact',
   },
   {
     label: 'Donate',
@@ -56,7 +58,7 @@ const navigation = [
   },
   {
     label: 'Apply',
-    href: '/contact',
+    href: '/apply',
   },
 ];
 
@@ -73,14 +75,14 @@ export function NavigationBar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/95 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/95 backdrop-blur-xl relative">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <a href="/" className="text-xl font-bold text-slate-900">
           RiseWithData
         </a>
 
         {/* ================= DESKTOP NAV ================= */}
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
           {navigation.map((item) => {
             const isMega = item.megaMenu;
             const isOpen = activeMegaMenu === item.label;
@@ -111,7 +113,7 @@ export function NavigationBar() {
 
                 {/* ================= FELLOWSHIPS ================= */}
                 {item.label === 'Fellowships' && isOpen && (
-                  <div className="absolute left-1/2 top-full z-50 w-[750px] -translate-x-1/2 pt-4">
+                  <div className="absolute left-1/2 top-full z-50 w-[375px] -translate-x-1/2 pt-4">
                     <div className="rounded-2xl border border-slate-200 bg-white shadow-xl p-6">
 
                       {/* TITLE */}
@@ -150,7 +152,7 @@ export function NavigationBar() {
 
                 {/* ================= CAREERS ================= */}
                 {item.label === 'Careers' && isOpen && (
-                  <div className="absolute left-1/2 top-full z-50 w-[420px] -translate-x-1/2 pt-4">
+                  <div className="absolute left-1/2 top-full z-50 w-[210px] -translate-x-1/2 pt-4">
                     <div className="rounded-2xl border border-slate-200 bg-white shadow-xl p-4">
                       
                       <div className="space-y-2">
@@ -172,15 +174,6 @@ export function NavigationBar() {
           })}
         </nav>
 
-        {/* RIGHT ACTIONS */}
-        <div className="hidden items-center gap-3 lg:flex">
-          <a href="/login" className="text-sm text-slate-700 hover:text-slate-900">
-            Login
-          </a>
-          <Button as="a" href="#final-cta" variant="primary">
-            Get Started
-          </Button>
-        </div>
 
         {/* MOBILE */}
         <button
