@@ -65,7 +65,7 @@ export function PricingSection() {
                 </ul>
 
                 <a
-                  href="/contact"
+                  href="/apply"
                   className={`mt-10 block rounded-xl py-3.5 text-center text-sm font-semibold transition ${
                     plan.popular
                       ? 'bg-white text-blue-600 hover:bg-blue-50'

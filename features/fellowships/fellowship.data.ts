@@ -39,6 +39,7 @@ export type Fellowship = {
   price: string;
   originalPrice: string;
   enrollmentDeadline: string;
+  showPrice?: boolean;
   totalLearners: string;
   rating: string;
   completionRate: string;
@@ -293,6 +294,7 @@ export const fellowships: Fellowship[] = [
     price: '$1,297',
     originalPrice: '$1,897',
     enrollmentDeadline: 'June 27, 2025',
+    showPrice: false,
     totalLearners: '30 seats',
     rating: '4.9',
     completionRate: '91%',
@@ -318,6 +320,7 @@ export const fellowships: Fellowship[] = [
     price: '$1,297',
     originalPrice: '$1,897',
     enrollmentDeadline: 'August 29, 2025',
+    showPrice: false,
     totalLearners: '30 seats',
     rating: '4.9',
     completionRate: '91%',

@@ -48,10 +48,10 @@ export function FinalCta() {
 
               <div className="mt-8 space-y-4">
                 <a
-                  href="/contact"
+                  href="/apply"
                   className="block w-full rounded-xl bg-blue-600 py-4 text-center text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-blue-500"
                 >
-                  Apply Now — It's Free
+                  Apply Now
                 </a>
                 <a
                   href="/fellowships/power-bi-data-analyst-fellowship"
@@ -59,16 +59,6 @@ export function FinalCta() {
                 >
                   View Full Fellowship Details
                 </a>
-              </div>
-
-              <div className="mt-6 space-y-2 text-sm text-slate-400">
-                {[
-                  '✓ No prior experience required',
-                  '✓ Sessions are recorded — never miss a class',
-                  '✓ 7-day full refund guarantee',
-                ].map((item) => (
-                  <p key={item}>{item}</p>
-                ))}
               </div>
             </div>
           </div>

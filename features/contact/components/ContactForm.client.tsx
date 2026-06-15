@@ -56,7 +56,6 @@ export function ContactForm() {
           </label>
           <input
             {...register('firstName')}
-            placeholder="Jane"
             className={inputClass(!!errors.firstName)}
           />
           {errors.firstName && (
@@ -70,7 +69,6 @@ export function ContactForm() {
           </label>
           <input
             {...register('lastName')}
-            placeholder="Doe"
             className={inputClass(!!errors.lastName)}
           />
           {errors.lastName && (
@@ -87,7 +85,6 @@ export function ContactForm() {
         <input
           {...register('email')}
           type="email"
-          placeholder="jane@example.com"
           className={inputClass(!!errors.email)}
         />
         {errors.email && (
@@ -106,7 +103,6 @@ export function ContactForm() {
         <textarea
           {...register('message')}
           rows={5}
-          placeholder="How can we help you?"
           className={`${inputClass(!!errors.message)} resize-none`}
         />
         {errors.message && (

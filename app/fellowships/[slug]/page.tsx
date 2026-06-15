@@ -310,12 +310,14 @@ export default function FellowshipPage({ params }: Props) {
       {/* ===== MOBILE ENROLL STICKY FOOTER ===== */}
       <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white px-6 py-4 shadow-2xl lg:hidden">
         <div className="flex items-center justify-between gap-4">
-          <div>
-            <p className="text-lg font-bold text-slate-900">{fellowship.price}</p>
-            <p className="text-xs text-slate-400 line-through">{fellowship.originalPrice}</p>
-          </div>
+          {fellowship.showPrice !== false && (
+            <div>
+              <p className="text-lg font-bold text-slate-900">{fellowship.price}</p>
+              <p className="text-xs text-slate-400 line-through">{fellowship.originalPrice}</p>
+            </div>
+          )}
           <a
-            href="/contact"
+            href="/apply"
             className="flex-1 rounded-xl bg-blue-600 py-3 text-center text-sm font-semibold text-white hover:bg-blue-700"
           >
             Enroll Now
@@ -331,20 +333,22 @@ export default function FellowshipPage({ params }: Props) {
 function EnrollCard({ fellowship }: { fellowship: ReturnType<typeof getFellowshipBySlug> & {} }) {
   return (
     <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
-      {/* Price */}
-      <div className="bg-gradient-to-br from-slate-900 to-slate-800 px-6 py-6 text-white">
-        <div className="flex items-end gap-3">
-          <p className="text-4xl font-bold">{fellowship!.price}</p>
-          <p className="mb-1 text-sm text-slate-400 line-through">{fellowship!.originalPrice}</p>
+      {/* Price — hidden for cohorts with showPrice: false */}
+      {fellowship!.showPrice !== false && (
+        <div className="bg-gradient-to-br from-slate-900 to-slate-800 px-6 py-6 text-white">
+          <div className="flex items-end gap-3">
+            <p className="text-4xl font-bold">{fellowship!.price}</p>
+            <p className="mb-1 text-sm text-slate-400 line-through">{fellowship!.originalPrice}</p>
+          </div>
+          <p className="mt-1 text-xs text-slate-400">
+            Deadline: {fellowship!.enrollmentDeadline}
+          </p>
         </div>
-        <p className="mt-1 text-xs text-slate-400">
-          Deadline: {fellowship!.enrollmentDeadline}
-        </p>
-      </div>
+      )}
 
       <div className="p-6">
         <a
-          href="/contact"
+          href="/apply"
           className="block w-full rounded-xl bg-blue-600 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-blue-700"
         >
           Enroll Now

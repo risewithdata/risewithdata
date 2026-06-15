@@ -60,7 +60,7 @@ export function VolunteerForm() {
           <label className="mb-1.5 block text-sm font-medium text-slate-700">
             First Name <span className="text-red-500">*</span>
           </label>
-          <input {...register('firstName')} placeholder="Jane" className={field(!!errors.firstName)} />
+          <input {...register('firstName')} className={field(!!errors.firstName)} />
           {errors.firstName && <p className="mt-1.5 text-xs text-red-600">{errors.firstName.message}</p>}
         </div>
 
@@ -68,22 +68,9 @@ export function VolunteerForm() {
           <label className="mb-1.5 block text-sm font-medium text-slate-700">
             Last Name <span className="text-red-500">*</span>
           </label>
-          <input {...register('lastName')} placeholder="Doe" className={field(!!errors.lastName)} />
+          <input {...register('lastName')} className={field(!!errors.lastName)} />
           {errors.lastName && <p className="mt-1.5 text-xs text-red-600">{errors.lastName.message}</p>}
         </div>
-      </div>
-
-      {/* Address */}
-      <div>
-        <label className="mb-1.5 block text-sm font-medium text-slate-700">
-          Address <span className="text-red-500">*</span>
-        </label>
-        <input
-          {...register('address')}
-          placeholder="123 Main St, City, State"
-          className={field(!!errors.address)}
-        />
-        {errors.address && <p className="mt-1.5 text-xs text-red-600">{errors.address.message}</p>}
       </div>
 
       {/* Zipcode + LinkedIn row */}
@@ -94,7 +81,6 @@ export function VolunteerForm() {
           </label>
           <input
             {...register('zipcode')}
-            placeholder="10001"
             maxLength={10}
             className={field(!!errors.zipcode)}
           />
@@ -105,16 +91,10 @@ export function VolunteerForm() {
           <label className="mb-1.5 block text-sm font-medium text-slate-700">
             LinkedIn Name <span className="text-red-500">*</span>
           </label>
-          <div className="relative">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-xs text-slate-400 select-none">
-              linkedin.com/in/
-            </span>
-            <input
-              {...register('linkedinName')}
-              placeholder="jane-doe"
-              className={`${field(!!errors.linkedinName)} pl-[7.5rem]`}
-            />
-          </div>
+          <input
+            {...register('linkedinName')}
+            className={field(!!errors.linkedinName)}
+          />
           {errors.linkedinName && (
             <p className="mt-1.5 text-xs text-red-600">{errors.linkedinName.message}</p>
           )}

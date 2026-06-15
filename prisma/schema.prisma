@@ -49,7 +49,6 @@ model VolunteerApplication {
   id                  String   @id @default(cuid())
   firstName           String
   lastName            String
-  address             String
   zipcode             String
   linkedinName        String
   resumeFileName      String
@@ -68,7 +67,6 @@ model StudentApplication {
   id                  String   @id @default(cuid())
   firstName           String
   lastName            String
-  address             String
   zipcode             String
   linkedinName        String
   resumeFileName      String
