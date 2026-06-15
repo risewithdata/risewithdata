@@ -5,29 +5,22 @@ const navigation = [
   {
     label: 'Fellowships',
     megaMenu: true,
-    categories: [
+    main: {
+      name: 'Power BI Data Analyst Fellowship',
+      href: '/fellowships/power-bi-data-analyst-fellowship',
+      meta: 'Most Popular',
+      desc: 'Go from zero to job-ready Power BI analyst in 8 weeks.',
+    },
+    cohorts: [
       {
-        title: 'Core Product Skills',
-        items: [
-          {
-            name: 'Power BI Data Analyst Fellowship',
-            href: '/fellowships/power-bi-data-analyst-fellowship',
-            meta: 'Most Popular',
-            desc: 'Learn Power BI dashboards, data modeling, and real-world analytics workflows.',
-          },
-          {
-            name: 'Cohort Washington',
-            href: '/fellowships/cohort-washington',
-            meta: 'Starts July 4th',
-            desc: 'Learn Power BI dashboards, data modeling, and real-world analytics workflows.',
-          },
-          {
-            name: 'Cohort Lincoln',
-            href: '/fellowships/cohort-lincoln',
-            meta: 'Starts Sep 5th',
-            desc: 'Hands-on training in business intelligence, reporting, and KPI tracking using Power BI.',
-          },
-        ],
+        name: 'Cohort Washington',
+        href: '/fellowships/cohort-washington',
+        meta: 'Starts July 4th',
+      },
+      {
+        name: 'Cohort Lincoln',
+        href: '/fellowships/cohort-lincoln',
+        meta: 'Starts Sep 5th',
       },
     ],
   },
@@ -113,35 +106,47 @@ export function NavigationBar() {
 
                 {/* ================= FELLOWSHIPS ================= */}
                 {item.label === 'Fellowships' && isOpen && (
-                  <div className="absolute left-1/2 top-full z-50 w-[375px] -translate-x-1/2 pt-4">
-                    <div className="rounded-2xl border border-slate-200 bg-white shadow-xl p-6">
+                  <div className="absolute left-1/2 top-full z-50 w-[340px] -translate-x-1/2 pt-4">
+                    <div className="rounded-2xl border border-slate-200 bg-white shadow-xl overflow-hidden">
 
-                      {/* TITLE */}
-                      <h3 className="mb-6 text-sm font-semibold uppercase tracking-wide text-slate-500">
-                        Power BI Data Analyst Fellowship
-                      </h3>
+                      {/* PARENT — Power BI Fellowship */}
+                      <a
+                        href={(item as any).main.href}
+                        className="group flex items-start justify-between gap-3 bg-slate-900 px-5 py-4 transition hover:bg-slate-800"
+                      >
+                        <div>
+                          <p className="text-sm font-semibold text-white group-hover:text-blue-300">
+                            {(item as any).main.name}
+                          </p>
+                          <p className="mt-1 text-xs text-slate-400">
+                            {(item as any).main.desc}
+                          </p>
+                        </div>
+                        <span className="mt-0.5 flex-shrink-0 rounded-full bg-blue-500/20 px-2 py-0.5 text-xs font-medium text-blue-300">
+                          {(item as any).main.meta}
+                        </span>
+                      </a>
 
-                      {/* COHORT LIST */}
-                      <div className="space-y-3">
-                        {item.categories?.[0]?.items?.map((cohort: any) => (
+                      {/* COHORTS — nested sub-items */}
+                      <div className="px-4 py-3 space-y-1">
+                        <p className="mb-2 px-2 text-xs font-semibold uppercase tracking-widest text-slate-400">
+                          Active Cohorts
+                        </p>
+                        {(item as any).cohorts.map((cohort: any) => (
                           <a
                             key={cohort.name}
                             href={cohort.href}
-                            className="flex items-start justify-between rounded-xl border border-slate-100 p-4 transition hover:border-blue-200 hover:bg-blue-50 group"
+                            className="group flex items-center justify-between rounded-lg px-3 py-2.5 transition hover:bg-blue-50"
                           >
-                            <div>
-                              <h4 className="text-sm font-semibold text-slate-900 group-hover:text-blue-700">
+                            <div className="flex items-center gap-2.5">
+                              <span className="h-1.5 w-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+                              <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700">
                                 {cohort.name}
-                              </h4>
-                              <p className="mt-1 text-xs text-slate-500">
-                                {cohort.desc}
-                              </p>
-                            </div>
-                            {cohort.meta && (
-                              <span className="ml-4 flex-shrink-0 rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-700">
-                                {cohort.meta}
                               </span>
-                            )}
+                            </div>
+                            <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600">
+                              {cohort.meta}
+                            </span>
                           </a>
                         ))}
                       </div>

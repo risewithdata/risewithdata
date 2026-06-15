@@ -27,7 +27,6 @@ export function VolunteerForm() {
     const formData = new FormData();
     formData.append('firstName',    data.firstName);
     formData.append('lastName',     data.lastName);
-    formData.append('address',      data.address);
     formData.append('zipcode',      data.zipcode);
     formData.append('linkedinName', data.linkedinName);
     formData.append('resume',       (data.resume as FileList)[0]);

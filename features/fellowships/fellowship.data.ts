@@ -269,6 +269,7 @@ export const fellowships: Fellowship[] = [
     price: '$1,297',
     originalPrice: '$1,897',
     enrollmentDeadline: 'Limited seats per cohort',
+    showPrice: false,
     totalLearners: '3,400+',
     rating: '4.9',
     completionRate: '91%',
