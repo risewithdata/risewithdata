@@ -1,0 +1,34 @@
+<svg viewBox="0 0 420 70" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>RiseWithData</title>
+
+  <!-- Bar chart bars -->
+  <rect x="4"  y="44" width="14" height="20" rx="3" fill="#3B82F6" opacity="0.4"/>
+  <rect x="22" y="30" width="14" height="34" rx="3" fill="#3B82F6" opacity="0.62"/>
+  <rect x="40" y="16" width="14" height="48" rx="3" fill="#3B82F6" opacity="0.82"/>
+  <rect x="58" y="5"  width="14" height="59" rx="3" fill="#0EA5E9"/>
+
+  <!-- Trend line -->
+  <path d="M8 53 Q37 14 68 8" fill="none" stroke="#0EA5E9" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.55"/>
+
+  <!-- Wordmark -->
+  <text
+    x="84" y="40"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="30"
+    font-weight="800"
+    letter-spacing="-0.5"
+  >
+    <tspan fill="#0F172A">Rise</tspan><tspan fill="#0EA5E9">With</tspan><tspan fill="#3B82F6">Data</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text
+    x="86" y="58"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="9.5"
+    font-weight="600"
+    fill="#94A3B8"
+    letter-spacing="2"
+  >LEARN · GROW · SUCCEED</text>
+
+</svg>
