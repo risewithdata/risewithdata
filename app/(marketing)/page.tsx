@@ -31,11 +31,11 @@ export default function MarketingHomePage() {
         <HeroSection />
         <FinalCta />
         <TrustedCompanies />
-        <FeaturedPrograms />
+        {/* <FeaturedPrograms /> */}
         <LearningJourney />
         {/* <SuccessStories /> */}
-        <InstructorShowcase />
-        <CurriculumPreview />
+        {/* <InstructorShowcase /> */}
+        {/* <CurriculumPreview /> */}
         {/* <CommunitySection /> */}
         {/* <PricingSection /> */}
         <FAQSection />

@@ -29,7 +29,7 @@ export function FinalCta() {
                 {[
                   { v: '30', l: 'Seats total' },
                   { v: '8 wks', l: 'Duration' },
-                  { v: '7-day', l: 'Money back' },
+                  { v: 'Free Training', l: 'For all' },
                 ].map((s) => (
                   <div key={s.l} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
                     <p className="text-xl font-bold text-white">{s.v}</p>

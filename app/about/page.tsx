@@ -88,14 +88,11 @@ export default function AboutPage() {
           </h2>
 
           <p className="mt-6 text-lg leading-relaxed text-slate-600">
-            RiseWithData was created to bridge the gap between traditional education
-            and industry expectations. Most learners struggle to apply theory to real
-            job scenarios — we solve this through structured, hands-on learning paths.
-          </p>
+            Rise with Data is an education-focused platform dedicated to helping motivated individuals develop the skills needed to succeed in today's evolving job market. We provide free, live, online training designed to bridge the gap between traditional education and the practical skills employers seek.
 
-          <p className="mt-4 text-lg leading-relaxed text-slate-600">
-            Our mission is simple: help you become job-ready faster with real skills,
-            real projects, and real outcomes.
+            We believe talent is everywhere, but access to quality training and mentorship is not. Through expert-led instruction, hands-on learning, and a supportive community, we help participants gain confidence, build real-world skills, and prepare for meaningful career opportunities.
+            At Rise with Data, we value motivation, commitment, and a willingness to learn. Our mission is to empower individuals with the knowledge, mindset, and skills needed to achieve better careers, greater financial stability, and an improved quality of life.
+
           </p>
 
         </section>

@@ -17,11 +17,11 @@ const navigation = [
         href: '/fellowships/cohort-washington',
         meta: 'Starts July 4th',
       },
-      {
+      /* {
         name: 'Cohort Lincoln',
         href: '/fellowships/cohort-lincoln',
         meta: 'Starts Sep 5th',
-      },
+      }, */
     ],
   },
   {
@@ -45,10 +45,10 @@ const navigation = [
     label: 'Contact Us',
     href: '/contact',
   },
-  {
+  /* {
     label: 'Donate',
     href: '/donate',
-  },
+  }, */
   {
     label: 'Apply',
     href: '/apply',

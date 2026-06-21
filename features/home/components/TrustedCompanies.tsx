@@ -5,7 +5,7 @@ export function TrustedCompanies() {
     <section className="border-y border-slate-100 bg-slate-50 py-12">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
-          Our graduates work at top companies including
+         Technologies covered are used by most Fortune 500 companies.
         </p>
         <div className="mt-8 overflow-hidden">
           <div className="marquee flex items-center gap-12 whitespace-nowrap">
