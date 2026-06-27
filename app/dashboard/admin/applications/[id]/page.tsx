@@ -178,6 +178,7 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
             <span className="hidden rounded-md bg-blue-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 sm:block">Admin</span>
           </div>
           <nav className="flex items-center gap-1">
+            <a href="/dashboard/admin"              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Dashboard</a>
             <a href="/dashboard/admin/applications" className="rounded-lg bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700">Applications</a>
             <a href="/dashboard/admin/courses"      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Courses</a>
             <button onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}
