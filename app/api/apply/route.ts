@@ -11,11 +11,12 @@ export async function POST(req: NextRequest) {
 
     const firstName    = String(formData.get('firstName')    ?? '').trim();
     const lastName     = String(formData.get('lastName')     ?? '').trim();
+    const email        = String(formData.get('email')        ?? '').trim();
     const zipcode      = String(formData.get('zipcode')      ?? '').trim();
     const linkedinName = String(formData.get('linkedinName') ?? '').trim();
     const file         = formData.get('resume') as File | null;
 
-    if (!firstName || !lastName || !zipcode || !linkedinName || !file) {
+    if (!firstName || !lastName || !email || !zipcode || !linkedinName || !file) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
@@ -24,6 +25,7 @@ export async function POST(req: NextRequest) {
       data: {
         firstName,
         lastName,
+        email,
         zipcode,
         linkedinName,
         resumeFileName:      file.name,

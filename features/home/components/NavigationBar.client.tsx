@@ -1,5 +1,18 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
+type SessionUser = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  role: 'SUPER_ADMIN' | 'INSTRUCTOR' | 'STUDENT';
+} | null;
+
+function dashboardHref(role: NonNullable<SessionUser>['role']) {
+  if (role === 'SUPER_ADMIN') return '/dashboard/admin';
+  if (role === 'INSTRUCTOR')  return '/dashboard/instructor';
+  return '/dashboard/student';
+}
 
 const navigation = [
   {
@@ -45,6 +58,14 @@ const navigation = [
 export function NavigationBar() {
   const [open, setOpen] = useState(false);
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
+  const [user, setUser] = useState<SessionUser>(null);
+
+  useEffect(() => {
+    fetch('/api/auth/me')
+      .then((r) => r.json())
+      .then((j) => setUser(j.user ?? null))
+      .catch(() => {});
+  }, []);
 
   const handleEnter = (label: string) => setActiveMegaMenu(label);
   const handleLeave = (label: string) => {
@@ -185,18 +206,43 @@ export function NavigationBar() {
 
         {/* ── Right actions ── */}
         <div className="hidden items-center gap-2.5 lg:flex">
-          <a
-            href="/login"
-            className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
-          >
-            Login
-          </a>
-          <a
-            href="/apply"
-            className="rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/20 transition hover:from-blue-700 hover:to-blue-800"
-          >
-            Apply Now
-          </a>
+          {user ? (
+            <>
+              <a
+                href={dashboardHref(user.role)}
+                className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                  {user.firstName[0]}
+                </span>
+                {user.firstName}
+              </a>
+              <button
+                onClick={async () => {
+                  await fetch('/api/auth/logout', { method: 'POST' });
+                  window.location.href = '/';
+                }}
+                className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-red-200 hover:bg-red-50 hover:text-red-600"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <a
+                href="/login"
+                className="rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+              >
+                Login
+              </a>
+              <a
+                href="/apply"
+                className="rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/20 transition hover:from-blue-700 hover:to-blue-800"
+              >
+                Apply Now
+              </a>
+            </>
+          )}
         </div>
 
         {/* ── Mobile toggle ── */}
@@ -225,8 +271,24 @@ export function NavigationBar() {
             </a>
           ))}
           <div className="mt-3 flex gap-2 border-t border-slate-100 pt-3">
-            <a href="/login" className="flex-1 rounded-xl border border-slate-200 py-2 text-center text-sm font-medium text-slate-700">Login</a>
-            <a href="/apply" className="flex-1 rounded-xl bg-blue-600 py-2 text-center text-sm font-semibold text-white">Apply Now</a>
+            {user ? (
+              <>
+                <a href={dashboardHref(user.role)} className="flex-1 rounded-xl border border-slate-200 py-2 text-center text-sm font-medium text-slate-700">
+                  Dashboard
+                </a>
+                <button
+                  onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/'; }}
+                  className="flex-1 rounded-xl border border-red-200 bg-red-50 py-2 text-center text-sm font-medium text-red-600"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <a href="/login" className="flex-1 rounded-xl border border-slate-200 py-2 text-center text-sm font-medium text-slate-700">Login</a>
+                <a href="/apply" className="flex-1 rounded-xl bg-blue-600 py-2 text-center text-sm font-semibold text-white">Apply Now</a>
+              </>
+            )}
           </div>
         </div>
       )}

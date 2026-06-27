@@ -27,6 +27,7 @@ export function ApplyForm() {
     const formData = new FormData();
     formData.append('firstName',    data.firstName);
     formData.append('lastName',     data.lastName);
+    formData.append('email',        data.email);
     formData.append('zipcode',      data.zipcode);
     formData.append('linkedinName', data.linkedinName);
     formData.append('resume',       (data.resume as FileList)[0]);
@@ -70,6 +71,19 @@ export function ApplyForm() {
           <input {...register('lastName')} className={field(!!errors.lastName)} />
           {errors.lastName && <p className="mt-1.5 text-xs text-red-600">{errors.lastName.message}</p>}
         </div>
+      </div>
+
+      {/* Email */}
+      <div>
+        <label className="mb-1.5 block text-sm font-medium text-slate-700">
+          Email Address <span className="text-red-500">*</span>
+        </label>
+        <input
+          {...register('email')}
+          type="email"
+          className={field(!!errors.email)}
+        />
+        {errors.email && <p className="mt-1.5 text-xs text-red-600">{errors.email.message}</p>}
       </div>
 
       {/* Zipcode + LinkedIn */}

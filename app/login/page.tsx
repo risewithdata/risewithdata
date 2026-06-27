@@ -4,6 +4,12 @@ import { useState } from 'react';
 import { NavigationBar } from '@features/home/components/NavigationBar.client';
 import { Footer } from '@features/home/components/Footer';
 
+const ROLE_REDIRECT: Record<string, string> = {
+  SUPER_ADMIN: '/dashboard/admin',
+  INSTRUCTOR:  '/dashboard/instructor',
+  STUDENT:     '/dashboard/student',
+};
+
 export default function LoginPage() {
   const [email, setEmail]       = useState('');
   const [password, setPassword] = useState('');
@@ -15,11 +21,27 @@ export default function LoginPage() {
     e.preventDefault();
     setError('');
     if (!email || !password) { setError('Please fill in all fields.'); return; }
+
     setLoading(true);
-    // TODO: wire up authentication
-    await new Promise((r) => setTimeout(r, 800));
-    setLoading(false);
-    setError('Invalid email or password. Please try again.');
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await res.json();
+
+      if (!res.ok) {
+        setError(data.error ?? 'Login failed. Please try again.');
+        return;
+      }
+
+      window.location.href = ROLE_REDIRECT[data.user.role] ?? '/';
+    } catch {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -40,7 +62,7 @@ export default function LoginPage() {
             {/* Card header */}
             <div className="px-8 pt-8 pb-6 text-center">
               <a href="/">
-                <img src="/logo.svg" alt="RiseWithData" className="mx-auto h-16 w-auto" />
+                <img src="/logo.svg" alt="RiseWithData" className="mx-auto h-14 w-auto" />
               </a>
               <h1 className="mt-6 text-2xl font-bold text-white">Welcome back</h1>
               <p className="mt-1.5 text-sm text-slate-400">Sign in to your RiseWithData account</p>

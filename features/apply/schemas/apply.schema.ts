@@ -9,6 +9,7 @@ const ACCEPTED_TYPES = [
 export const ApplySchema = z.object({
   firstName:    z.string().min(1, 'First name is required'),
   lastName:     z.string().min(1, 'Last name is required'),
+  email:        z.string().min(1, 'Email is required').email('Invalid email address'),
   zipcode:      z.string().min(1, 'Zipcode is required').max(10, 'Invalid zipcode'),
   linkedinName: z.string().min(1, 'LinkedIn name is required'),
   resume: z

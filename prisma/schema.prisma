@@ -64,17 +64,86 @@ model VolunteerApplication {
 // ============================================================================
 
 model StudentApplication {
-  id                  String   @id @default(cuid())
+  id                  String            @id @default(cuid())
   firstName           String
   lastName            String
+  email               String            @default("")
   zipcode             String
   linkedinName        String
+  courseApplied       String?
+  trainer             String?
+  status              ApplicationStatus @default(PENDING)
   resumeFileName      String
   resumeFileType      String
   resumeFileSizeBytes Int
-  createdAt           DateTime @default(now())
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
 
+  @@index([status])
+  @@index([email])
   @@index([createdAt])
+}
+
+// ============================================================================
+// Section: Enums
+// ============================================================================
+
+enum ApplicationStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum CourseStatus {
+  ACTIVE
+  INACTIVE
+}
+
+// ============================================================================
+// Section: Admin Courses
+// ============================================================================
+
+model AdminCourse {
+  id                   String       @id @default(cuid())
+  name                 String
+  trainerName          String
+  duration             String
+  startDate            DateTime
+  endDate              DateTime
+  seatsAvailable       Int          @default(0)
+  applicationsReceived Int          @default(0)
+  status               CourseStatus @default(ACTIVE)
+  createdAt            DateTime     @default(now())
+  updatedAt            DateTime     @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@index([trainerName])
+}
+
+// ============================================================================
+// Section: Users & Authentication
+// ============================================================================
+
+enum Role {
+  SUPER_ADMIN
+  INSTRUCTOR
+  STUDENT
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  firstName    String
+  lastName     String
+  role         Role
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([email])
+  @@index([role])
 }
 
 model Program {
