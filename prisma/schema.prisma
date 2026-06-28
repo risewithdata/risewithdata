@@ -158,3 +158,53 @@ model Program {
   @@index([slug])
   @@index([published])
 }
+
+// ============================================================================
+// Section: Instructor Dashboard
+// ============================================================================
+
+model CourseMaterial {
+  id          String   @id @default(cuid())
+  courseId    String
+  courseName  String
+  title       String
+  description String?
+  fileName    String
+  fileType    String
+  uploadedBy  String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([courseId])
+  @@index([uploadedBy])
+}
+
+model CourseAnnouncement {
+  id         String   @id @default(cuid())
+  courseId   String
+  courseName String
+  title      String
+  body       String
+  postedBy   String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([courseId])
+  @@index([postedBy])
+}
+
+model CourseScheduleSlot {
+  id         String   @id @default(cuid())
+  courseId   String
+  courseName String
+  title      String
+  slotDate   DateTime
+  startTime  String
+  endTime    String
+  location   String?
+  notes      String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([courseId])
+}

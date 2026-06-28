@@ -108,10 +108,10 @@ export default function AdminDashboardPage() {
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
             <a href="/"><img src="/logo.jpeg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
-            <span className="hidden rounded-md bg-brand-600 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-600 sm:block">Admin</span>
+            <span className="hidden rounded-md bg-brand-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 sm:block">Admin</span>
           </div>
           <nav className="flex items-center gap-1">
-            <a href="/dashboard/admin"              className="rounded-lg bg-brand-600 px-3 py-2 text-sm font-medium text-brand-600">Dashboard</a>
+            <a href="/dashboard/admin"              className="rounded-lg bg-brand-100 px-3 py-2 text-sm font-medium text-brand-700">Dashboard</a>
             <a href="/dashboard/admin/applications" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Applications</a>
             <a href="/dashboard/admin/courses"      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Courses</a>
             <button
@@ -149,7 +149,7 @@ export default function AdminDashboardPage() {
             </a>
             <a
               href="/dashboard/admin/courses"
-              className="flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600"
+              className="flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-700"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -187,7 +187,7 @@ export default function AdminDashboardPage() {
                     <p className="mt-1 text-3xl font-bold text-slate-900">{stats.totalApplications}</p>
                     <div className="mt-1">{trendArrow(stats.recentAppsCount, stats.prevAppsCount)}</div>
                   </div>
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-100">
                     <svg className="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
