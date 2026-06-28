@@ -7,7 +7,7 @@ export function LearningJourney() {
 
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-400">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
             How It Works
           </p>
           <h2 className="mt-3 text-4xl font-bold tracking-tight">
@@ -29,17 +29,17 @@ export function LearningJourney() {
               className="relative rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm"
             >
               {/* Step number */}
-              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-xl">
+              <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-500 text-xl">
                 {step.icon}
               </div>
 
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-400">
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-600">
                 Step {step.step}
               </p>
               <h3 className="mt-2 text-xl font-bold text-white">{step.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-slate-400">{step.description}</p>
 
-              <div className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-blue-400">
+              <div className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
                 {step.cta}
                 <span className="text-base">→</span>
               </div>

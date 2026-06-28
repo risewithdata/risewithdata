@@ -149,7 +149,7 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
   if (loading) return (
     <div className="min-h-screen bg-slate-50 flex items-center justify-center">
       <div className="flex flex-col items-center gap-3">
-        <svg className="h-8 w-8 animate-spin text-blue-500" fill="none" viewBox="0 0 24 24">
+        <svg className="h-8 w-8 animate-spin text-brand-500" fill="none" viewBox="0 0 24 24">
           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
         </svg>
@@ -162,7 +162,7 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
     <div className="min-h-screen bg-slate-50 flex items-center justify-center">
       <div className="text-center">
         <p className="text-red-600 font-medium">{error || 'Application not found'}</p>
-        <a href="/dashboard/admin/applications" className="mt-4 inline-block text-sm text-blue-600 hover:underline">← Back to Applications</a>
+        <a href="/dashboard/admin/applications" className="mt-4 inline-block text-sm text-brand-600 hover:underline">← Back to Applications</a>
       </div>
     </div>
   );
@@ -174,12 +174,12 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
-            <a href="/"><img src="/logo.svg" alt="RiseWithData" className="h-9 w-auto" /></a>
-            <span className="hidden rounded-md bg-blue-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 sm:block">Admin</span>
+            <a href="/"><img src="/logo.jpeg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
+            <span className="hidden rounded-md bg-brand-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 sm:block">Admin</span>
           </div>
           <nav className="flex items-center gap-1">
             <a href="/dashboard/admin"              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Dashboard</a>
-            <a href="/dashboard/admin/applications" className="rounded-lg bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700">Applications</a>
+            <a href="/dashboard/admin/applications" className="rounded-lg bg-brand-50 px-3 py-2 text-sm font-medium text-brand-700">Applications</a>
             <a href="/dashboard/admin/courses"      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Courses</a>
             <button onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}
               className="ml-2 flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">
@@ -216,7 +216,7 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
             {/* Student Information */}
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-sm font-bold text-white">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-sm font-bold text-white">
                   {app.firstName[0]}{app.lastName[0]}
                 </div>
                 <div>
@@ -318,7 +318,7 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
                 onChange={(e) => setNotes(e.target.value)}
                 rows={5}
                 placeholder="Add private notes about this application…"
-                className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none placeholder-slate-400 focus:border-blue-400 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                className="w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none placeholder-slate-400 focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-100"
               />
               <button
                 onClick={saveNotes}
@@ -358,7 +358,7 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
 
               <button
                 onClick={() => setInfoDialog(true)}
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 py-3 text-sm font-semibold text-blue-700 transition hover:bg-blue-100"
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-brand-200 bg-brand-50 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-100"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
                 Request More Information
@@ -448,8 +448,8 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
       {infoDialog && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm px-4">
           <div className="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100">
-              <svg className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-100">
+              <svg className="h-6 w-6 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
             </div>
             <h3 className="text-center text-lg font-bold text-slate-900">Request More Information</h3>
             <p className="mt-1 text-center text-sm text-slate-500">
@@ -460,14 +460,14 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
               onChange={(e) => setInfoMsg(e.target.value)}
               rows={4}
               placeholder="Describe what additional information you need from the student…"
-              className="mt-4 w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none placeholder-slate-400 focus:border-blue-400 focus:bg-white focus:ring-2 focus:ring-blue-100"
+              className="mt-4 w-full resize-none rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 outline-none placeholder-slate-400 focus:border-brand-400 focus:bg-white focus:ring-2 focus:ring-brand-100"
             />
             <div className="mt-4 flex gap-3">
               <button onClick={() => { setInfoDialog(false); setInfoMsg(''); }} className="flex-1 rounded-xl border border-slate-200 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50">Cancel</button>
               <button
                 onClick={handleRequestInfo}
                 disabled={!infoMsg.trim() || infoSending || infoSent}
-                className="flex-1 rounded-xl bg-blue-600 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
+                className="flex-1 rounded-xl bg-brand-600 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-50"
               >
                 {infoSending ? 'Sending…' : infoSent ? '✓ Sent!' : 'Send Message'}
               </button>

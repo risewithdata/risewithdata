@@ -25,7 +25,7 @@ export function Accordion({ items }: Props) {
               aria-expanded={isActive}
             >
               {item.question}
-              <span className={`ml-4 inline-flex h-9 w-9 items-center justify-center rounded-full border ${isActive ? 'border-blue-600 bg-blue-50 text-blue-600' : 'border-slate-300 text-slate-500'}`}>
+              <span className={`ml-4 inline-flex h-9 w-9 items-center justify-center rounded-full border ${isActive ? 'border-brand-400 bg-brand-600 text-brand-600' : 'border-slate-300 text-slate-500'}`}>
                 {isActive ? '−' : '+'}
               </span>
             </button>

@@ -8,7 +8,7 @@ export function PricingSection() {
 
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
             Pricing
           </p>
           <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
@@ -26,12 +26,12 @@ export function PricingSection() {
               key={plan.name}
               className={`relative flex flex-col overflow-hidden rounded-3xl border shadow-sm transition hover:-translate-y-1 hover:shadow-xl ${
                 plan.popular
-                  ? 'border-blue-600 bg-blue-600 text-white'
+                  ? 'border-brand-500 bg-brand-500 text-white'
                   : 'border-slate-200 bg-white'
               }`}
             >
               {plan.popular && (
-                <div className="bg-blue-500 py-2 text-center text-xs font-bold uppercase tracking-widest text-white">
+                <div className="bg-brand-500 py-2 text-center text-xs font-bold uppercase tracking-widest text-white">
                   Most Popular
                 </div>
               )}
@@ -40,7 +40,7 @@ export function PricingSection() {
                 <h3 className={`text-xl font-bold ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
                   {plan.name}
                 </h3>
-                <p className={`mt-1 text-sm ${plan.popular ? 'text-blue-100' : 'text-slate-500'}`}>
+                <p className={`mt-1 text-sm ${plan.popular ? 'text-brand-600' : 'text-slate-500'}`}>
                   {plan.description}
                 </p>
 
@@ -48,15 +48,15 @@ export function PricingSection() {
                   <span className={`text-5xl font-bold ${plan.popular ? 'text-white' : 'text-slate-900'}`}>
                     {plan.priceMonthly}
                   </span>
-                  <span className={`ml-2 text-sm ${plan.popular ? 'text-blue-200' : 'text-slate-400'}`}>
+                  <span className={`ml-2 text-sm ${plan.popular ? 'text-brand-600' : 'text-slate-400'}`}>
                     one-time
                   </span>
                 </div>
 
                 <ul className="mt-8 flex-1 space-y-3">
                   {plan.perks.map((perk) => (
-                    <li key={perk} className={`flex items-start gap-3 text-sm ${plan.popular ? 'text-blue-100' : 'text-slate-600'}`}>
-                      <span className={`mt-0.5 flex-shrink-0 font-bold ${plan.popular ? 'text-white' : 'text-blue-600'}`}>
+                    <li key={perk} className={`flex items-start gap-3 text-sm ${plan.popular ? 'text-brand-600' : 'text-slate-600'}`}>
+                      <span className={`mt-0.5 flex-shrink-0 font-bold ${plan.popular ? 'text-white' : 'text-brand-600'}`}>
                         ✓
                       </span>
                       {perk}
@@ -68,7 +68,7 @@ export function PricingSection() {
                   href="/apply"
                   className={`mt-10 block rounded-xl py-3.5 text-center text-sm font-semibold transition ${
                     plan.popular
-                      ? 'bg-white text-blue-600 hover:bg-blue-50'
+                      ? 'bg-white text-brand-600 hover:bg-brand-500'
                       : 'bg-slate-900 text-white hover:bg-slate-700'
                   }`}
                 >

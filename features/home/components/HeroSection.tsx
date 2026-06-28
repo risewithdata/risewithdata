@@ -8,8 +8,8 @@ export function HeroSection() {
 
         {/* Eyebrow */}
         <div className="flex justify-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-1.5 text-sm font-semibold text-blue-700">
-            <span className="h-2 w-2 rounded-full bg-blue-500" />
+          <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-700">
+            <span className="h-2 w-2 rounded-full bg-brand-500" />
             Now enrolling · Cohort Washington starts July 4
           </span>
         </div>
@@ -18,7 +18,7 @@ export function HeroSection() {
         <div className="mx-auto mt-8 max-w-4xl text-center">
           <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
             Become a Job-Ready{' '}
-            <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent">
               Data Analyst
             </span>{' '}
             in 8 Weeks
@@ -33,7 +33,7 @@ export function HeroSection() {
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
             href="/apply"
-            className="rounded-xl bg-blue-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition hover:bg-blue-700"
+            className="rounded-xl bg-brand-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-700"
           >
             Apply Now
           </a>

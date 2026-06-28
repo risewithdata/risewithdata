@@ -21,7 +21,7 @@ export function Tabs({ tabs }: Props) {
             key={tab.title}
             type="button"
             onClick={() => setActive(index)}
-            className={`w-full rounded-2xl px-4 py-3 text-sm font-semibold transition ${active === index ? 'bg-gradient-to-r from-violet-600 to-blue-600 text-white shadow-lg shadow-violet-500/20' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'}`}
+            className={`w-full rounded-2xl px-4 py-3 text-sm font-semibold transition ${active === index ? 'bg-gradient-to-r from-brand-600 to-brand-500 text-white shadow-lg shadow-brand-500/20' : 'bg-slate-50 text-slate-700 hover:bg-slate-100'}`}
           >
             {tab.title}
           </button>

@@ -57,16 +57,16 @@ export default function VolunteerPage() {
       {/* ── Hero ── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-teal-950 to-slate-900" />
-        <div className="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-teal-500/15 blur-3xl" />
-        <div className="absolute bottom-0 right-0 h-[400px] w-[500px] rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-brand-500/15 blur-3xl" />
+        <div className="absolute bottom-0 right-0 h-[400px] w-[500px] rounded-full bg-brand-500/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-4xl px-6 py-28 text-center text-white">
-          <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-teal-300">
+          <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-300">
             Volunteer With Us
           </span>
           <h1 className="mt-5 text-5xl font-bold tracking-tight sm:text-6xl">
             Support the{' '}
-            <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-400 to-brand-300 bg-clip-text text-transparent">
               Community
             </span>
           </h1>
@@ -95,7 +95,7 @@ export default function VolunteerPage() {
       <section className="bg-slate-50 py-20">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">Volunteer Roles</p>
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">Volunteer Roles</p>
             <h2 className="mt-3 text-3xl font-bold text-slate-900">Find your way to contribute</h2>
             <p className="mx-auto mt-3 max-w-xl text-slate-500">
               No data background required — just enthusiasm and a willingness to help.
@@ -105,7 +105,7 @@ export default function VolunteerPage() {
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {roles.map((role) => (
               <div key={role.title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                <span className="mb-4 inline-block rounded-full bg-teal-50 px-2.5 py-0.5 text-xs font-semibold text-teal-700">
+                <span className="mb-4 inline-block rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-semibold text-brand-700">
                   {role.badge}
                 </span>
                 <p className="font-bold text-slate-900">{role.title}</p>
@@ -126,7 +126,7 @@ export default function VolunteerPage() {
         <div className="space-y-10 lg:col-span-2">
 
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">Why Volunteer</p>
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">Why Volunteer</p>
             <h2 className="mt-3 text-3xl font-bold text-slate-900">Give your time. Change a life.</h2>
             <p className="mt-4 leading-relaxed text-slate-500">
               Every hour you volunteer helps someone who might never have had access to
@@ -137,7 +137,7 @@ export default function VolunteerPage() {
           <div className="space-y-5">
             {benefits.map((b) => (
               <div key={b.title} className="flex items-start gap-4">
-                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-teal-50 text-xl">
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-brand-50 text-xl">
                   {b.icon}
                 </span>
                 <div>
@@ -149,12 +149,12 @@ export default function VolunteerPage() {
           </div>
 
           {/* Requirements */}
-          <div className="rounded-2xl border border-teal-100 bg-teal-50 p-6">
-            <p className="font-semibold text-teal-900">What We Look For</p>
+          <div className="rounded-2xl border border-brand-100 bg-brand-50 p-6">
+            <p className="font-semibold text-brand-900">What We Look For</p>
             <ul className="mt-3 space-y-2">
               {requirements.map((r) => (
-                <li key={r} className="flex items-start gap-2 text-sm text-teal-800">
-                  <span className="mt-0.5 text-teal-500">✓</span>
+                <li key={r} className="flex items-start gap-2 text-sm text-brand-800">
+                  <span className="mt-0.5 text-brand-500">✓</span>
                   {r}
                 </li>
               ))}
@@ -163,7 +163,7 @@ export default function VolunteerPage() {
 
           {/* Process */}
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <p className="text-sm font-semibold uppercase tracking-widest text-teal-600">What Happens Next</p>
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">What Happens Next</p>
             <ol className="mt-5 space-y-4">
               {[
                 'Submit your application below',
@@ -172,7 +172,7 @@ export default function VolunteerPage() {
                 'Orientation, team intro & your first assignment',
               ].map((step, i) => (
                 <li key={step} className="flex items-start gap-3 text-sm text-slate-600">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-teal-600 text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
                     {i + 1}
                   </span>
                   {step}
@@ -185,7 +185,7 @@ export default function VolunteerPage() {
         {/* Right — form */}
         <div className="lg:col-span-3">
           <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
-            <div className="bg-gradient-to-br from-slate-900 to-teal-900 px-8 py-7 text-white">
+            <div className="bg-gradient-to-br from-brand-950 to-brand-900 px-8 py-7 text-white">
               <h2 className="text-xl font-bold">Volunteer Application</h2>
               <p className="mt-1 text-sm text-slate-300">
                 Takes less than 2 minutes. We'll reach out within 3–5 business days.

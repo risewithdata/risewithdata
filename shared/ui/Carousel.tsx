@@ -28,7 +28,7 @@ export function Carousel({ slides }: Props) {
               key={idx}
               type="button"
               onClick={() => setIndex(idx)}
-              className={`h-2.5 w-10 rounded-full transition ${idx === index ? 'bg-blue-600' : 'bg-slate-300'}`}
+              className={`h-2.5 w-10 rounded-full transition ${idx === index ? 'bg-brand-600' : 'bg-slate-300'}`}
               aria-label={`Slide ${idx + 1}`}
             />
           ))}

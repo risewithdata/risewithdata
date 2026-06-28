@@ -12,7 +12,7 @@ export function CurriculumPreview() {
         {/* Header */}
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
               Curriculum Preview
             </p>
             <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
@@ -21,7 +21,7 @@ export function CurriculumPreview() {
           </div>
           <a
             href="/fellowships/power-bi-data-analyst-fellowship#curriculum"
-            className="text-sm font-semibold text-blue-600 hover:underline"
+            className="text-sm font-semibold text-brand-600 hover:underline"
           >
             See full curriculum →
           </a>
@@ -37,11 +37,11 @@ export function CurriculumPreview() {
                 onClick={() => setActive(i)}
                 className={`flex-1 rounded-2xl border p-4 text-left transition lg:flex-initial ${
                   active === i
-                    ? 'border-blue-600 bg-blue-600 text-white shadow-lg shadow-blue-500/20'
-                    : 'border-slate-200 bg-white text-slate-700 hover:border-blue-200 hover:bg-blue-50'
+                    ? 'border-brand-200 bg-brand-600 text-white shadow-lg shadow-brand-500/20'
+                    : 'border-slate-200 bg-white text-slate-700 hover:border-brand-200 hover:bg-brand-600'
                 }`}
               >
-                <p className={`text-xs font-bold uppercase tracking-wider ${active === i ? 'text-blue-200' : 'text-slate-400'}`}>
+                <p className={`text-xs font-bold uppercase tracking-wider ${active === i ? 'text-brand-600' : 'text-slate-400'}`}>
                   Module {i + 1}
                 </p>
                 <p className="mt-1 font-semibold">{mod.title}</p>
@@ -52,7 +52,7 @@ export function CurriculumPreview() {
           {/* Lesson list */}
           <div className="lg:col-span-3">
             <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8">
-              <p className="text-xs font-bold uppercase tracking-wider text-blue-600">
+              <p className="text-xs font-bold uppercase tracking-wider text-brand-600">
                 Module {active + 1}
               </p>
               <h3 className="mt-1 text-2xl font-bold text-slate-900">
@@ -65,7 +65,7 @@ export function CurriculumPreview() {
                     key={lesson}
                     className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
                   >
-                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
                       {i + 1}
                     </span>
                     <div>
@@ -78,12 +78,12 @@ export function CurriculumPreview() {
                 ))}
               </ul>
 
-              <div className="mt-8 rounded-2xl bg-blue-600 p-6 text-white">
+              <div className="mt-8 rounded-2xl bg-brand-600 p-6 text-white">
                 <p className="font-semibold">Every module includes:</p>
-                <div className="mt-3 grid grid-cols-2 gap-2 text-sm text-blue-100">
+                <div className="mt-3 grid grid-cols-2 gap-2 text-sm text-brand-600">
                   {['Live sessions', 'Recorded replay', 'Practice dataset', 'Project submission'].map((item) => (
                     <div key={item} className="flex items-center gap-2">
-                      <span className="text-blue-300">✓</span> {item}
+                      <span className="text-brand-600">✓</span> {item}
                     </div>
                   ))}
                 </div>

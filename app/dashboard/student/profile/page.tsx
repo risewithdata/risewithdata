@@ -126,14 +126,14 @@ export default function ProfilePage() {
             {/* Avatar + account info */}
             <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
               <div className="flex items-center gap-5">
-                <div className="flex h-18 w-18 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-2xl font-bold text-white" style={{ height: 72, width: 72 }}>
+                <div className="flex h-18 w-18 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-2xl font-bold text-white" style={{ height: 72, width: 72 }}>
                   {profile.firstName[0]}{profile.lastName[0]}
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-slate-900">{profile.firstName} {profile.lastName}</h2>
                   <p className="text-sm text-slate-500">{profile.email}</p>
                   <div className="mt-1.5 flex items-center gap-2">
-                    <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">
+                    <span className="rounded-full bg-brand-100 px-2.5 py-0.5 text-xs font-semibold text-brand-700">
                       {profile.role === 'STUDENT' ? 'Student' : profile.role}
                     </span>
                     <span className="text-xs text-slate-400">Member since {fmtDate(profile.createdAt)}</span>
@@ -151,7 +151,7 @@ export default function ProfilePage() {
                   <input
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 outline-none focus:border-blue-400 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 outline-none focus:border-brand-200 focus:bg-white focus:ring-2 focus:ring-brand-500"
                   />
                 </div>
                 <div>
@@ -159,7 +159,7 @@ export default function ProfilePage() {
                   <input
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 outline-none focus:border-blue-400 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 outline-none focus:border-brand-200 focus:bg-white focus:ring-2 focus:ring-brand-500"
                   />
                 </div>
                 <div>
@@ -175,7 +175,7 @@ export default function ProfilePage() {
                 <button
                   onClick={saveProfile}
                   disabled={saving || !firstName.trim() || !lastName.trim()}
-                  className="rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
+                  className="rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-50"
                 >
                   {saving ? 'Saving…' : 'Save Changes'}
                 </button>
@@ -197,7 +197,7 @@ export default function ProfilePage() {
                     type="password"
                     value={curPass}
                     onChange={(e) => setCurPass(e.target.value)}
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 outline-none focus:border-blue-400 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 outline-none focus:border-brand-200 focus:bg-white focus:ring-2 focus:ring-brand-500"
                   />
                 </div>
                 <div>
@@ -207,7 +207,7 @@ export default function ProfilePage() {
                     value={newPass}
                     onChange={(e) => setNewPass(e.target.value)}
                     placeholder="Min 8 characters"
-                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 outline-none focus:border-blue-400 focus:bg-white focus:ring-2 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-800 outline-none focus:border-brand-200 focus:bg-white focus:ring-2 focus:ring-brand-500"
                   />
                 </div>
                 <div>
@@ -219,7 +219,7 @@ export default function ProfilePage() {
                     className={`w-full rounded-xl border bg-slate-50 px-4 py-2.5 text-sm text-slate-800 outline-none focus:ring-2 ${
                       confPass && confPass !== newPass
                         ? 'border-red-400 focus:border-red-400 focus:ring-red-100'
-                        : 'border-slate-200 focus:border-blue-400 focus:ring-blue-100'
+                        : 'border-slate-200 focus:border-brand-200 focus:ring-brand-500'
                     }`}
                   />
                   {confPass && confPass !== newPass && (

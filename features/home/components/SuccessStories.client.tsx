@@ -9,7 +9,7 @@ export function SuccessStories() {
         {/* Header */}
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
               Success Stories
             </p>
             <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
@@ -29,7 +29,7 @@ export function SuccessStories() {
               className="flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:shadow-md"
             >
               <div>
-                <span className="text-3xl text-blue-200 leading-none">"</span>
+                <span className="text-3xl text-brand-600 leading-none">"</span>
                 <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.quote}</p>
               </div>
 
@@ -38,7 +38,7 @@ export function SuccessStories() {
                   {t.outcome}
                 </span>
                 <div className="mt-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-violet-600 text-xs font-bold text-white">
+                  <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-600 to-brand-500 text-xs font-bold text-white">
                     {t.avatar}
                   </div>
                   <div>

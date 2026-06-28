@@ -7,7 +7,7 @@ export function InstructorShowcase() {
 
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
             Your Instructors
           </p>
           <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
@@ -27,12 +27,12 @@ export function InstructorShowcase() {
               className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
             >
               {/* Avatar */}
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-xl font-bold text-white">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-500 text-xl font-bold text-white">
                 {instructor.name.split(' ').map((n) => n[0]).join('')}
               </div>
 
               <h3 className="mt-5 text-xl font-bold text-slate-900">{instructor.name}</h3>
-              <p className="mt-1 text-sm font-medium text-blue-600">
+              <p className="mt-1 text-sm font-medium text-brand-600">
                 {instructor.title} · {instructor.company}
               </p>
 
@@ -43,7 +43,7 @@ export function InstructorShowcase() {
               <p className="mt-4 text-sm leading-relaxed text-slate-500">{instructor.bio}</p>
 
               <div className="mt-6 flex gap-4 text-sm font-medium">
-                <a href={instructor.social.linkedin} className="text-blue-600 hover:underline">
+                <a href={instructor.social.linkedin} className="text-brand-600 hover:underline">
                   LinkedIn
                 </a>
                 <a href={instructor.social.twitter} className="text-slate-500 hover:text-slate-700">

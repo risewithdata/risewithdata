@@ -27,7 +27,7 @@ function courseProgress(startDate: string, endDate: string) {
   const now   = Date.now();
   const start = new Date(startDate).getTime();
   const end   = new Date(endDate).getTime();
-  if (now < start) return { label: 'Upcoming', pct: 0, bg: 'bg-blue-500', text: 'text-blue-700', badge: 'bg-blue-100 text-blue-700' };
+  if (now < start) return { label: 'Upcoming', pct: 0, bg: 'bg-brand-600', text: 'text-brand-600', badge: 'bg-brand-600 text-brand-600' };
   if (now > end)   return { label: 'Completed', pct: 100, bg: 'bg-emerald-500', text: 'text-emerald-700', badge: 'bg-emerald-100 text-emerald-700' };
   const pct = Math.round(((now - start) / (end - start)) * 100);
   return { label: 'In Progress', pct, bg: 'bg-amber-500', text: 'text-amber-700', badge: 'bg-amber-100 text-amber-700' };
@@ -71,7 +71,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
         {/* Back */}
         <a
           href="/dashboard/student/courses"
-          className="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-blue-600"
+          className="mb-6 inline-flex items-center gap-1.5 text-sm font-medium text-slate-500 hover:text-brand-600"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -108,7 +108,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                         {prog.label}
                       </span>
                       <h1 className="text-xl font-bold text-white sm:text-2xl">{course.name}</h1>
-                      <p className="mt-1 text-sm text-blue-300">Trainer: {course.trainerName}</p>
+                      <p className="mt-1 text-sm text-brand-600">Trainer: {course.trainerName}</p>
                     </div>
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 backdrop-blur">
                       <svg className="h-7 w-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -119,7 +119,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
 
                   {/* Progress bar */}
                   <div className="mt-6">
-                    <div className="mb-1.5 flex items-center justify-between text-xs text-blue-200">
+                    <div className="mb-1.5 flex items-center justify-between text-xs text-brand-600">
                       <span>Course Progress</span>
                       <span className="font-semibold text-white">{prog.pct}%</span>
                     </div>

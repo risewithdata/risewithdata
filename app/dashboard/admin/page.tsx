@@ -107,11 +107,11 @@ export default function AdminDashboardPage() {
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
-            <a href="/"><img src="/logo.svg" alt="RiseWithData" className="h-9 w-auto" /></a>
-            <span className="hidden rounded-md bg-blue-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 sm:block">Admin</span>
+            <a href="/"><img src="/logo.jpeg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
+            <span className="hidden rounded-md bg-brand-600 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-600 sm:block">Admin</span>
           </div>
           <nav className="flex items-center gap-1">
-            <a href="/dashboard/admin"              className="rounded-lg bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700">Dashboard</a>
+            <a href="/dashboard/admin"              className="rounded-lg bg-brand-600 px-3 py-2 text-sm font-medium text-brand-600">Dashboard</a>
             <a href="/dashboard/admin/applications" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Applications</a>
             <a href="/dashboard/admin/courses"      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Courses</a>
             <button
@@ -149,7 +149,7 @@ export default function AdminDashboardPage() {
             </a>
             <a
               href="/dashboard/admin/courses"
-              className="flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-700"
+              className="flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-brand-600"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -187,13 +187,13 @@ export default function AdminDashboardPage() {
                     <p className="mt-1 text-3xl font-bold text-slate-900">{stats.totalApplications}</p>
                     <div className="mt-1">{trendArrow(stats.recentAppsCount, stats.prevAppsCount)}</div>
                   </div>
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-50">
-                    <svg className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-600">
+                    <svg className="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
                   </div>
                 </div>
-                <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-blue-400 to-blue-600" />
+                <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-brand-600 to-brand-500" />
               </div>
 
               {/* Pending Review */}
@@ -300,8 +300,8 @@ export default function AdminDashboardPage() {
               </div>
 
               <div className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
-                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-indigo-50">
-                  <svg className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-brand-50">
+                  <svg className="h-6 w-6 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
                 </div>
@@ -322,7 +322,7 @@ export default function AdminDashboardPage() {
           <div className="rounded-2xl border border-slate-200 bg-white shadow-sm lg:col-span-2">
             <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
               <h2 className="text-sm font-bold text-slate-800">Recent Applications</h2>
-              <a href="/dashboard/admin/applications" className="text-xs font-semibold text-blue-600 hover:underline">View all →</a>
+              <a href="/dashboard/admin/applications" className="text-xs font-semibold text-brand-600 hover:underline">View all →</a>
             </div>
 
             {loading ? (
@@ -347,7 +347,7 @@ export default function AdminDashboardPage() {
                     className="flex items-center gap-4 px-6 py-3.5 transition hover:bg-slate-50"
                   >
                     {/* Avatar */}
-                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-xs font-bold text-white">
+                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-600 to-brand-500 text-xs font-bold text-white">
                       {app.firstName[0]}{app.lastName[0]}
                     </div>
 
@@ -399,7 +399,7 @@ export default function AdminDashboardPage() {
                 <div className="space-y-4 p-6">
                   {byCourse.map((item, i) => {
                     const pct = Math.round((item.count / maxByCourse) * 100);
-                    const colors = ['bg-blue-500', 'bg-purple-500', 'bg-teal-500', 'bg-amber-500', 'bg-rose-500'];
+                    const colors = ['bg-brand-600', 'bg-purple-500', 'bg-teal-500', 'bg-amber-500', 'bg-rose-500'];
                     return (
                       <div key={i}>
                         <div className="mb-1.5 flex items-center justify-between">
@@ -423,7 +423,7 @@ export default function AdminDashboardPage() {
             <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
               <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
                 <h2 className="text-sm font-bold text-slate-800">Courses</h2>
-                <a href="/dashboard/admin/courses" className="text-xs font-semibold text-blue-600 hover:underline">Manage →</a>
+                <a href="/dashboard/admin/courses" className="text-xs font-semibold text-brand-600 hover:underline">Manage →</a>
               </div>
               {loading ? (
                 <div className="space-y-3 p-6">

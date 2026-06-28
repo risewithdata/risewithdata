@@ -14,11 +14,11 @@ export default function ContactPage() {
         {/* ===== HERO ===== */}
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800" />
-          <div className="absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl" />
+          <div className="absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-brand-500/20 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-purple-500/10 blur-3xl" />
 
           <div className="relative mx-auto max-w-4xl px-6 py-28 text-center text-white">
-            <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-300">
+            <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-300">
               Get in Touch
             </span>
             <h1 className="mt-4 text-5xl font-semibold tracking-tight">Contact Us</h1>
@@ -50,7 +50,7 @@ export default function ContactPage() {
                   <p className="font-medium">Email</p>
                   <a
                     href="mailto:risewithdatausa@gmail.com"
-                    className="text-blue-600 hover:underline"
+                    className="text-brand-600 hover:underline"
                   >
                     risewithdatausa@gmail.com
                   </a>

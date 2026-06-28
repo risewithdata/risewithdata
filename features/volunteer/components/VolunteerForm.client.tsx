@@ -46,7 +46,7 @@ export function VolunteerForm() {
   };
 
   const field = (err: boolean) =>
-    `w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-blue-500 ${
+    `w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-brand-500 ${
       err ? 'border-red-400 bg-red-50' : 'border-slate-200 bg-white'
     }`;
 
@@ -116,7 +116,7 @@ export function VolunteerForm() {
 
           {selectedFile ? (
             <div className="text-center">
-              <p className="text-sm font-medium text-blue-600">{selectedFile.name}</p>
+              <p className="text-sm font-medium text-brand-600">{selectedFile.name}</p>
               <p className="mt-0.5 text-xs text-slate-400">
                 {(selectedFile.size / 1024 / 1024).toFixed(2)} MB
               </p>
@@ -124,7 +124,7 @@ export function VolunteerForm() {
           ) : (
             <>
               <span className="text-sm text-slate-500">
-                <span className="font-medium text-blue-600">Click to upload</span> or drag and drop
+                <span className="font-medium text-brand-600">Click to upload</span> or drag and drop
               </span>
               <span className="text-xs text-slate-400">PDF, DOC, DOCX — max 5 MB</span>
             </>
@@ -146,7 +146,7 @@ export function VolunteerForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-xl bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/20 transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? 'Submitting…' : 'Submit Application'}
       </button>

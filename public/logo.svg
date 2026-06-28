@@ -1,34 +1,54 @@
-<svg viewBox="0 0 420 70" xmlns="http://www.w3.org/2000/svg" role="img">
-  <title>RiseWithData</title>
+<svg viewBox="0 0 585 106" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rise With Data">
+  <title>Rise With Data — Small Cohorts. Big Impact.</title>
 
-  <!-- Bar chart bars -->
-  <rect x="4"  y="44" width="14" height="20" rx="3" fill="#3B82F6" opacity="0.4"/>
-  <rect x="22" y="30" width="14" height="34" rx="3" fill="#3B82F6" opacity="0.62"/>
-  <rect x="40" y="16" width="14" height="48" rx="3" fill="#3B82F6" opacity="0.82"/>
-  <rect x="58" y="5"  width="14" height="59" rx="3" fill="#0EA5E9"/>
+  <!-- Ground line under sun -->
+  <line x1="6" y1="92" x2="126" y2="92" stroke="#C88010" stroke-width="1.5" stroke-linecap="round"/>
 
-  <!-- Trend line -->
-  <path d="M8 53 Q37 14 68 8" fill="none" stroke="#0EA5E9" stroke-width="2.5" stroke-dasharray="4 3" opacity="0.55"/>
+  <!-- Sun outer semi-circle (golden orange) -->
+  <path d="M36 92 A32 32 0 0 1 100 92" fill="#E8A020"/>
 
-  <!-- Wordmark -->
+  <!-- Sun inner highlight (lighter yellow) -->
+  <path d="M46 92 A22 22 0 0 1 90 92" fill="#F5C040"/>
+
+  <!-- Rays emanating from sun center (68, 92) -->
+  <!-- ±75° (near horizontal) -->
+  <line x1="35"   y1="83.6" x2="20"   y2="79.6" stroke="#C88010" stroke-width="2" stroke-linecap="round"/>
+  <line x1="101"  y1="83.6" x2="116"  y2="79.6" stroke="#C88010" stroke-width="2" stroke-linecap="round"/>
+  <!-- ±60° -->
+  <line x1="39.3" y1="74"   x2="25.4" y2="66"   stroke="#C88010" stroke-width="2" stroke-linecap="round"/>
+  <line x1="96.7" y1="74"   x2="110.6" y2="66"  stroke="#C88010" stroke-width="2" stroke-linecap="round"/>
+  <!-- ±40° -->
+  <line x1="46.7" y1="65.7" x2="36.8" y2="53.7" stroke="#C88010" stroke-width="2" stroke-linecap="round"/>
+  <line x1="89.3" y1="65.7" x2="99.2" y2="53.7" stroke="#C88010" stroke-width="2" stroke-linecap="round"/>
+  <!-- ±20° -->
+  <line x1="56.3" y1="59.5" x2="51"   y2="44.9" stroke="#C88010" stroke-width="2" stroke-linecap="round"/>
+  <line x1="79.7" y1="59.5" x2="85"   y2="44.9" stroke="#C88010" stroke-width="2" stroke-linecap="round"/>
+  <!-- 0° (straight up) -->
+  <line x1="68"   y1="57"   x2="68"   y2="42"   stroke="#C88010" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Thin vertical separator between icon and text -->
+  <line x1="137" y1="12" x2="137" y2="92" stroke="#DDD0B0" stroke-width="0.9"/>
+
+  <!-- "Rise With Data" — dark brown serif -->
   <text
-    x="84" y="40"
-    font-family="'Helvetica Neue', Arial, sans-serif"
-    font-size="30"
-    font-weight="800"
+    x="152" y="72"
+    font-family="Georgia, 'Times New Roman', 'DejaVu Serif', serif"
+    font-size="52"
+    font-weight="400"
+    fill="#1C0F08"
     letter-spacing="-0.5"
-  >
-    <tspan fill="#0F172A">Rise</tspan><tspan fill="#0EA5E9">With</tspan><tspan fill="#3B82F6">Data</tspan>
-  </text>
+  >Rise With Data</text>
 
-  <!-- Tagline -->
+  <!-- Thin divider line under title -->
+  <line x1="152" y1="81" x2="577" y2="81" stroke="#C88010" stroke-width="0.9"/>
+
+  <!-- Subtitle — golden brown small caps -->
   <text
-    x="86" y="58"
+    x="156" y="97"
     font-family="'Helvetica Neue', Arial, sans-serif"
-    font-size="9.5"
+    font-size="11"
     font-weight="600"
-    fill="#94A3B8"
-    letter-spacing="2"
-  >LEARN · GROW · SUCCEED</text>
-
+    fill="#C4882A"
+    letter-spacing="3.5"
+  >SMALL COHORTS. BIG IMPACT</text>
 </svg>

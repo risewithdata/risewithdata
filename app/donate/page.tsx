@@ -54,16 +54,16 @@ export default function DonatePage() {
         {/* ===== HERO ===== */}
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950" />
-          <div className="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl" />
+          <div className="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-brand-500/20 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-[400px] w-[500px] rounded-full bg-violet-500/10 blur-3xl" />
 
           <div className="relative mx-auto max-w-4xl px-6 py-28 text-center text-white">
-            <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-300">
+            <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-300">
               Support Data Education
             </span>
             <h1 className="mt-5 text-5xl font-bold tracking-tight sm:text-6xl">
               Help someone launch their{' '}
-              <span className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-brand-400 to-brand-400 bg-clip-text text-transparent">
                 data career
               </span>
             </h1>
@@ -93,7 +93,7 @@ export default function DonatePage() {
 
             {/* What your money does */}
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
                 Your Impact
               </p>
               <h2 className="mt-3 text-3xl font-bold text-slate-900">
@@ -112,7 +112,7 @@ export default function DonatePage() {
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">{item.icon}</span>
-                      <span className="rounded-xl bg-blue-50 px-3 py-1 text-sm font-bold text-blue-700">
+                      <span className="rounded-xl bg-brand-50 px-3 py-1 text-sm font-bold text-brand-700">
                         {item.amount}
                       </span>
                     </div>
@@ -125,7 +125,7 @@ export default function DonatePage() {
 
             {/* Mission statement */}
             <div className="rounded-3xl bg-slate-950 p-8 text-white">
-              <p className="text-sm font-semibold uppercase tracking-widest text-blue-400">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-400">
                 Our Mission
               </p>
               <p className="mt-4 text-xl font-semibold leading-relaxed">
@@ -134,7 +134,7 @@ export default function DonatePage() {
                 comes with it."
               </p>
               <div className="mt-6 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-sm font-bold">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-600 text-sm font-bold">
                   RD
                 </div>
                 <div>
@@ -146,7 +146,7 @@ export default function DonatePage() {
 
             {/* Donor wall */}
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
                 Recent Donors
               </p>
               <h2 className="mt-3 text-3xl font-bold text-slate-900">
@@ -158,7 +158,7 @@ export default function DonatePage() {
                     key={d.name}
                     className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
                   >
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-violet-600 text-sm font-bold text-white">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-600 to-brand-700 text-sm font-bold text-white">
                       {d.initials}
                     </div>
                     <div className="flex-1">
@@ -182,9 +182,9 @@ export default function DonatePage() {
             <div className="sticky top-24">
               <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
                 {/* Card header */}
-                <div className="bg-gradient-to-br from-blue-600 to-violet-600 px-6 py-6 text-white">
+                <div className="bg-gradient-to-br from-brand-600 to-brand-700 px-6 py-6 text-white">
                   <h2 className="text-xl font-bold">Make a Donation</h2>
-                  <p className="mt-1 text-sm text-blue-100">
+                  <p className="mt-1 text-sm text-brand-100">
                     Secure · Tax-deductible · 100% to scholars
                   </p>
                 </div>
@@ -209,7 +209,7 @@ export default function DonatePage() {
         <section className="bg-slate-50 py-20">
           <div className="mx-auto max-w-5xl px-6 lg:px-8">
             <div className="text-center">
-              <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
                 Transparency
               </p>
               <h2 className="mt-3 text-3xl font-bold text-slate-900">
@@ -219,7 +219,7 @@ export default function DonatePage() {
 
             <div className="mt-12 grid gap-6 sm:grid-cols-3">
               {[
-                { pct: '70%', label: 'Fellowship Scholarships', color: 'bg-blue-600',   desc: 'Subsidizing tuition for learners who demonstrate need' },
+                { pct: '70%', label: 'Fellowship Scholarships', color: 'bg-brand-600',   desc: 'Subsidizing tuition for learners who demonstrate need' },
                 { pct: '20%', label: 'Curriculum & Instructors', color: 'bg-violet-600', desc: 'Developing new modules and compensating expert instructors' },
                 { pct: '10%', label: 'Community & Events',       color: 'bg-slate-700',  desc: 'Hosting networking events, alumni meetups, and office hours' },
               ].map((item) => (
@@ -241,7 +241,7 @@ export default function DonatePage() {
         {/* ===== FINAL CTA ===== */}
         <section className="py-20">
           <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
               Every contribution counts
             </p>
             <h2 className="mt-3 text-4xl font-bold text-slate-900">
@@ -257,13 +257,13 @@ export default function DonatePage() {
                 e.preventDefault();
                 document.querySelector('form')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="mt-8 inline-block rounded-xl bg-blue-600 px-10 py-4 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-blue-700"
+              className="mt-8 inline-block rounded-xl bg-brand-600 px-10 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-700"
             >
               Donate Now
             </a>
             <p className="mt-4 text-sm text-slate-400">
               Questions?{' '}
-              <a href="mailto:risewithdatausa@gmail.com" className="text-blue-600 hover:underline">
+              <a href="mailto:risewithdatausa@gmail.com" className="text-brand-600 hover:underline">
                 risewithdatausa@gmail.com
               </a>
             </p>

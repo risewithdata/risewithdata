@@ -9,7 +9,7 @@ export function FAQSection() {
 
         {/* Header */}
         <div className="text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
             FAQs
           </p>
           <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
@@ -32,7 +32,7 @@ export function FAQSection() {
           </p>
           <a
             href="/contact"
-            className="mt-6 inline-block rounded-xl bg-slate-900 px-7 py-3 text-sm font-semibold text-white transition hover:bg-slate-700"
+            className="mt-6 inline-block rounded-xl bg-brand-600 px-7 py-3 text-sm font-semibold text-white transition hover:bg-brand-700"
           >
             Talk to an Advisor
           </a>

@@ -8,13 +8,13 @@ export function FinalCta() {
 
           {/* Glow */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
-            <div className="absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-600/20 blur-3xl" />
+            <div className="absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-brand-500/20 blur-3xl" />
           </div>
 
           <div className="relative grid gap-12 lg:grid-cols-2 lg:items-center">
             {/* Left */}
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-blue-400">
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
                 Limited seats per cohort
               </p>
               <h2 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
@@ -49,7 +49,7 @@ export function FinalCta() {
               <div className="mt-8 space-y-4">
                 <a
                   href="/apply"
-                  className="block w-full rounded-xl bg-blue-600 py-4 text-center text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-blue-500"
+                  className="block w-full rounded-xl bg-brand-500 py-4 text-center text-sm font-bold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-500"
                 >
                   Apply Now
                 </a>

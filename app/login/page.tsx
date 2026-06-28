@@ -48,11 +48,11 @@ export default function LoginPage() {
     <>
       <NavigationBar />
 
-      <main className="min-h-[calc(100vh-140px)] bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 flex items-center justify-center px-4 py-16">
+      <main className="min-h-[calc(100vh-140px)] bg-gradient-to-br from-brand-950 via-brand-900 to-brand-950 flex items-center justify-center px-4 py-16">
 
         {/* Glow blobs */}
-        <div className="pointer-events-none absolute -top-40 left-1/4 h-[500px] w-[500px] rounded-full bg-blue-500/10 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-violet-500/10 blur-3xl" />
+        <div className="pointer-events-none absolute -top-40 left-1/4 h-[500px] w-[500px] rounded-full bg-brand-500/10 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-brand-400/10 blur-3xl" />
 
         <div className="relative w-full max-w-md">
 
@@ -61,8 +61,8 @@ export default function LoginPage() {
 
             {/* Card header */}
             <div className="px-8 pt-8 pb-6 text-center">
-              <a href="/">
-                <img src="/logo.svg" alt="RiseWithData" className="mx-auto h-14 w-auto" />
+              <a href="/" className="inline-block rounded-2xl bg-warm-100 px-5 py-3">
+                <img src="/logo.jpeg" alt="RiseWithData" className="mx-auto h-9 w-auto" />
               </a>
               <h1 className="mt-6 text-2xl font-bold text-white">Welcome back</h1>
               <p className="mt-1.5 text-sm text-slate-400">Sign in to your RiseWithData account</p>
@@ -83,7 +83,7 @@ export default function LoginPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full rounded-xl border border-slate-600 bg-slate-800 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30"
+                  className="w-full rounded-xl border border-slate-600 bg-slate-800 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
                   autoComplete="email"
                 />
               </div>
@@ -92,7 +92,7 @@ export default function LoginPage() {
               <div>
                 <div className="mb-1.5 flex items-center justify-between">
                   <label className="text-sm font-medium text-slate-300">Password</label>
-                  <a href="/forgot-password" className="text-xs text-blue-400 hover:text-blue-300 transition-colors">
+                  <a href="/forgot-password" className="text-xs text-brand-400 hover:text-brand-300 transition-colors">
                     Forgot password?
                   </a>
                 </div>
@@ -101,7 +101,7 @@ export default function LoginPage() {
                     type={showPass ? 'text' : 'password'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full rounded-xl border border-slate-600 bg-slate-800 px-4 py-3 pr-12 text-sm text-white placeholder-slate-500 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-500/30"
+                    className="w-full rounded-xl border border-slate-600 bg-slate-800 px-4 py-3 pr-12 text-sm text-white placeholder-slate-500 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-500/30"
                     autoComplete="current-password"
                   />
                   <button
@@ -137,7 +137,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition hover:from-blue-700 hover:to-blue-800 disabled:cursor-not-allowed disabled:opacity-60"
+                className="w-full rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:from-brand-700 hover:to-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
               >
                 {loading ? (
                   <span className="flex items-center justify-center gap-2">

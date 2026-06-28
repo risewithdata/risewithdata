@@ -21,7 +21,7 @@ export default function FellowshipPage({ params }: Props) {
 
       {/* ===== HERO ===== */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
-        <div className="absolute -top-48 left-1/4 h-[600px] w-[600px] rounded-full bg-blue-600/15 blur-3xl" />
+        <div className="absolute -top-48 left-1/4 h-[600px] w-[600px] rounded-full bg-brand-600/15 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-[400px] w-[500px] rounded-full bg-violet-600/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8">
@@ -37,7 +37,7 @@ export default function FellowshipPage({ params }: Props) {
           <div className="grid gap-12 lg:grid-cols-3">
             {/* Left — title & info */}
             <div className="lg:col-span-2">
-              <span className="inline-block rounded-full bg-blue-500/20 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-blue-300">
+              <span className="inline-block rounded-full bg-brand-600/20 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-brand-600">
                 {fellowship.badge}
               </span>
 
@@ -125,7 +125,7 @@ export default function FellowshipPage({ params }: Props) {
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {fellowship.outcomes.map((o) => (
                   <div key={o} className="flex items-start gap-3 rounded-xl border border-slate-100 bg-slate-50 p-4">
-                    <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs text-white">
+                    <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs text-white">
                       ✓
                     </span>
                     <p className="text-sm text-slate-700">{o}</p>
@@ -171,17 +171,17 @@ export default function FellowshipPage({ params }: Props) {
                         onClick={() => setOpenModule(isOpen ? null : i)}
                       >
                         <div className="flex items-center gap-4">
-                          <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                          <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
                             {i + 1}
                           </span>
                           <div>
-                            <p className="text-xs font-semibold uppercase tracking-wide text-blue-600">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-brand-600">
                               {mod.week}
                             </p>
                             <p className="mt-0.5 font-semibold text-slate-900">{mod.title}</p>
                           </div>
                         </div>
-                        <span className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border text-sm transition ${isOpen ? 'border-blue-600 bg-blue-50 text-blue-600' : 'border-slate-200 text-slate-400'}`}>
+                        <span className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border text-sm transition ${isOpen ? 'border-brand-200 bg-brand-600 text-brand-600' : 'border-slate-200 text-slate-400'}`}>
                           {isOpen ? '−' : '+'}
                         </span>
                       </button>
@@ -190,7 +190,7 @@ export default function FellowshipPage({ params }: Props) {
                           <ul className="space-y-2">
                             {mod.topics.map((t) => (
                               <li key={t} className="flex items-start gap-2 text-sm text-slate-600">
-                                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-400" />
+                                <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-600" />
                                 {t}
                               </li>
                             ))}
@@ -215,12 +215,12 @@ export default function FellowshipPage({ params }: Props) {
                     key={ins.name}
                     className="flex gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                   >
-                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-600 to-violet-600 text-xl font-bold text-white">
+                    <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-500 text-xl font-bold text-white">
                       {ins.initials}
                     </div>
                     <div>
                       <p className="font-bold text-slate-900">{ins.name}</p>
-                      <p className="text-sm text-blue-600">{ins.title} · {ins.company}</p>
+                      <p className="text-sm text-brand-600">{ins.title} · {ins.company}</p>
                       <p className="mt-3 text-sm leading-relaxed text-slate-500">{ins.bio}</p>
                     </div>
                   </div>
@@ -241,11 +241,11 @@ export default function FellowshipPage({ params }: Props) {
                     className="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                   >
                     <div>
-                      <span className="text-2xl text-blue-400">"</span>
+                      <span className="text-2xl text-brand-600">"</span>
                       <p className="mt-1 text-sm leading-relaxed text-slate-600">{t.quote}</p>
                     </div>
                     <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-violet-600 text-sm font-bold text-white">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-brand-600 to-brand-500 text-sm font-bold text-white">
                         {t.initials}
                       </div>
                       <div>
@@ -282,7 +282,7 @@ export default function FellowshipPage({ params }: Props) {
                         aria-expanded={isOpen}
                       >
                         {faq.question}
-                        <span className={`ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border text-sm transition ${isOpen ? 'border-blue-600 bg-blue-50 text-blue-600' : 'border-slate-200 text-slate-400'}`}>
+                        <span className={`ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border text-sm transition ${isOpen ? 'border-brand-200 bg-brand-600 text-brand-600' : 'border-slate-200 text-slate-400'}`}>
                           {isOpen ? '−' : '+'}
                         </span>
                       </button>
@@ -318,7 +318,7 @@ export default function FellowshipPage({ params }: Props) {
           )}
           <a
             href="/apply"
-            className="flex-1 rounded-xl bg-blue-600 py-3 text-center text-sm font-semibold text-white hover:bg-blue-700"
+            className="flex-1 rounded-xl bg-brand-600 py-3 text-center text-sm font-semibold text-white hover:bg-brand-600"
           >
             Enroll Now
           </a>
@@ -349,7 +349,7 @@ function EnrollCard({ fellowship }: { fellowship: ReturnType<typeof getFellowshi
       <div className="p-6">
         <a
           href="/apply"
-          className="block w-full rounded-xl bg-blue-600 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-blue-700"
+          className="block w-full rounded-xl bg-brand-600 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-brand-600"
         >
           Enroll Now
         </a>
@@ -375,7 +375,7 @@ function EnrollCard({ fellowship }: { fellowship: ReturnType<typeof getFellowshi
             'Alumni community access',
           ].map((item) => (
             <div key={item} className="flex items-center gap-2 text-sm text-slate-600">
-              <span className="text-blue-500">✓</span>
+              <span className="text-brand-600">✓</span>
               {item}
             </div>
           ))}
@@ -392,6 +392,6 @@ function EnrollCard({ fellowship }: { fellowship: ReturnType<typeof getFellowshi
 /* ── Section label ──────────────────────────────────────────────── */
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-sm font-semibold uppercase tracking-widest text-blue-600">{children}</p>
+    <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">{children}</p>
   );
 }

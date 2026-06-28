@@ -74,11 +74,11 @@ export function NavigationBar() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-xl shadow-sm border-b border-slate-100 relative">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-1 lg:px-8">
 
         {/* ── Logo ── */}
         <a href="/" className="flex-shrink-0">
-          <img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto" />
+          <img src="/logo.jpeg" alt="RiseWithData" className="h-20 w-auto mix-blend-multiply" />
         </a>
 
         {/* ── Desktop Nav ── */}
@@ -92,7 +92,7 @@ export function NavigationBar() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="relative px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-blue-600 rounded-lg hover:bg-blue-50"
+                  className="relative px-4 py-2 text-sm font-medium text-slate-600 transition-colors hover:text-brand-600 rounded-lg hover:bg-brand-50"
                 >
                   {item.label}
                 </a>
@@ -107,10 +107,10 @@ export function NavigationBar() {
                 onMouseLeave={() => handleLeave(item.label)}
               >
                 <button className={`flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
-                  isOpen ? 'bg-blue-50 text-blue-600' : 'text-slate-600 hover:bg-blue-50 hover:text-blue-600'
+                  isOpen ? 'bg-brand-50 text-brand-600' : 'text-slate-600 hover:bg-brand-50 hover:text-brand-600'
                 }`}>
                   {item.label}
-                  <svg className={`h-3.5 w-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-blue-500' : 'text-slate-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <svg className={`h-3.5 w-3.5 transition-transform duration-200 ${isOpen ? 'rotate-180 text-brand-500' : 'text-slate-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
@@ -123,16 +123,16 @@ export function NavigationBar() {
                       {/* Parent item */}
                       <a
                         href={(item as any).main.href}
-                        className="group flex items-start justify-between gap-3 bg-gradient-to-br from-slate-900 to-blue-950 px-5 py-5 transition hover:from-slate-800 hover:to-blue-900"
+                        className="group flex items-start justify-between gap-3 bg-gradient-to-br from-brand-950 to-brand-900 px-5 py-5 transition hover:from-brand-900 hover:to-brand-800"
                       >
                         <div>
                           <div className="flex items-center gap-2 mb-1">
-                            <span className="text-blue-400">
+                            <span className="text-brand-400">
                               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                               </svg>
                             </span>
-                            <p className="text-sm font-semibold text-white group-hover:text-blue-200 transition-colors">
+                            <p className="text-sm font-semibold text-white group-hover:text-brand-200 transition-colors">
                               {(item as any).main.name}
                             </p>
                           </div>
@@ -140,7 +140,7 @@ export function NavigationBar() {
                             {(item as any).main.desc}
                           </p>
                         </div>
-                        <span className="mt-0.5 flex-shrink-0 rounded-full bg-blue-500/25 border border-blue-400/30 px-2.5 py-0.5 text-xs font-semibold text-blue-300">
+                        <span className="mt-0.5 flex-shrink-0 rounded-full bg-brand-500/25 border border-brand-400/30 px-2.5 py-0.5 text-xs font-semibold text-brand-300">
                           {(item as any).main.meta}
                         </span>
                       </a>
@@ -154,17 +154,17 @@ export function NavigationBar() {
                           <a
                             key={cohort.name}
                             href={cohort.href}
-                            className="group flex items-center justify-between rounded-xl px-3 py-2.5 transition hover:bg-blue-50"
+                            className="group flex items-center justify-between rounded-xl px-3 py-2.5 transition hover:bg-brand-50"
                           >
                             <div className="flex items-center gap-2.5">
-                              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 group-hover:bg-blue-200 transition-colors">
-                                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-100 group-hover:bg-brand-200 transition-colors">
+                                <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
                               </span>
-                              <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700 transition-colors">
+                              <span className="text-sm font-medium text-slate-700 group-hover:text-brand-700 transition-colors">
                                 {cohort.name}
                               </span>
                             </div>
-                            <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 transition-colors">
+                            <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-xs font-medium text-slate-500 group-hover:bg-brand-100 group-hover:text-brand-600 transition-colors">
                               {cohort.meta}
                             </span>
                           </a>
@@ -187,7 +187,7 @@ export function NavigationBar() {
                           <a
                             key={i.name}
                             href={i.href}
-                            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-blue-50 hover:text-blue-700"
+                            className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
                           >
                             <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-slate-100">
                               {i.name.includes('Instructor') ? '🎓' : '🤝'}
@@ -212,7 +212,7 @@ export function NavigationBar() {
                 href={dashboardHref(user.role)}
                 className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
                   {user.firstName[0]}
                 </span>
                 {user.firstName}
@@ -237,7 +237,7 @@ export function NavigationBar() {
               </a>
               <a
                 href="/apply"
-                className="rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-blue-500/20 transition hover:from-blue-700 hover:to-blue-800"
+                className="rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-brand-500/20 transition hover:from-brand-700 hover:to-brand-600"
               >
                 Apply Now
               </a>
@@ -265,7 +265,7 @@ export function NavigationBar() {
             <a
               key={item.label}
               href={(item as any).href || '#'}
-              className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-blue-50 hover:text-blue-700"
+              className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700"
             >
               {item.label}
             </a>
@@ -286,7 +286,7 @@ export function NavigationBar() {
             ) : (
               <>
                 <a href="/login" className="flex-1 rounded-xl border border-slate-200 py-2 text-center text-sm font-medium text-slate-700">Login</a>
-                <a href="/apply" className="flex-1 rounded-xl bg-blue-600 py-2 text-center text-sm font-semibold text-white">Apply Now</a>
+                <a href="/apply" className="flex-1 rounded-xl bg-brand-600 py-2 text-center text-sm font-semibold text-white">Apply Now</a>
               </>
             )}
           </div>

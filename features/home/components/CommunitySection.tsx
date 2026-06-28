@@ -8,7 +8,7 @@ export function CommunitySection() {
 
           {/* Left */}
           <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-400">
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
               Community
             </p>
             <h2 className="mt-3 text-4xl font-bold tracking-tight">
@@ -29,7 +29,7 @@ export function CommunitySection() {
                 'Office hours with instructors every Friday',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-slate-300">
-                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs text-white">
+                  <span className="mt-0.5 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-brand-500 text-xs text-white">
                     ✓
                   </span>
                   {item}
@@ -39,7 +39,7 @@ export function CommunitySection() {
 
             <a
               href="/contact"
-              className="mt-10 inline-block rounded-xl bg-blue-600 px-7 py-3 text-sm font-semibold text-white transition hover:bg-blue-500"
+              className="mt-10 inline-block rounded-xl bg-brand-500 px-7 py-3 text-sm font-semibold text-white transition hover:bg-brand-500"
             >
               Apply to Join
             </a>
@@ -57,12 +57,12 @@ export function CommunitySection() {
               </div>
             ))}
 
-            <div className="rounded-3xl border border-blue-500/30 bg-blue-600/10 p-8">
+            <div className="rounded-3xl border border-brand-500/30 bg-brand-500/10 p-8">
               <p className="text-lg font-semibold text-white">
                 "The community was the unexpected benefit. I still talk to my cohort every week."
               </p>
               <div className="mt-4 flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-500 text-xs font-bold text-white">
                   JK
                 </div>
                 <div>

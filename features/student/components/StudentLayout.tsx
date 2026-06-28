@@ -83,7 +83,7 @@ export function StudentLayout({ children }: Props) {
         {/* Logo */}
         <div className="flex h-16 flex-shrink-0 items-center border-b border-slate-100 px-5">
           <a href="/" className="flex-shrink-0">
-            <img src="/logo.svg" alt="RiseWithData" className="h-9 w-auto" />
+            <img src="/logo.jpeg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" />
           </a>
           <button
             onClick={() => setOpen(false)}
@@ -106,7 +106,7 @@ export function StudentLayout({ children }: Props) {
                 href={item.href}
                 className={`group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all ${
                   active
-                    ? 'bg-blue-600 text-white shadow-md shadow-blue-500/25'
+                    ? 'bg-brand-600 text-white shadow-md shadow-brand-500/25'
                     : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
@@ -115,7 +115,7 @@ export function StudentLayout({ children }: Props) {
                 </span>
                 {item.label}
                 {item.label === 'Notifications' && notifCount > 0 && (
-                  <span className={`ml-auto flex h-5 min-w-[20px] items-center justify-center rounded-full px-1 text-xs font-bold ${active ? 'bg-white/25 text-white' : 'bg-blue-100 text-blue-700'}`}>
+                  <span className={`ml-auto flex h-5 min-w-[20px] items-center justify-center rounded-full px-1 text-xs font-bold ${active ? 'bg-white/25 text-white' : 'bg-brand-100 text-brand-700'}`}>
                     {notifCount}
                   </span>
                 )}
@@ -128,7 +128,7 @@ export function StudentLayout({ children }: Props) {
         <div className="border-t border-slate-100 p-4 space-y-2">
           {user && (
             <div className="flex items-center gap-3 rounded-xl bg-slate-50 px-3 py-2.5">
-              <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-sm font-bold text-white">
+              <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-sm font-bold text-white">
                 {initials}
               </div>
               <div className="min-w-0">
@@ -163,14 +163,14 @@ export function StudentLayout({ children }: Props) {
             </svg>
           </button>
           <a href="/">
-            <img src="/logo.svg" alt="RiseWithData" className="h-8 w-auto" />
+            <img src="/logo.jpeg" alt="RiseWithData" className="h-12 w-auto mix-blend-multiply" />
           </a>
           <a href="/dashboard/student/notifications" className="relative rounded-lg border border-slate-200 p-2 text-slate-600 hover:bg-slate-50">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
             </svg>
             {notifCount > 0 && (
-              <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-blue-600 text-[10px] font-bold text-white">
+              <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-brand-600 text-[10px] font-bold text-white">
                 {notifCount}
               </span>
             )}

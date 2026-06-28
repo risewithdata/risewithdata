@@ -45,11 +45,11 @@ export default function ApplyPage() {
 
       {/* ── Hero ── */}
       <section className="bg-[#0f172a] px-6 py-20 text-center text-white lg:px-8">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-blue-400">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-brand-400">
           Applications Open
         </p>
         <h1 className="mx-auto max-w-2xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-          Apply to the <span className="text-blue-400">RiseWithData</span> Fellowship
+          Apply to the <span className="text-brand-400">RiseWithData</span> Fellowship
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-base text-slate-300">
           Gain real-world Power BI skills, hands-on project experience, and career support — at no cost to you.
@@ -98,7 +98,7 @@ export default function ApplyPage() {
               <ol className="space-y-6">
                 {steps.map((s) => (
                   <li key={s.step} className="flex gap-4">
-                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white">
+                    <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
                       {s.step}
                     </div>
                     <div>
@@ -110,9 +110,9 @@ export default function ApplyPage() {
               </ol>
             </div>
 
-            <div className="mt-6 rounded-2xl border border-blue-100 bg-blue-50 p-6">
-              <h3 className="font-semibold text-blue-900">Who Should Apply?</h3>
-              <ul className="mt-3 space-y-2 text-sm text-blue-800">
+            <div className="mt-6 rounded-2xl border border-brand-100 bg-brand-50 p-6">
+              <h3 className="font-semibold text-brand-900">Who Should Apply?</h3>
+              <ul className="mt-3 space-y-2 text-sm text-brand-800">
                 {[
                   'Career changers entering data analytics',
                   'Recent graduates seeking practical skills',
@@ -120,7 +120,7 @@ export default function ApplyPage() {
                   'Anyone passionate about data-driven decisions',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
-                    <span className="mt-0.5 text-blue-500">✓</span>
+                    <span className="mt-0.5 text-brand-500">✓</span>
                     {item}
                   </li>
                 ))}

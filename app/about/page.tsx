@@ -18,7 +18,7 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800" />
 
           {/* Glow effects */}
-          <div className="absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-blue-500/20 blur-3xl" />
+          <div className="absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-brand-500/20 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-purple-500/10 blur-3xl" />
 
           {/* Content */}
@@ -81,10 +81,10 @@ export default function AboutPage() {
         </section>
 
         {/* ================= MISSION SECTION ================= */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50 py-28">
+        <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-warm-100 py-28">
 
           {/* Background glows */}
-          <div className="pointer-events-none absolute -top-20 right-0 h-[420px] w-[420px] rounded-full bg-blue-100/50 blur-3xl" />
+          <div className="pointer-events-none absolute -top-20 right-0 h-[420px] w-[420px] rounded-full bg-brand-100/50 blur-3xl" />
           <div className="pointer-events-none absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-sky-100/50 blur-3xl" />
 
           <div className="relative mx-auto max-w-6xl px-6">
@@ -95,13 +95,13 @@ export default function AboutPage() {
               {/* Left — headline + paragraphs */}
               <div>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="h-px w-10 bg-blue-500" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-blue-600">Our Mission</span>
+                  <div className="h-px w-10 bg-brand-500" />
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-600">Our Mission</span>
                 </div>
 
                 <h2 className="text-4xl font-bold leading-tight text-slate-900">
                   Empowering talent with skills that{' '}
-                  <span className="text-blue-600">open doors</span>
+                  <span className="text-brand-600">open doors</span>
                 </h2>
 
                 <div className="mt-8 space-y-5 text-base leading-relaxed text-slate-600">
@@ -128,8 +128,8 @@ export default function AboutPage() {
               <div className="space-y-4">
 
                 {/* Quote callout */}
-                <div className="relative rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 p-8 text-white shadow-xl shadow-blue-500/20">
-                  <svg className="mb-4 h-8 w-8 text-blue-300/60" fill="currentColor" viewBox="0 0 32 32">
+                <div className="relative rounded-2xl bg-gradient-to-br from-brand-600 to-brand-700 p-8 text-white shadow-xl shadow-brand-500/25">
+                  <svg className="mb-4 h-8 w-8 text-brand-300/60" fill="currentColor" viewBox="0 0 32 32">
                     <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"/>
                   </svg>
                   <p className="text-lg font-medium leading-relaxed">
@@ -140,8 +140,8 @@ export default function AboutPage() {
                 {/* Three pillars */}
                 <div className="grid grid-cols-3 gap-3">
                   <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100 text-center">
-                    <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50">
-                      <svg className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50">
+                      <svg className="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
@@ -174,7 +174,7 @@ export default function AboutPage() {
         </section>
 
         {/* ================= IMPACT STATS ================= */}
-        <section className="bg-slate-900 py-20 text-white">
+        <section className="bg-brand-950 py-20 text-white">
 
           <div className="mx-auto grid max-w-6xl gap-10 px-6 text-center md:grid-cols-3">
 
@@ -210,7 +210,7 @@ export default function AboutPage() {
 
           <a
             href="/contact"
-            className="mt-8 inline-block rounded-xl bg-slate-900 px-8 py-3 text-sm font-medium text-white hover:bg-slate-800"
+            className="mt-8 inline-block rounded-xl bg-brand-600 px-8 py-3 text-sm font-medium text-white hover:bg-brand-700"
           >
             Get Started
           </a>

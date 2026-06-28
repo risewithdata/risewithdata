@@ -36,7 +36,7 @@ export function DonateForm() {
   };
 
   const field =
-    'w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-blue-500';
+    'w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-brand-500';
   const fieldOk  = 'border-slate-200 bg-white';
   const fieldErr = 'border-red-400 bg-red-50';
 
@@ -56,8 +56,8 @@ export function DonateForm() {
               onClick={() => setValue('frequency', f)}
               className={`rounded-xl border py-3 text-sm font-semibold capitalize transition ${
                 selectedFreq === f
-                  ? 'border-blue-600 bg-blue-600 text-white shadow-md shadow-blue-500/20'
-                  : 'border-slate-200 bg-white text-slate-600 hover:border-blue-300'
+                  ? 'border-brand-400 bg-brand-600 text-white shadow-md shadow-brand-500/20'
+                  : 'border-slate-200 bg-white text-slate-600 hover:border-brand-400'
               }`}
             >
               {f === 'one-time' ? 'One-Time' : 'Monthly'}
@@ -81,8 +81,8 @@ export function DonateForm() {
                 onClick={() => setValue('presetAmount', val as any)}
                 className={`rounded-xl border py-3 text-sm font-bold transition ${
                   selectedPreset === val
-                    ? 'border-blue-600 bg-blue-600 text-white shadow-md shadow-blue-500/20'
-                    : 'border-slate-200 bg-white text-slate-700 hover:border-blue-300'
+                    ? 'border-brand-400 bg-brand-600 text-white shadow-md shadow-brand-500/20'
+                    : 'border-slate-200 bg-white text-slate-700 hover:border-brand-400'
                 }`}
               >
                 ${amt}
@@ -97,8 +97,8 @@ export function DonateForm() {
           onClick={() => setValue('presetAmount', 'custom')}
           className={`mt-2 w-full rounded-xl border py-3 text-sm font-semibold transition ${
             isCustom
-              ? 'border-blue-600 bg-blue-50 text-blue-700'
-              : 'border-dashed border-slate-300 text-slate-500 hover:border-blue-300'
+              ? 'border-brand-400 bg-brand-600 text-brand-600'
+              : 'border-dashed border-slate-300 text-slate-500 hover:border-brand-400'
           }`}
         >
           Enter custom amount
@@ -181,7 +181,7 @@ export function DonateForm() {
           {...register('anonymous')}
           id="anonymous"
           type="checkbox"
-          className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+          className="h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
         />
         <label htmlFor="anonymous" className="text-sm text-slate-600">
           Make my donation anonymous
@@ -212,11 +212,11 @@ export function DonateForm() {
             {...register('terms')}
             id="terms"
             type="checkbox"
-            className="mt-0.5 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+            className="mt-0.5 h-4 w-4 rounded border-slate-300 text-brand-600 focus:ring-brand-500"
           />
           <label htmlFor="terms" className="text-sm text-slate-600">
             I agree to the{' '}
-            <a href="/terms" className="font-medium text-blue-600 hover:underline">
+            <a href="/terms" className="font-medium text-brand-600 hover:underline">
               Terms &amp; Conditions
             </a>{' '}
             and confirm this is a voluntary donation.{' '}
@@ -232,7 +232,7 @@ export function DonateForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-xl bg-blue-600 px-6 py-4 text-sm font-bold text-white shadow-lg shadow-blue-500/25 transition hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-xl bg-brand-600 px-6 py-4 text-sm font-bold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-600 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting
           ? 'Processing…'

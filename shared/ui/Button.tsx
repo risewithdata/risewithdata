@@ -7,9 +7,9 @@ type ButtonProps = {
 } & ButtonHTMLAttributes<HTMLButtonElement> & AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export function Button({ variant = 'primary', className = '', children, as = 'button', href, ...props }: ButtonProps) {
-  const base = 'inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500';
+  const base = 'inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500';
   const variants = {
-    primary: 'bg-gradient-to-r from-violet-600 to-blue-600 text-white shadow-lg shadow-violet-500/20 hover:from-violet-500 hover:to-blue-500',
+    primary: 'bg-gradient-to-r from-brand-600 to-brand-500 text-white shadow-lg shadow-brand-500/20 hover:from-brand-500 hover:to-brand-400',
     secondary: 'bg-white text-slate-900 border border-slate-200 hover:bg-slate-50',
     ghost: 'bg-transparent text-slate-700 hover:text-slate-900'
   };

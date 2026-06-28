@@ -41,7 +41,7 @@ export function ContactForm() {
   };
 
   const inputClass = (hasError: boolean) =>
-    `w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-blue-500 ${
+    `w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-brand-500 ${
       hasError ? 'border-red-400 bg-red-50' : 'border-slate-200 bg-white'
     }`;
 
@@ -114,7 +114,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-xl bg-slate-900 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-700 disabled:cursor-not-allowed disabled:opacity-60"
+        className="w-full rounded-xl bg-brand-600 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {isSubmitting ? 'Sending…' : 'Send Message'}
       </button>

@@ -176,15 +176,15 @@ export default function AdminApplicationsPage() {
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
             <a href="/">
-              <img src="/logo.svg" alt="RiseWithData" className="h-9 w-auto" />
+              <img src="/logo.jpeg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" />
             </a>
-            <span className="hidden rounded-md bg-blue-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 sm:block">
+            <span className="hidden rounded-md bg-brand-600 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-600 sm:block">
               Admin
             </span>
           </div>
           <nav className="flex items-center gap-1">
             <a href="/dashboard/admin"              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Dashboard</a>
-            <a href="/dashboard/admin/applications" className="rounded-lg bg-blue-50 px-3 py-2 text-sm font-medium text-blue-700">Applications</a>
+            <a href="/dashboard/admin/applications" className="rounded-lg bg-brand-600 px-3 py-2 text-sm font-medium text-brand-600">Applications</a>
             <a href="/dashboard/admin/courses"      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Courses</a>
             <button
               onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}
@@ -246,7 +246,7 @@ export default function AdminApplicationsPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by name or email…"
-              className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-9 pr-4 text-sm outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
+              className="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-9 pr-4 text-sm outline-none transition focus:border-brand-200 focus:ring-2 focus:ring-brand-500"
             />
           </div>
 
@@ -254,7 +254,7 @@ export default function AdminApplicationsPage() {
           <select
             value={courseFilter}
             onChange={(e) => { setCourse(e.target.value); setPage(1); }}
-            className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
+            className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-200 focus:ring-2 focus:ring-brand-500"
           >
             <option value="">All Courses</option>
             {COURSES.map((c) => <option key={c} value={c}>{c}</option>)}
@@ -264,7 +264,7 @@ export default function AdminApplicationsPage() {
           <select
             value={statusFilter}
             onChange={(e) => { setStatus(e.target.value); setPage(1); }}
-            className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
+            className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-brand-200 focus:ring-2 focus:ring-brand-500"
           >
             <option value="">All Statuses</option>
             <option value="PENDING">Pending</option>
@@ -277,14 +277,14 @@ export default function AdminApplicationsPage() {
             type="date"
             value={dateFrom}
             onChange={(e) => { setDateFrom(e.target.value); setPage(1); }}
-            className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-600 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
+            className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-600 outline-none transition focus:border-brand-200 focus:ring-2 focus:ring-brand-500"
           />
           <span className="text-xs text-slate-400">to</span>
           <input
             type="date"
             value={dateTo}
             onChange={(e) => { setDateTo(e.target.value); setPage(1); }}
-            className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-600 outline-none transition focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
+            className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-600 outline-none transition focus:border-brand-200 focus:ring-2 focus:ring-brand-500"
           />
 
           {/* Clear filters */}
@@ -333,7 +333,7 @@ export default function AdminApplicationsPage() {
                   </tr>
                 ) : (
                   data.map((app) => (
-                    <tr key={app.id} className="border-b border-slate-100 transition hover:bg-blue-50/30">
+                    <tr key={app.id} className="border-b border-slate-100 transition hover:bg-brand-600/30">
                       <td className="px-4 py-3.5">
                         <span className="rounded-md bg-slate-100 px-2 py-0.5 font-mono text-xs text-slate-600">
                           #{shortId(app.id)}
@@ -341,7 +341,7 @@ export default function AdminApplicationsPage() {
                       </td>
                       <td className="px-4 py-3.5">
                         <div className="flex items-center gap-2.5">
-                          <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">
+                          <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-brand-600">
                             {app.firstName[0]}{app.lastName[0]}
                           </div>
                           <span className="font-medium text-slate-800">{app.firstName} {app.lastName}</span>
@@ -367,7 +367,7 @@ export default function AdminApplicationsPage() {
                           {/* View Details */}
                           <a
                             href={`/dashboard/admin/applications/${app.id}`}
-                            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-blue-300 hover:bg-blue-50 hover:text-blue-700"
+                            className="rounded-lg border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700 transition hover:border-brand-200 hover:bg-brand-600 hover:text-brand-600"
                           >
                             View Details
                           </a>
@@ -424,7 +424,7 @@ export default function AdminApplicationsPage() {
                       onClick={() => setPage(pg)}
                       className={`rounded-lg border px-3 py-1.5 text-xs font-medium transition ${
                         pg === page
-                          ? 'border-blue-500 bg-blue-600 text-white'
+                          ? 'border-brand-200 bg-brand-600 text-white'
                           : 'border-slate-200 text-slate-600 hover:bg-slate-50'
                       }`}
                     >{pg}</button>
