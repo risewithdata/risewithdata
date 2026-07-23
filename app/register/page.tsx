@@ -213,7 +213,7 @@ export default function RegisterPage() {
         {/* Logo */}
         <div className="mb-8 text-center">
           <a href="/" className="inline-block rounded-2xl bg-warm-100 px-5 py-3">
-            <img src="/logo.jpeg" alt="RiseWithData" className="mx-auto h-14 w-auto" />
+            <img src="/logo.svg" alt="RiseWithData" className="mx-auto h-14 w-auto" />
           </a>
         </div>
 

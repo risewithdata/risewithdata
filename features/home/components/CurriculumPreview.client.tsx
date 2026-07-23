@@ -16,7 +16,7 @@ export function CurriculumPreview() {
               Curriculum Preview
             </p>
             <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
-              What you'll learn in 8 weeks
+              What you'll learn in 10 weeks
             </h2>
           </div>
           <a

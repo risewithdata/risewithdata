@@ -33,7 +33,7 @@ const steps = [
 const perks = [
   { icon: '📊', label: 'Power BI Mastery', desc: 'From basics to advanced DAX and data modeling.' },
   { icon: '🤝', label: 'Mentorship', desc: 'Guidance from seasoned data professionals.' },
-  { icon: '💼', label: 'Career Support', desc: 'Resume reviews, mock interviews, and job referrals.' },
+  { icon: '💼', label: 'Career Support', desc: 'Resume reviews and job referrals.' },
   { icon: '🏅', label: 'Certification', desc: 'Earn a recognized fellowship certificate upon completion.' },
 ];
 
@@ -59,8 +59,8 @@ export default function ApplyPage() {
         <div className="mx-auto mt-10 flex max-w-lg flex-wrap justify-center gap-8">
           {[
             { value: '100%', label: 'Free Fellowship' },
-            { value: '12 wks', label: 'Program Duration' },
-            { value: '500+', label: 'Fellows Placed' },
+            { value: '10 wks', label: 'Program Duration' },
+            { value: 'Free Certification', label: 'Upon completion' },
           ].map((s) => (
             <div key={s.label} className="text-center">
               <p className="text-3xl font-bold text-white">{s.value}</p>
@@ -117,7 +117,6 @@ export default function ApplyPage() {
                   'Career changers entering data analytics',
                   'Recent graduates seeking practical skills',
                   'Professionals looking to upskill in Power BI',
-                  'Anyone passionate about data-driven decisions',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2">
                     <span className="mt-0.5 text-brand-500">✓</span>
@@ -130,6 +129,17 @@ export default function ApplyPage() {
 
           {/* RIGHT: form */}
           <div className="lg:col-span-3">
+            {/* USA-only notice */}
+            <div className="mb-4 flex items-start gap-3 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
+              <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20A10 10 0 0012 2z" />
+              </svg>
+              <p className="text-sm text-amber-800">
+                <span className="font-semibold">RiseWithData is a U.S.-based organization.</span>{' '}
+                Only applicants currently living in the USA will be considered.
+              </p>
+            </div>
+
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
               <h2 className="mb-1 text-xl font-bold text-slate-900">Student Application</h2>
               <p className="mb-7 text-sm text-slate-500">

@@ -22,13 +22,13 @@ const navigation = [
       name: 'Power BI Data Analyst Fellowship',
       href: '/fellowships/power-bi-data-analyst-fellowship',
       meta: 'Most Popular',
-      desc: 'Go from zero to job-ready Power BI analyst in 8 weeks.',
+      desc: 'Go from zero to job-ready Power BI analyst in 10 weeks.',
     },
     cohorts: [
       {
         name: 'Cohort Washington',
         href: '/fellowships/cohort-washington',
-        meta: 'Starts July 4th',
+        meta: 'Starts August 1st',
       },
       /* {
         name: 'Cohort Lincoln',
@@ -78,7 +78,7 @@ export function NavigationBar() {
 
         {/* ── Logo ── */}
         <a href="/" className="flex-shrink-0">
-          <img src="/logo.jpeg" alt="RiseWithData" className="h-20 w-auto mix-blend-multiply" />
+          <img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" />
         </a>
 
         {/* ── Desktop Nav ── */}

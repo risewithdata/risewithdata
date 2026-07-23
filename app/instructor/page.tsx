@@ -10,7 +10,7 @@ export const metadata = {
 const roles = [
   {
     title: 'Cohort Instructor',
-    desc: 'Lead an entire 8-week cohort from kickoff through Demo Day with weekly live sessions, assignments, and real-world projects.',
+    desc: 'Lead an entire 10-week cohort from kickoff through Demo Day with weekly live sessions, assignments, and real-world projects.',
     time: '4–6 hrs / week',
     badge: 'Most Impactful',
   },
@@ -36,13 +36,13 @@ const roles = [
 
 const benefits = [
   { icon: '🏆', title: 'Build Your Brand', desc: 'Get featured on our website and LinkedIn as a RiseWithData instructor, boosting your credibility and visibility.' },
-  { icon: '🌐', title: 'Expand Your Network', desc: 'Join 45+ instructors and 3,400+ alumni — a community of data professionals growing fast.' },
+  { icon: '🌐', title: 'Expand Your Network', desc: 'A community of data professionals growing fast.' },
   { icon: '💡', title: 'Deepen Your Expertise', desc: 'Teaching reinforces mastery. Instructors consistently report stronger command of Power BI after their first cohort.' },
   { icon: '🎯', title: 'Real-World Impact', desc: 'Your sessions directly help career-changers land data analyst roles at top companies.' },
 ];
 
 const requirements = [
-  '2+ years of hands-on Power BI, data analytics, or BI reporting experience',
+  '7+ years of hands-on Power BI, data analytics, or BI reporting experience',
   'Ability to explain technical concepts clearly to non-technical learners',
   'Availability for at least one of the roles listed above',
   'Professional LinkedIn profile and resume',
@@ -74,19 +74,6 @@ export default function InstructorPage() {
             Become a RiseWithData instructor and help ambitious learners break into
             data analytics — while growing your own professional brand.
           </p>
-
-          <div className="mx-auto mt-12 grid max-w-xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
-            {[
-              { value: '45+', label: 'Active instructors' },
-              { value: '3,400+', label: 'Fellows trained' },
-              { value: '8 wks', label: 'Cohort length' },
-            ].map((s) => (
-              <div key={s.label} className="bg-slate-900/80 px-6 py-5">
-                <p className="text-2xl font-bold text-white">{s.value}</p>
-                <p className="mt-1 text-xs text-slate-400">{s.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

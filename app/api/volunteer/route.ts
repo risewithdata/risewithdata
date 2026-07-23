@@ -11,11 +11,12 @@ export async function POST(req: NextRequest) {
 
     const firstName    = String(formData.get('firstName')    ?? '').trim();
     const lastName     = String(formData.get('lastName')     ?? '').trim();
+    const email        = String(formData.get('email')        ?? '').trim();
     const zipcode      = String(formData.get('zipcode')      ?? '').trim();
     const linkedinName = String(formData.get('linkedinName') ?? '').trim();
     const file         = formData.get('resume') as File | null;
 
-    if (!firstName || !lastName || !zipcode || !linkedinName || !file) {
+    if (!firstName || !lastName || !email || !zipcode || !linkedinName || !file) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
@@ -24,6 +25,7 @@ export async function POST(req: NextRequest) {
       data: {
         firstName,
         lastName,
+        email,
         zipcode,
         linkedinName,
         resumeFileName:      file.name,
@@ -36,7 +38,7 @@ export async function POST(req: NextRequest) {
     const fileBuffer = Buffer.from(await file.arrayBuffer());
 
     await resend.emails.send({
-      from:    'RiseWithData <onboarding@resend.dev>',
+      from:    'RiseWithData <noreply@risewithdata.com>',
       to:      [TO_EMAIL],
       replyTo: undefined,
       subject: `New Instructor/Volunteer Application — ${firstName} ${lastName}`,
@@ -66,9 +68,9 @@ function buildEmailHtml(d: {
           <table width="580" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);">
 
             <tr>
-              <td style="background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);padding:28px 36px;">
+              <td style="background:linear-gradient(135deg,#1C0F08 0%,#8B5010 100%);padding:28px 36px;">
                 <h1 style="margin:0;color:#ffffff;font-size:20px;font-weight:700;">RiseWithData</h1>
-                <p style="margin:6px 0 0;color:#bfdbfe;font-size:13px;">New Instructor / Volunteer Application</p>
+                <p style="margin:6px 0 0;color:#F5C040;font-size:13px;">New Instructor / Volunteer Application</p>
               </td>
             </tr>
 

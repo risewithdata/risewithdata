@@ -39,21 +39,16 @@ export function LearningJourney() {
               <h3 className="mt-2 text-xl font-bold text-white">{step.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-slate-400">{step.description}</p>
 
-              <div className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
-                {step.cta}
-                <span className="text-base">→</span>
-              </div>
             </div>
           ))}
         </div>
 
         {/* Bottom proof */}
-        <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-4">
+        <div className="mt-20 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-white/10 bg-white/10 sm:grid-cols-3">
           {[
-            { value: '8 Weeks', label: 'Structured curriculum' },
-            { value: '16',      label: 'Live sessions per cohort' },
-            { value: '5+',      label: 'Portfolio dashboards' },
-            { value: '100%',    label: 'Career support included' },
+            { value: '10 weeks', label: 'Structured curriculum' },
+            { value: '20',      label: 'Live sessions per cohort' },
+            { value: '5+',      label: 'Portfolio reports' },
           ].map((item) => (
             <div key={item.label} className="bg-slate-950 px-8 py-8 text-center">
               <p className="text-3xl font-bold text-white">{item.value}</p>

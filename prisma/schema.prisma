@@ -46,17 +46,22 @@ model ContactSubmission {
 // ============================================================================
 
 model VolunteerApplication {
-  id                  String   @id @default(cuid())
+  id                  String            @id @default(cuid())
   firstName           String
   lastName            String
+  email               String
   zipcode             String
   linkedinName        String
   resumeFileName      String
   resumeFileType      String
   resumeFileSizeBytes Int
-  createdAt           DateTime @default(now())
+  status              ApplicationStatus @default(PENDING)
+  adminNotes          String?
+  createdAt           DateTime          @default(now())
+  updatedAt           DateTime          @updatedAt
 
   @@index([createdAt])
+  @@index([status])
 }
 
 // ============================================================================
@@ -70,12 +75,16 @@ model StudentApplication {
   email               String            @default("")
   zipcode             String
   linkedinName        String
-  courseApplied       String?
-  trainer             String?
-  status              ApplicationStatus @default(PENDING)
-  resumeFileName      String
+  courseApplied              String?
+  trainer                    String?
+  planningToJoinWorkforce    String?
+  status                     ApplicationStatus @default(PENDING)
+  resumeFileName             String
   resumeFileType      String
   resumeFileSizeBytes Int
+  resumeFileData      Bytes?
+  adminNotes          String?
+  rejectionReason     String?
   createdAt           DateTime          @default(now())
   updatedAt           DateTime          @updatedAt
 

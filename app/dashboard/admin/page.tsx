@@ -107,12 +107,14 @@ export default function AdminDashboardPage() {
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
-            <a href="/"><img src="/logo.jpeg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
+            <a href="/" className="no-underline"><img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
             <span className="hidden rounded-md bg-brand-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 sm:block">Admin</span>
           </div>
           <nav className="flex items-center gap-1">
             <a href="/dashboard/admin"              className="rounded-lg bg-brand-100 px-3 py-2 text-sm font-medium text-brand-700">Dashboard</a>
-            <a href="/dashboard/admin/applications" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Applications</a>
+            <a href="/dashboard/admin/applications" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Student Apps</a>
+            <a href="/dashboard/admin/volunteers"   className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Volunteers</a>
+            <a href="/dashboard/admin/instructors"  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Instructors</a>
             <a href="/dashboard/admin/courses"      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Courses</a>
             <button
               onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}

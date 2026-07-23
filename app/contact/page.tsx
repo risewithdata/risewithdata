@@ -49,10 +49,10 @@ export default function ContactPage() {
                 <div>
                   <p className="font-medium">Email</p>
                   <a
-                    href="mailto:risewithdatausa@gmail.com"
+                    href="mailto:support@risewithdata.com"
                     className="text-brand-600 hover:underline"
                   >
-                    risewithdatausa@gmail.com
+                    support@risewithdata.com
                   </a>
                 </div>
               </li>

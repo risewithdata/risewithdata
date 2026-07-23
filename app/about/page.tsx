@@ -21,67 +21,10 @@ export default function AboutPage() {
           <div className="absolute -top-40 left-1/2 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-brand-500/20 blur-3xl" />
           <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-purple-500/10 blur-3xl" />
 
-          {/* Content */}
-          <div className="relative mx-auto max-w-6xl px-6 py-28 text-center text-white">
-
-            <h1 className="text-5xl font-semibold tracking-tight">
-              Why RiseWithData
-            </h1>
-
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-200">
-              We help professionals become job-ready in Data & AI through structured,
-              cohort-based learning programs designed for real-world impact.
-            </p>
-
-            <div className="mt-10 flex justify-center gap-4">
-              <a
-                href="/apply"
-                className="rounded-xl bg-white px-6 py-3 text-sm font-medium text-slate-900 hover:bg-slate-200"
-              >
-                Apply Now
-              </a>
-
-              <a
-                href="/fellowships"
-                className="rounded-xl border border-white/30 px-6 py-3 text-sm font-medium text-white hover:bg-white/10"
-              >
-                Explore Programs
-              </a>
-            </div>
-
-          </div>
-        </section>
-
-        {/* ================= VALUE PROPOSITIONS ================= */}
-        <section className="bg-slate-50 py-10">
-          <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-3">
-
-            <div className="rounded-2xl bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-semibold">Hands-on Learning</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Work on real-world datasets, dashboards, and analytics problems.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-semibold">Mentor-led Cohorts</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Learn directly from industry experts in Data & AI roles.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-semibold">Career Outcomes</h3>
-              <p className="mt-2 text-sm text-slate-600">
-                Build job-ready skills that translate into real opportunities.
-              </p>
-            </div>
-
-          </div>
         </section>
 
         {/* ================= MISSION SECTION ================= */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-warm-100 py-28">
+        <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-warm-100 py-16">
 
           {/* Background glows */}
           <div className="pointer-events-none absolute -top-20 right-0 h-[420px] w-[420px] rounded-full bg-brand-100/50 blur-3xl" />
@@ -145,8 +88,8 @@ export default function AboutPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
                     </div>
-                    <p className="text-sm font-semibold text-slate-800">Motivation</p>
-                    <p className="mt-1 text-xs text-slate-500">Drive to grow</p>
+                    <p className="text-sm font-semibold text-slate-800">Hands-on Learning</p>
+                    <p className="mt-1 text-xs text-slate-500">Work on real-world datasets, reports, and analytics problems.</p>
                   </div>
                   <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100 text-center">
                     <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-sky-50">
@@ -154,8 +97,8 @@ export default function AboutPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
                     </div>
-                    <p className="text-sm font-semibold text-slate-800">Commitment</p>
-                    <p className="mt-1 text-xs text-slate-500">Show up &amp; deliver</p>
+                    <p className="text-sm font-semibold text-slate-800">Mentor-led Cohorts</p>
+                    <p className="mt-1 text-xs text-slate-500">Learn directly from industry experts in Data & AI roles.</p>
                   </div>
                   <div className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-100 text-center">
                     <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50">
@@ -163,8 +106,8 @@ export default function AboutPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                       </svg>
                     </div>
-                    <p className="text-sm font-semibold text-slate-800">Learning</p>
-                    <p className="mt-1 text-xs text-slate-500">Always curious</p>
+                    <p className="text-sm font-semibold text-slate-800">Career Outcomes</p>
+                    <p className="mt-1 text-xs text-slate-500">Build job-ready skills that translate into real opportunities.</p>
                   </div>
                 </div>
 
@@ -173,28 +116,37 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ================= IMPACT STATS ================= */}
-        <section className="bg-brand-950 py-20 text-white">
+        {/* ================= ADVISORS ================= */}
+        <section className="bg-white py-16">
+          <div className="mx-auto max-w-6xl px-6">
 
-          <div className="mx-auto grid max-w-6xl gap-10 px-6 text-center md:grid-cols-3">
-
-            <div>
-              <h3 className="text-4xl font-semibold">10K+</h3>
-              <p className="mt-2 text-sm text-slate-300">Learners trained</p>
+            <div className="flex items-center gap-3 mb-10">
+              <div className="h-px w-10 bg-brand-500" />
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-600">Advisors</span>
             </div>
 
-            <div>
-              <h3 className="text-4xl font-semibold">100+</h3>
-              <p className="mt-2 text-sm text-slate-300">Industry mentors</p>
-            </div>
+            <h2 className="text-3xl font-bold text-slate-900 mb-10">Meet Our Advisors</h2>
 
-            <div>
-              <h3 className="text-4xl font-semibold">85%</h3>
-              <p className="mt-2 text-sm text-slate-300">Career success rate</p>
+            <div className="flex flex-wrap gap-8">
+              {/* Leland Shamo */}
+              <div className="flex items-center gap-6 rounded-2xl border border-slate-100 bg-slate-50 p-6 shadow-sm w-full max-w-md">
+                <img
+                  src="/Advisor1.jpeg"
+                  alt="Leland Shamo"
+                  className="h-24 w-24 rounded-full object-cover ring-2 ring-brand-200 flex-shrink-0"
+                />
+                <div>
+                  <p className="text-lg font-semibold text-slate-900">Leland Shamo</p>
+                  <p className="text-sm text-brand-600 font-medium mt-0.5">Sr. Manager, Labor Planning &amp; Analytics</p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    Seasoned analytics leader with deep expertise in workforce planning, data strategy,
+                    and translating complex data insights into actionable business decisions.
+                  </p>
+                </div>
+              </div>
             </div>
 
           </div>
-
         </section>
 
         {/* ================= FINAL CTA ================= */}

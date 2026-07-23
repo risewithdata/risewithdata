@@ -17,7 +17,7 @@ export function CommunitySection() {
             <p className="mt-5 text-lg leading-relaxed text-slate-400">
               Every fellow joins a tight-knit cohort of 30 analysts. You tackle the same
               projects, hold each other accountable, and build a professional network
-              that lasts far beyond the 8 weeks.
+              that lasts far beyond the 10 weeks.
             </p>
 
             <ul className="mt-8 space-y-4">

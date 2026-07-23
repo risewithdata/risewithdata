@@ -67,7 +67,7 @@ export default function FellowshipPage({ params }: Props) {
               </div>
 
               {/* Social proof */}
-              <div className="mt-10 flex flex-wrap items-center gap-8">
+              {/* <div className="mt-10 flex flex-wrap items-center gap-8">
                 <div className="text-center">
                   <p className="text-2xl font-bold text-white">{fellowship.totalLearners}</p>
                   <p className="text-xs text-slate-400">Learners enrolled</p>
@@ -80,7 +80,7 @@ export default function FellowshipPage({ params }: Props) {
                   <p className="text-2xl font-bold text-white">{fellowship.completionRate}</p>
                   <p className="text-xs text-slate-400">Completion rate</p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Right — enrollment card (desktop) */}
@@ -155,7 +155,7 @@ export default function FellowshipPage({ params }: Props) {
                 {fellowship.curriculum.length}-week program, week by week
               </h2>
               <p className="mt-3 text-slate-500">
-                Live sessions every Tuesday & Thursday, 7–9 PM ET.
+                Live sessions every Saturday & Sunday, 10 - 11:15 AM EST.
               </p>
               <div className="mt-8 space-y-3">
                 {fellowship.curriculum.map((mod, i) => {
@@ -229,7 +229,7 @@ export default function FellowshipPage({ params }: Props) {
             </section>
 
             {/* Testimonials */}
-            <section id="testimonials">
+            {/* <section id="testimonials">
               <SectionLabel>Success Stories</SectionLabel>
               <h2 className="mt-2 text-3xl font-bold text-slate-900">
                 Real outcomes from real graduates
@@ -259,7 +259,7 @@ export default function FellowshipPage({ params }: Props) {
                   </div>
                 ))}
               </div>
-            </section>
+            </section> */}
 
             {/* FAQ */}
             <section id="faq">
@@ -366,8 +366,8 @@ function EnrollCard({ fellowship }: { fellowship: ReturnType<typeof getFellowshi
             This fellowship includes
           </p>
           {[
-            '8 weeks of live instruction',
-            '16 live sessions (recorded)',
+            '10 weeks of live instruction',
+            '20 live sessions',
             'Real-world capstone project',
             'Instructor & peer feedback',
             'Career coaching + resume review',
@@ -380,10 +380,6 @@ function EnrollCard({ fellowship }: { fellowship: ReturnType<typeof getFellowshi
             </div>
           ))}
         </div>
-
-        <p className="mt-6 text-center text-xs text-slate-400">
-          7-day money-back guarantee · No questions asked
-        </p>
       </div>
     </div>
   );

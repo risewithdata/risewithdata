@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
 
     // 2. Send email via Resend
     await resend.emails.send({
-      from:    'RiseWithData Contact <onboarding@resend.dev>',
+      from:    'RiseWithData <noreply@risewithdata.com>',
       to:      [TO_EMAIL],
       replyTo: email,
       subject: `New Message from ${firstName} ${lastName}`,
@@ -54,7 +54,7 @@ function buildEmailHtml(data: {
           <table width="580" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);">
 
             <tr>
-              <td style="background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);padding:28px 36px;">
+              <td style="background:linear-gradient(135deg,#1C0F08 0%,#8B5010 100%);padding:28px 36px;">
                 <h1 style="margin:0;color:#ffffff;font-size:20px;font-weight:700;">RiseWithData</h1>
                 <p style="margin:6px 0 0;color:#94a3b8;font-size:13px;">New Contact Form Message</p>
               </td>

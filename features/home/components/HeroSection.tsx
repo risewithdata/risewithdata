@@ -10,7 +10,7 @@ export function HeroSection() {
         <div className="flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-700">
             <span className="h-2 w-2 rounded-full bg-brand-500" />
-            Now enrolling · Cohort Washington starts July 4
+            Now enrolling · Cohort Washington starts August 1st
           </span>
         </div>
 
@@ -21,11 +21,12 @@ export function HeroSection() {
             <span className="bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent">
               Data Analyst
             </span>{' '}
-            in 8 Weeks
+            in 10 weeks
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-500">
-            Live, cohort-based Power BI training with real industry datasets, weekly
-            instructor feedback, and career coaching — designed to get you hired.
+            Free, live, project-based training — not just teaching. Build real Power
+            BI reports, get hands-on instructor feedback every week, and
+            finish job-ready.
           </p>
         </div>
 

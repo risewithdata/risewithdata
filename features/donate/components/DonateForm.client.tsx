@@ -256,8 +256,8 @@ export function DonateForm() {
       {status === 'error' && (
         <div className="rounded-2xl bg-red-50 p-4 text-sm text-red-800">
           Something went wrong. Please try again or email us at{' '}
-          <a href="mailto:risewithdatausa@gmail.com" className="underline">
-            risewithdatausa@gmail.com
+          <a href="mailto:support@risewithdata.com" className="underline">
+            support@risewithdata.com
           </a>
           .
         </div>

@@ -1,13 +1,12 @@
 'use client';
 
-import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { ApplySchema, ApplyInput } from '@features/apply/schemas/apply.schema';
+import { useToast } from '@shared/ui/ToastProvider';
 
 export function ApplyForm() {
-  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMsg, setErrorMsg] = useState('');
+  const { showSuccess, showError } = useToast();
 
   const {
     register,
@@ -21,16 +20,15 @@ export function ApplyForm() {
   const selectedFile = resumeFiles?.[0];
 
   const onSubmit = async (data: ApplyInput) => {
-    setStatus('idle');
-    setErrorMsg('');
-
     const formData = new FormData();
-    formData.append('firstName',    data.firstName);
-    formData.append('lastName',     data.lastName);
-    formData.append('email',        data.email);
-    formData.append('zipcode',      data.zipcode);
-    formData.append('linkedinName', data.linkedinName);
-    formData.append('resume',       (data.resume as FileList)[0]);
+    formData.append('firstName',               data.firstName);
+    formData.append('lastName',                data.lastName);
+    formData.append('email',                   data.email);
+    formData.append('zipcode',                 data.zipcode);
+    formData.append('linkedinName',            data.linkedinName);
+    formData.append('courseApplied',           data.courseApplied);
+    formData.append('planningToJoinWorkforce', data.planningToJoinWorkforce);
+    formData.append('resume',                  (data.resume as FileList)[0]);
 
     try {
       const res = await fetch('/api/apply', { method: 'POST', body: formData });
@@ -38,11 +36,10 @@ export function ApplyForm() {
         const json = await res.json().catch(() => ({}));
         throw new Error(json.error ?? 'Submission failed');
       }
-      setStatus('success');
+      showSuccess('Application submitted! We\'ll review it and reach out within 3–5 business days.');
       reset();
     } catch (err) {
-      setErrorMsg(err instanceof Error ? err.message : 'Something went wrong');
-      setStatus('error');
+      showError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
     }
   };
 
@@ -112,6 +109,48 @@ export function ApplyForm() {
         </div>
       </div>
 
+      {/* Cohort selection */}
+      <div>
+        <label className="mb-1.5 block text-sm font-medium text-slate-700">
+          Which cohort are you applying for? <span className="text-red-500">*</span>
+        </label>
+        <select
+          {...register('courseApplied')}
+          defaultValue=""
+          className={`w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-brand-500 ${
+            errors.courseApplied ? 'border-red-400 bg-red-50' : 'border-slate-200 bg-white'
+          }`}
+        >
+          <option value="" disabled>Select a cohort</option>
+          <option value="Cohort Washington">Cohort Washington (Start date – Aug 1st 2026)</option>
+        </select>
+        {errors.courseApplied && (
+          <p className="mt-1.5 text-xs text-red-600">{errors.courseApplied.message}</p>
+        )}
+      </div>
+
+      {/* Workforce question */}
+      <div>
+        <label className="mb-1.5 block text-sm font-medium text-slate-700">
+          In the next 3–6 months are you planning to enter the workforce?{' '}
+          <span className="text-red-500">*</span>
+        </label>
+        <select
+          {...register('planningToJoinWorkforce')}
+          defaultValue=""
+          className={`w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2 focus:ring-brand-500 ${
+            errors.planningToJoinWorkforce ? 'border-red-400 bg-red-50' : 'border-slate-200 bg-white'
+          }`}
+        >
+          <option value="" disabled>Select an option</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+        {errors.planningToJoinWorkforce && (
+          <p className="mt-1.5 text-xs text-red-600">{errors.planningToJoinWorkforce.message as string}</p>
+        )}
+      </div>
+
       {/* Resume upload */}
       <div>
         <label className="mb-1.5 block text-sm font-medium text-slate-700">
@@ -163,20 +202,6 @@ export function ApplyForm() {
         {isSubmitting ? 'Submitting…' : 'Submit Application'}
       </button>
 
-      {status === 'success' && (
-        <div className="rounded-xl bg-green-50 p-5 text-center">
-          <p className="text-2xl">🎉</p>
-          <p className="mt-2 font-semibold text-green-800">Application received!</p>
-          <p className="mt-1 text-sm text-green-600">
-            We'll review your application and reach out within 3–5 business days.
-          </p>
-        </div>
-      )}
-      {status === 'error' && (
-        <div className="rounded-xl bg-red-50 p-4 text-sm text-red-800">
-          {errorMsg || 'Something went wrong. Please try again.'}
-        </div>
-      )}
     </form>
   );
 }

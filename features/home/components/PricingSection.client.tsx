@@ -14,9 +14,6 @@ export function PricingSection() {
           <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-900">
             Simple, transparent pricing
           </h2>
-          <p className="mt-4 text-lg text-slate-500">
-            One-time payment. Lifetime access to materials. 7-day money-back guarantee.
-          </p>
         </div>
 
         {/* Cards */}

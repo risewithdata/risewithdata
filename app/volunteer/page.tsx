@@ -75,19 +75,6 @@ export default function VolunteerPage() {
             volunteers help run the programs, events, and outreach that keep our
             community thriving.
           </p>
-
-          <div className="mx-auto mt-12 grid max-w-xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
-            {[
-              { value: '80+', label: 'Active volunteers' },
-              { value: '3,400+', label: 'Fellows supported' },
-              { value: '15+', label: 'Events per year' },
-            ].map((s) => (
-              <div key={s.label} className="bg-slate-900/80 px-6 py-5">
-                <p className="text-2xl font-bold text-white">{s.value}</p>
-                <p className="mt-1 text-xs text-slate-400">{s.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

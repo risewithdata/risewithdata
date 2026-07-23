@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, use } from 'react';
+import { useToast } from '@shared/ui/ToastProvider';
 
 type Status = 'PENDING' | 'APPROVED' | 'REJECTED';
 
@@ -13,6 +14,7 @@ interface Application {
   linkedinName: string;
   courseApplied: string | null;
   trainer: string | null;
+  planningToJoinWorkforce: string | null;
   status: Status;
   adminNotes: string | null;
   rejectionReason: string | null;
@@ -52,6 +54,7 @@ function InfoRow({ label, value }: { label: string; value: string }) {
 
 export default function ApplicationReviewPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
+  const { showSuccess, showError } = useToast();
 
   const [app,             setApp]            = useState<Application | null>(null);
   const [loading,         setLoading]        = useState(true);
@@ -64,6 +67,9 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
   const [rejectError,     setRejectError]    = useState('');
   const [actionLoading,   setActionLoading]  = useState(false);
   const [actionError,     setActionError]    = useState('');
+  const [emailWarning,    setEmailWarning]   = useState('');
+  const [resendLoading,   setResendLoading]  = useState(false);
+  const [resendDone,      setResendDone]     = useState(false);
   const [infoDialog,      setInfoDialog]     = useState(false);
   const [infoMsg,         setInfoMsg]        = useState('');
   const [infoSending,     setInfoSending]    = useState(false);
@@ -83,14 +89,24 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
 
   const saveNotes = async () => {
     setNotesSaving(true);
-    await fetch(`/api/admin/applications/${id}`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ adminNotes: notes }),
-    });
-    setNotesSaving(false);
-    setNotesSaved(true);
-    setTimeout(() => setNotesSaved(false), 2500);
+    try {
+      const res = await fetch(`/api/admin/applications/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ adminNotes: notes }),
+      });
+      if (res.ok) {
+        showSuccess('Notes saved.');
+        setNotesSaved(true);
+        setTimeout(() => setNotesSaved(false), 2500);
+      } else {
+        showError('Failed to save notes. Please try again.');
+      }
+    } catch {
+      showError('Network error. Could not save notes.');
+    } finally {
+      setNotesSaving(false);
+    }
   };
 
   const handleStatusUpdate = async () => {
@@ -122,8 +138,39 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
       );
       setConfirm(null);
       setRejectionReason('');
+      if (json.emailSent === false) {
+        const warningMsg = json.emailError ?? 'The status was updated but the notification email could not be sent. Use "Resend Email" to retry.';
+        setEmailWarning(warningMsg);
+        showError(`${confirm === 'APPROVED' ? 'Application approved' : 'Application rejected'} but email failed to send.`);
+      } else {
+        showSuccess(confirm === 'APPROVED' ? 'Application approved! Email sent to student.' : 'Application rejected. Student has been notified.');
+      }
     } finally {
       setActionLoading(false);
+    }
+  };
+
+  const handleResendEmail = async () => {
+    setResendLoading(true);
+    setEmailWarning('');
+    try {
+      const res  = await fetch(`/api/admin/applications/${id}`, { method: 'POST' });
+      const json = await res.json();
+      if (!res.ok) {
+        const errMsg = json.error ?? 'Failed to resend email.';
+        setEmailWarning(errMsg);
+        showError(errMsg);
+      } else {
+        showSuccess('Approval email resent successfully!');
+        setResendDone(true);
+        setTimeout(() => setResendDone(false), 4000);
+      }
+    } catch {
+      const errMsg = 'Network error. Please try again.';
+      setEmailWarning(errMsg);
+      showError(errMsg);
+    } finally {
+      setResendLoading(false);
     }
   };
 
@@ -174,12 +221,14 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
-            <a href="/"><img src="/logo.jpeg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
+            <a href="/" className="no-underline"><img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
             <span className="hidden rounded-md bg-brand-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 sm:block">Admin</span>
           </div>
           <nav className="flex items-center gap-1">
             <a href="/dashboard/admin"              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Dashboard</a>
-            <a href="/dashboard/admin/applications" className="rounded-lg bg-brand-50 px-3 py-2 text-sm font-medium text-brand-700">Applications</a>
+            <a href="/dashboard/admin/applications" className="rounded-lg bg-brand-50 px-3 py-2 text-sm font-medium text-brand-700">Student Apps</a>
+            <a href="/dashboard/admin/volunteers"   className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Volunteers</a>
+            <a href="/dashboard/admin/instructors"  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Instructors</a>
             <a href="/dashboard/admin/courses"      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Courses</a>
             <button onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}
               className="ml-2 flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">
@@ -247,6 +296,11 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
               <div className="divide-y divide-slate-100">
                 <InfoRow label="Course"  value={app.courseApplied ?? '—'} />
                 <InfoRow label="Trainer" value={app.trainer ?? '—'} />
+                <InfoRow label="Entering Workforce (3–6 mo)" value={
+                  app.planningToJoinWorkforce === 'yes' ? 'Yes'
+                  : app.planningToJoinWorkforce === 'no' ? 'No'
+                  : '—'
+                } />
               </div>
               {!app.courseApplied && (
                 <p className="mt-3 rounded-xl bg-amber-50 px-4 py-3 text-xs text-amber-700">
@@ -282,10 +336,40 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
                     <p className="text-xs text-slate-500">{fmtSize(app.resumeFileSizeBytes)} · {app.resumeFileType?.split('/').pop()?.toUpperCase() ?? 'Document'}</p>
                   </div>
                 </div>
-                <span className="rounded-lg bg-slate-200 px-3 py-1.5 text-xs font-medium text-slate-500">
-                  Submitted with application
-                </span>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={`/api/admin/applications/${app.id}/resume`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-1.5 rounded-lg bg-brand-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-brand-700 transition-colors"
+                  >
+                    <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Download
+                  </a>
+                  {app.resumeFileType === 'application/pdf' && (
+                    <a
+                      href={`/api/admin/applications/${app.id}/resume`}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.open(`/api/admin/applications/${app.id}/resume`, '_blank');
+                      }}
+                      className="flex items-center gap-1.5 rounded-lg border border-brand-200 bg-brand-50 px-3 py-1.5 text-xs font-semibold text-brand-700 hover:bg-brand-100 transition-colors"
+                    >
+                      <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      View
+                    </a>
+                  )}
+                </div>
               </div>
+              <p className="mt-2 text-xs text-slate-400">
+                Files uploaded after July 9, 2026 are stored and downloadable. Earlier submissions — check the original notification email.
+              </p>
             </div>
 
           </div>
@@ -356,6 +440,40 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
                 </button>
               )}
 
+              {/* Resend approval email — visible for approved students */}
+              {app.status === 'APPROVED' && (
+                <button
+                  onClick={handleResendEmail}
+                  disabled={resendLoading || resendDone}
+                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 py-3 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-100 disabled:opacity-60"
+                >
+                  {resendDone ? (
+                    <>
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                      Email Sent!
+                    </>
+                  ) : resendLoading ? (
+                    <>
+                      <svg className="h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+                      Sending…
+                    </>
+                  ) : (
+                    <>
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                      Resend Approval Email
+                    </>
+                  )}
+                </button>
+              )}
+
+              {/* Email warning */}
+              {emailWarning && (
+                <div className="flex items-start gap-2 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2.5 text-xs text-amber-800">
+                  <svg className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" /></svg>
+                  {emailWarning}
+                </div>
+              )}
+
               <button
                 onClick={() => setInfoDialog(true)}
                 className="flex w-full items-center justify-center gap-2 rounded-xl border border-brand-200 bg-brand-50 py-3 text-sm font-semibold text-brand-700 transition hover:bg-brand-100"
@@ -366,7 +484,7 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
 
               {(app.status === 'APPROVED' || app.status === 'REJECTED') && (
                 <p className="text-center text-xs text-slate-400">
-                  {app.status === 'APPROVED' ? 'This application has been approved.' : 'This application has been rejected.'}
+                  {app.status === 'APPROVED' ? 'Approval email sent to student.' : 'This application has been rejected.'}
                 </p>
               )}
             </div>

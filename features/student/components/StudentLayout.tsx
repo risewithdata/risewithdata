@@ -83,7 +83,7 @@ export function StudentLayout({ children }: Props) {
         {/* Logo */}
         <div className="flex h-16 flex-shrink-0 items-center border-b border-slate-100 px-5">
           <a href="/" className="flex-shrink-0">
-            <img src="/logo.jpeg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" />
+            <img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" />
           </a>
           <button
             onClick={() => setOpen(false)}
@@ -163,7 +163,7 @@ export function StudentLayout({ children }: Props) {
             </svg>
           </button>
           <a href="/">
-            <img src="/logo.jpeg" alt="RiseWithData" className="h-12 w-auto mix-blend-multiply" />
+            <img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" />
           </a>
           <a href="/dashboard/student/notifications" className="relative rounded-lg border border-slate-200 p-2 text-slate-600 hover:bg-slate-50">
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

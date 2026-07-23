@@ -21,18 +21,19 @@ export function FinalCta() {
                 Start your data analyst career this summer
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                Join Cohort Washington on July 4 and graduate with 5 real Power BI
-                dashboards, a verified certificate, and a career coaching session — in 8 weeks.
+                Join Cohort Washington on August 1st and graduate with 5 real Power BI
+                reports, a verified certificate, and a career coaching session — in 10 weeks.
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {[
-                  { v: '30', l: 'Seats total' },
-                  { v: '8 wks', l: 'Duration' },
-                  { v: 'Free Training', l: 'For all' },
+                  { v: '20',           l: 'Seats total' },
+                  { v: '10 wks',        l: 'Duration' },
+                  { v: 'No Cost',      l: 'All Participants' },
+                  { v: '10 - 11:15 AM', l: 'Live, Sat & Sun (EST)', small: true },
                 ].map((s) => (
                   <div key={s.l} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
-                    <p className="text-xl font-bold text-white">{s.v}</p>
+                    <p className={`font-bold text-white ${s.small ? 'text-[12px]' : 'text-xl'}`}>{s.v}</p>
                     <p className="mt-1 text-xs text-slate-400">{s.l}</p>
                   </div>
                 ))}
@@ -43,7 +44,7 @@ export function FinalCta() {
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
               <p className="text-lg font-bold text-white">Reserve your seat today</p>
               <p className="mt-2 text-sm text-slate-400">
-                Applications are reviewed within 48 hours. No payment required to apply.
+                No application, Training fees. Results notified by July 27th.
               </p>
 
               <div className="mt-8 space-y-4">

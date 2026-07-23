@@ -62,7 +62,7 @@ export default function LoginPage() {
             {/* Card header */}
             <div className="px-8 pt-8 pb-6 text-center">
               <a href="/" className="inline-block rounded-2xl bg-warm-100 px-5 py-3">
-                <img src="/logo.jpeg" alt="RiseWithData" className="mx-auto h-9 w-auto" />
+                <img src="/logo.svg" alt="RiseWithData" className="mx-auto h-9 w-auto" />
               </a>
               <h1 className="mt-6 text-2xl font-bold text-white">Welcome back</h1>
               <p className="mt-1.5 text-sm text-slate-400">Sign in to your RiseWithData account</p>

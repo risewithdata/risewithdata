@@ -9,37 +9,37 @@ export const featuredPrograms = [
     title: 'Power BI Data Analyst Fellowship',
     slug: 'power-bi-data-analyst-fellowship',
     format: 'Live Online',
-    duration: '8 Weeks',
+    duration: '10 weeks',
     startDate: 'Rolling cohorts',
     level: 'Beginner – Intermediate',
     rating: 4.9,
     enrollments: '3,400+ enrolled',
     price: '$1,297',
     badge: 'Most Popular',
-    desc: 'Master Power BI dashboards, DAX, and data modeling through live instruction and real-world projects.',
+    desc: 'Master Power BI reports, DAX, and data modeling through live instruction and real-world projects.',
   },
   {
     title: 'Cohort Washington',
     slug: 'cohort-washington',
     format: 'Live Online',
-    duration: '8 Weeks',
-    startDate: 'July 4, 2025',
+    duration: '10 weeks',
+    startDate: 'August 1, 2026',
     level: 'Beginner – Intermediate',
     rating: 4.9,
-    enrollments: '30 seats available',
+    enrollments: '20 seats available',
     price: '$1,297',
-    badge: 'Starts July 4',
+    badge: 'Starts August 1st',
     desc: 'Summer cohort of the Power BI fellowship. Intensive, cohort-based, with twice-weekly live sessions.',
   },
   {
     title: 'Cohort Lincoln',
     slug: 'cohort-lincoln',
     format: 'Live Online',
-    duration: '8 Weeks',
-    startDate: 'September 5, 2025',
+    duration: '10 weeks',
+    startDate: 'September 5, 2026',
     level: 'Beginner – Intermediate',
     rating: 4.9,
-    enrollments: '30 seats available',
+    enrollments: '20 seats available',
     price: '$1,297',
     badge: 'Starts Sep 5',
     desc: 'Fall cohort of the Power BI fellowship. Build your analytics portfolio in a structured group setting.',
@@ -64,7 +64,7 @@ export const journeySteps = [
   {
     step: '03',
     title: 'Launch Your Data Career',
-    description: 'Graduate with a portfolio of 5+ dashboards, a verified certificate, and dedicated career coaching.',
+    description: 'Graduate with a portfolio of 5+ reports, a verified certificate.',
     icon: '🚀',
     cta: 'See Outcomes',
   },
@@ -72,7 +72,7 @@ export const journeySteps = [
 
 export const testimonials = [
   {
-    quote: 'I went from using basic Excel to building executive Power BI dashboards used by our entire C-suite. The live sessions and instructor feedback made all the difference.',
+    quote: 'I went from using basic Excel to building executive Power BI reports used by our entire C-suite. The live sessions and instructor feedback made all the difference.',
     name: 'Jordan Kim',
     role: 'Data Analyst',
     company: 'Google',
@@ -80,7 +80,7 @@ export const testimonials = [
     avatar: 'JK',
   },
   {
-    quote: 'Zero Power BI experience before this fellowship. Eight weeks later I had 5 production dashboards in my portfolio and a job offer from Accenture.',
+    quote: 'Zero Power BI experience before this fellowship. Eight weeks later I had 5 production reports in my portfolio and a job offer from Accenture.',
     name: 'Darius Thompson',
     role: 'Senior Data Analyst',
     company: 'Accenture',
@@ -111,7 +111,7 @@ export const instructors = [
     title: 'Senior Data Analyst',
     company: 'Microsoft',
     experience: '10+ years',
-    bio: 'Certified Power BI expert who has built enterprise dashboards at Microsoft and trained 3,000+ analysts globally.',
+    bio: 'Certified Power BI expert who has built enterprise reports at Microsoft and trained 3,000+ analysts globally.',
     social: { twitter: '#', linkedin: '#' },
   },
   {
@@ -186,7 +186,7 @@ export const pricingPlans = [
     description: 'Live instruction with a cohort of 30',
     perks: [
       'Everything in Self-Paced',
-      '16 live sessions (recorded)',
+      '20 live sessions',
       'Weekly instructor feedback',
       'Capstone project review',
       'Career coaching + resume review',
@@ -225,17 +225,7 @@ export const faqs = [
   {
     question: 'What do I get when I finish?',
     answer:
-      'A verified RiseWithData Fellowship Certificate, a shareable portfolio of 5+ real dashboards, career coaching, and access to our alumni network and job board.',
-  },
-  {
-    question: 'Is there a money-back guarantee?',
-    answer:
-      'Yes. We offer a full refund within 7 days of your cohort start date, no questions asked. After that, you can transfer to the next available cohort.',
-  },
-  {
-    question: 'Will this help me get a job?',
-    answer:
-      '87% of our graduates report a promotion or new role within 6 months. We include resume review, LinkedIn optimization, and mock interview prep in every cohort.',
+      'A verified RiseWithData Fellowship Certificate, a shareable portfolio of 5+ real reports, career coaching, and access to our alumni network and job board.',
   },
   {
     question: 'What tools do I need?',

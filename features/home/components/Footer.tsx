@@ -12,7 +12,7 @@ export function Footer() {
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
               Live, cohort-based Power BI and data analytics training designed to get
-              you job-ready in 8 weeks.
+              you job-ready in 10 weeks.
             </p>
             <div className="mt-6 flex gap-4 text-sm">
               <a href="#" className="hover:text-white">Twitter</a>
@@ -35,11 +35,6 @@ export function Footer() {
                   Cohort Washington
                 </a>
               </li>
-              <li>
-                <a href="/fellowships/cohort-lincoln" className="hover:text-white">
-                  Cohort Lincoln
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -49,7 +44,6 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               <li><a href="/about" className="hover:text-white">About Us</a></li>
               <li><a href="/contact" className="hover:text-white">Contact</a></li>
-              <li><a href="#pricing" className="hover:text-white">Pricing</a></li>
               <li><a href="#" className="hover:text-white">Blog</a></li>
             </ul>
           </div>
@@ -72,8 +66,8 @@ export function Footer() {
           <p>© {new Date().getFullYear()} RiseWithData. All rights reserved.</p>
           <p>
             Built for data professionals by data professionals.{' '}
-            <a href="mailto:risewithdatausa@gmail.com" className="hover:text-white">
-              risewithdatausa@gmail.com
+            <a href="mailto:support@risewithdata.com" className="hover:text-white">
+              support@risewithdata.com
             </a>
           </p>
         </div>

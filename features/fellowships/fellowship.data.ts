@@ -58,7 +58,7 @@ const sharedInstructors: Instructor[] = [
     title: 'Senior Data Analyst',
     company: 'Microsoft',
     initials: 'AP',
-    bio: '10+ years building enterprise Power BI dashboards at Microsoft and Fortune 500 companies. Certified Microsoft Power BI expert who has trained over 3,000 analysts globally.',
+    bio: '10+ years building enterprise Power BI reports at Microsoft and Fortune 500 companies. Certified Microsoft Power BI expert who has trained over 3,000 analysts globally.',
   },
   {
     name: 'Marcus Williams',
@@ -78,7 +78,7 @@ const sharedInstructors: Instructor[] = [
 
 const sharedTestimonials: Testimonial[] = [
   {
-    quote: 'This fellowship transformed how I think about data. I went from making basic bar charts to building executive dashboards used by our C-suite.',
+    quote: 'This fellowship transformed how I think about data. I went from making basic bar charts to building executive reports used by our C-suite.',
     name: 'Jordan Kim',
     role: 'Data Analyst',
     company: 'Google',
@@ -94,7 +94,7 @@ const sharedTestimonials: Testimonial[] = [
     outcome: '42% salary increase',
   },
   {
-    quote: 'I had zero Power BI experience. Eight weeks later I had a portfolio of 5 production-quality dashboards and a job offer.',
+    quote: 'I had zero Power BI experience. Eight weeks later I had a portfolio of 5 production-quality reports and a job offer.',
     name: 'Darius Thompson',
     role: 'Junior Data Analyst → Senior Analyst',
     company: 'Accenture',
@@ -125,11 +125,6 @@ const sharedFaqs: Faq[] = [
       'Yes. You receive a verified RiseWithData Fellowship Certificate and a shareable portfolio link showcasing your real-world projects.',
   },
   {
-    question: 'What is the refund policy?',
-    answer:
-      'We offer a full refund within 7 days of the cohort start date, no questions asked. After that, you can transfer to the next cohort.',
-  },
-  {
     question: 'Will this help me get a job?',
     answer:
       '87% of our graduates report a promotion or new role within 6 months. We include career coaching, resume review, and LinkedIn optimization.',
@@ -148,7 +143,7 @@ const sharedWhoIsThisFor = [
   },
   {
     title: 'Excel Power Users',
-    desc: 'Analysts who rely on Excel and want to level up to enterprise-grade BI dashboards and automation.',
+    desc: 'Analysts who rely on Excel and want to level up to enterprise-grade BI reports and automation.',
   },
   {
     title: 'BI Beginners',
@@ -161,7 +156,7 @@ const sharedWhoIsThisFor = [
 ];
 
 const sharedOutcomes = [
-  'Build production-ready Power BI dashboards from scratch',
+  'Build production-ready Power BI reports from scratch',
   'Master DAX formulas and calculated measures',
   'Design star-schema data models for performance',
   'Connect and transform data with Power Query (M language)',
@@ -252,20 +247,40 @@ const sharedCurriculum: Module[] = [
       'Fellowship certificate & next steps',
     ],
   },
+  {
+    week: 'Week 9',
+    title: 'Real-World Capstone Project',
+    topics: [
+      'End-to-end dashboard from raw data',
+      'Industry dataset: finance, retail, or HR track',
+      'Peer review and instructor feedback',
+      'Portfolio presentation prep',
+    ],
+  },
+  {
+    week: 'Week 10',
+    title: 'Career Launch & Certification',
+    topics: [
+      'Demo Day: live portfolio presentations',
+      'Resume and LinkedIn profile review',
+      'Interview prep: data case studies',
+      'Fellowship certificate & next steps',
+    ],
+  },
 ];
 
 export const fellowships: Fellowship[] = [
   {
     slug: 'power-bi-data-analyst-fellowship',
     name: 'Power BI Data Analyst Fellowship',
-    tagline: 'Go from zero to job-ready Power BI analyst in 8 weeks.',
+    tagline: 'Go from zero to job-ready Power BI analyst in 10 weeks.',
     description:
       'A live, cohort-based fellowship designed to take you from data novice to confident Power BI analyst. Work on real industry datasets, get weekly instructor feedback, and graduate with a portfolio that gets you hired.',
     badge: 'Most Popular',
     format: 'Live Online',
-    duration: '8 Weeks',
+    duration: '10 weeks',
     startDate: 'Rolling Cohorts',
-    level: 'Beginner – Intermediate',
+    level: '10 - 11:15 AM Live, Sat & Sun (EST)',
     price: '$1,297',
     originalPrice: '$1,897',
     enrollmentDeadline: 'Limited seats per cohort',
@@ -284,19 +299,19 @@ export const fellowships: Fellowship[] = [
   {
     slug: 'cohort-washington',
     name: 'Cohort Washington',
-    tagline: 'Power BI Data Analyst Fellowship — Summer 2025 cohort.',
+    tagline: 'Power BI Data Analyst Fellowship — Summer 2026 cohort.',
     description:
-      'Cohort Washington is our July intake of the Power BI Data Analyst Fellowship. Join a tight-knit group of 30 analysts, get live instruction twice a week, and build a portfolio of real dashboards by August.',
-    badge: 'Starts July 4',
+      'Cohort Washington is our August intake of the Power BI Data Analyst Fellowship. Join a tight-knit group of 30 analysts, get live instruction twice a week, and build a portfolio of real reports by August.',
+    badge: 'Starts August 1st',
     format: 'Live Online',
-    duration: '8 Weeks',
-    startDate: 'July 4, 2025',
-    level: 'Beginner – Intermediate',
+    duration: '10 weeks',
+    startDate: 'August 1, 2026',
+    level: '10 - 11:15 AM Live, Sat & Sun (EST)',
     price: '$1,297',
     originalPrice: '$1,897',
-    enrollmentDeadline: 'June 27, 2025',
+    enrollmentDeadline: 'July 27, 2026',
     showPrice: false,
-    totalLearners: '30 seats',
+    totalLearners: '20 seats',
     rating: '4.9',
     completionRate: '91%',
     outcomes: sharedOutcomes,
@@ -310,19 +325,19 @@ export const fellowships: Fellowship[] = [
   {
     slug: 'cohort-lincoln',
     name: 'Cohort Lincoln',
-    tagline: 'Power BI Data Analyst Fellowship — Fall 2025 cohort.',
+    tagline: 'Power BI Data Analyst Fellowship — Fall 2026 cohort.',
     description:
       'Cohort Lincoln is our September intake of the Power BI Data Analyst Fellowship. A focused cohort of 30 learners working through the full curriculum together, with dedicated office hours and peer accountability.',
     badge: 'Starts Sep 5',
     format: 'Live Online',
-    duration: '8 Weeks',
-    startDate: 'September 5, 2025',
+    duration: '10 weeks',
+    startDate: 'September 5, 2026',
     level: 'Beginner – Intermediate',
     price: '$1,297',
     originalPrice: '$1,897',
-    enrollmentDeadline: 'August 29, 2025',
+    enrollmentDeadline: 'August 29, 2026',
     showPrice: false,
-    totalLearners: '30 seats',
+    totalLearners: '20 seats',
     rating: '4.9',
     completionRate: '91%',
     outcomes: sharedOutcomes,

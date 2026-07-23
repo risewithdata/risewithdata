@@ -3,8 +3,8 @@ import { Resend } from 'resend';
 import { prisma } from '../../../../../prisma/prisma.config';
 
 const resend   = new Resend(process.env.RESEND_API_KEY);
-const FROM     = 'RiseWithData <onboarding@resend.dev>';
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://risewithdata.com';
+const FROM     = 'RiseWithData <noreply@risewithdata.com>';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.risewithdata.com';
 
 type Ctx = { params: Promise<{ id: string }> };
 
@@ -13,7 +13,8 @@ export async function GET(_req: NextRequest, { params }: Ctx) {
     const { id } = await params;
     const rows = await prisma.$queryRawUnsafe<Record<string, unknown>[]>(
       `SELECT id, "firstName", "lastName", email, zipcode, "linkedinName",
-              "courseApplied", trainer, status, "adminNotes", "rejectionReason",
+              "courseApplied", trainer, "planningToJoinWorkforce",
+              status, "adminNotes", "rejectionReason",
               "resumeFileName", "resumeFileType", "resumeFileSizeBytes",
               "createdAt", "updatedAt"
        FROM "StudentApplication" WHERE id = $1`,
@@ -82,16 +83,18 @@ export async function PATCH(req: NextRequest, { params }: Ctx) {
         );
       }
 
-      // Check if student already has an account
+      // Check if student already has a STUDENT account (admin accounts don't count)
       const existingUser = await prisma.$queryRawUnsafe<{ id: string }[]>(
-        `SELECT id FROM "User" WHERE LOWER(email) = LOWER($1) LIMIT 1`,
+        `SELECT id FROM "User" WHERE LOWER(email) = LOWER($1) AND role = 'STUDENT'::"Role" LIMIT 1`,
         app.email
       );
       const hasAccount = existingUser.length > 0;
 
-      // Send approval email
+      // Send approval email — capture result so frontend knows if it failed
+      let emailSent = false;
+      let emailError: string | null = null;
       if (app.email) {
-        await resend.emails.send({
+        const { error: sendError } = await resend.emails.send({
           from:    FROM,
           to:      [app.email],
           subject: '🎉 Your RiseWithData Application Has Been Approved!',
@@ -103,8 +106,16 @@ export async function PATCH(req: NextRequest, { params }: Ctx) {
             siteUrl:       SITE_URL,
             hasAccount,
           }),
-        }).catch((e) => console.error('Approval email failed:', e));
+        });
+        if (sendError) {
+          emailError = (sendError as { message?: string }).message ?? 'Email delivery failed';
+          console.error('Approval email failed:', sendError);
+        } else {
+          emailSent = true;
+        }
       }
+
+      return NextResponse.json({ ok: true, status, emailSent, emailError });
 
     } else {
       // REJECTED
@@ -122,9 +133,11 @@ export async function PATCH(req: NextRequest, { params }: Ctx) {
         rejectionReason, id
       );
 
-      // Send rejection email
+      // Send rejection email — capture result
+      let emailSent = false;
+      let emailError: string | null = null;
       if (app.email) {
-        await resend.emails.send({
+        const { error: sendError } = await resend.emails.send({
           from:    FROM,
           to:      [app.email],
           subject: 'Update on Your RiseWithData Application',
@@ -134,13 +147,72 @@ export async function PATCH(req: NextRequest, { params }: Ctx) {
             rejectionReason: rejectionReason,
             siteUrl:         SITE_URL,
           }),
-        }).catch((e) => console.error('Rejection email failed:', e));
+        });
+        if (sendError) {
+          emailError = (sendError as { message?: string }).message ?? 'Email delivery failed';
+          console.error('Rejection email failed:', sendError);
+        } else {
+          emailSent = true;
+        }
       }
-    }
 
-    return NextResponse.json({ ok: true, status });
+      return NextResponse.json({ ok: true, status, emailSent, emailError });
+    }
   } catch (err) {
     console.error('[applications/[id]] PATCH:', err);
+    return NextResponse.json({ error: err instanceof Error ? err.message : 'Server error' }, { status: 500 });
+  }
+}
+
+// ── Resend approval email ─────────────────────────────────────────────────
+
+export async function POST(_req: NextRequest, { params }: Ctx) {
+  try {
+    const { id } = await params;
+
+    const rows = await prisma.$queryRawUnsafe<Record<string, unknown>[]>(
+      `SELECT "firstName", "lastName", email, "courseApplied", status
+       FROM "StudentApplication" WHERE id = $1`,
+      id
+    );
+    if (!rows.length) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+    const app = rows[0] as {
+      firstName: string; lastName: string; email: string;
+      courseApplied: string | null; status: string;
+    };
+
+    if (app.status !== 'APPROVED') {
+      return NextResponse.json({ error: 'Application is not approved.' }, { status: 400 });
+    }
+
+    const existingUser = await prisma.$queryRawUnsafe<{ id: string }[]>(
+      `SELECT id FROM "User" WHERE LOWER(email) = LOWER($1) AND role = 'STUDENT'::"Role" LIMIT 1`,
+      app.email
+    );
+    const hasAccount = existingUser.length > 0;
+
+    const { error: resendError } = await resend.emails.send({
+      from:    FROM,
+      to:      [app.email],
+      subject: '🎉 Your RiseWithData Application Has Been Approved!',
+      html:    approvalEmailHtml({
+        firstName:     app.firstName,
+        lastName:      app.lastName,
+        email:         app.email,
+        courseApplied: app.courseApplied,
+        siteUrl:       SITE_URL,
+        hasAccount,
+      }),
+    });
+
+    if (resendError) {
+      console.error('Resend approval email failed:', resendError);
+      return NextResponse.json({ ok: false, emailSent: false, emailError: (resendError as { message?: string }).message ?? 'Email delivery failed' }, { status: 500 });
+    }
+
+    return NextResponse.json({ ok: true, emailSent: true });
+  } catch (err) {
+    console.error('[applications/[id]] POST resend:', err);
     return NextResponse.json({ error: err instanceof Error ? err.message : 'Server error' }, { status: 500 });
   }
 }
@@ -187,10 +259,10 @@ function approvalEmailHtml({ firstName, lastName, email, courseApplied, siteUrl,
 <tr><td align="center">
 <table width="580" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);">
 
-  <tr><td style="background:linear-gradient(135deg,#065f46 0%,#059669 100%);padding:32px 36px;text-align:center;">
+  <tr><td style="background:linear-gradient(135deg,#1C0F08 0%,#C88010 100%);padding:32px 36px;text-align:center;">
     <div style="font-size:40px;margin-bottom:8px;">🎉</div>
     <h1 style="margin:0;color:#fff;font-size:22px;font-weight:700;">Congratulations, ${firstName}!</h1>
-    <p style="margin:8px 0 0;color:#a7f3d0;font-size:14px;">Your application has been approved</p>
+    <p style="margin:8px 0 0;color:#F5C040;font-size:14px;">Your application has been approved</p>
   </td></tr>
 
   <tr><td style="padding:32px 36px;">
@@ -241,9 +313,9 @@ function rejectionEmailHtml({ firstName, courseApplied, rejectionReason, siteUrl
 <tr><td align="center">
 <table width="580" cellpadding="0" cellspacing="0" style="background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.08);">
 
-  <tr><td style="background:linear-gradient(135deg,#1e3a5f 0%,#2563eb 100%);padding:32px 36px;text-align:center;">
+  <tr><td style="background:linear-gradient(135deg,#1C0F08 0%,#8B5010 100%);padding:32px 36px;text-align:center;">
     <h1 style="margin:0;color:#fff;font-size:22px;font-weight:700;">RiseWithData</h1>
-    <p style="margin:8px 0 0;color:#bfdbfe;font-size:14px;">Update on Your Application</p>
+    <p style="margin:8px 0 0;color:#F5C040;font-size:14px;">Update on Your Application</p>
   </td></tr>
 
   <tr><td style="padding:32px 36px;">

@@ -207,12 +207,14 @@ export default function AdminCoursesPage() {
       <header className="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm">
         <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3">
           <div className="flex items-center gap-3">
-            <a href="/"><img src="/logo.jpeg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
+            <a href="/" className="no-underline"><img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
             <span className="hidden rounded-md bg-brand-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 sm:block">Admin</span>
           </div>
           <nav className="flex items-center gap-1">
             <a href="/dashboard/admin"              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Dashboard</a>
-            <a href="/dashboard/admin/applications" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Applications</a>
+            <a href="/dashboard/admin/applications" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Student Apps</a>
+            <a href="/dashboard/admin/volunteers"   className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Volunteers</a>
+            <a href="/dashboard/admin/instructors"  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Instructors</a>
             <a href="/dashboard/admin/courses"      className="rounded-lg bg-brand-100 px-3 py-2 text-sm font-medium text-brand-700">Courses</a>
             <button
               onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}
@@ -487,7 +489,7 @@ export default function AdminCoursesPage() {
                 </div>
                 <div>
                   <label className="mb-1.5 block text-sm font-medium text-slate-700">Duration <span className="text-red-500">*</span></label>
-                  <input value={form.duration} onChange={(e) => setForm({ ...form, duration: e.target.value })} placeholder="e.g. 8 weeks" className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-brand-200 focus:ring-2 focus:ring-brand-500" />
+                  <input value={form.duration} onChange={(e) => setForm({ ...form, duration: e.target.value })} placeholder="e.g. 10 weeks" className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-brand-200 focus:ring-2 focus:ring-brand-500" />
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
