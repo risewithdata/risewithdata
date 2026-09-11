@@ -10,7 +10,7 @@ export function HeroSection() {
         <div className="flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-700">
             <span className="h-2 w-2 rounded-full bg-brand-500" />
-            Now enrolling · Cohort Washington starts August 1st
+            Apply for next cohort · Dates will be announced soon.
           </span>
         </div>
 

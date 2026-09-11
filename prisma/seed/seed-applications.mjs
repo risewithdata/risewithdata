@@ -7,7 +7,7 @@ const courses  = [
   'Cohort Washington',
   'Cohort Lincoln',
 ];
-const trainers = ['Sarah Johnson', 'Michael Chen', 'Priya Patel', 'David Williams', null];
+const trainers = ['Sarah Johnson', 'Ranjana B', 'Priya Patel', 'David Williams', null];
 const statuses = ['PENDING', 'PENDING', 'PENDING', 'APPROVED', 'APPROVED', 'REJECTED'];
 
 const students = [

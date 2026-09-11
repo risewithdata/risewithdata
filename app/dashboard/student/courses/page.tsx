@@ -121,6 +121,17 @@ export default function MyCoursesPage() {
                     <h2 className="mb-1 text-base font-bold text-slate-900 leading-snug group-hover:text-brand-700 transition-colors">
                       {course.name}
                     </h2>
+                    <a
+                      href="https://meet.google.com/aed-nerc-ven"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mb-3 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 hover:underline"
+                    >
+                      <svg className="h-3.5 w-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+                      </svg>
+                      Join Class
+                    </a>
                     <p className="text-xs text-slate-500 mb-4">Trainer: {course.trainerName}</p>
 
                     {/* Progress bar */}

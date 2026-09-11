@@ -134,9 +134,8 @@ export default function ApplyPage() {
               <svg className="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 2a10 10 0 100 20A10 10 0 0012 2z" />
               </svg>
-              <p className="text-sm text-amber-800">
-                <span className="font-semibold">RiseWithData is a U.S.-based organization.</span>{' '}
-                Only applicants currently living in the USA will be considered.
+              <p className="text-[12px] text-amber-800">
+                <span className="font-semibold">RiseWithData is a U.S.-based organization.</span> Only applicants currently living in the USA will be considered.
               </p>
             </div>
 

@@ -28,7 +28,7 @@ const navigation = [
       {
         name: 'Cohort Washington',
         href: '/fellowships/cohort-washington',
-        meta: 'Starts August 1st',
+        meta: 'Starts October 1st',
       },
       /* {
         name: 'Cohort Lincoln',

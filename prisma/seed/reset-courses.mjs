@@ -21,7 +21,7 @@ const courses = [
   {
     id:                   'course_002',
     name:                 'Cohort Washington',
-    trainerName:          'Michael Chen',
+    trainerName:          'Ranjana B',
     duration:             '10 weeks',
     startDate:            '2026-07-04T00:00:00',
     endDate:              '2026-08-29T00:00:00',

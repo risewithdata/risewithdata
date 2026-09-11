@@ -16,6 +16,7 @@ export async function GET(_req: NextRequest, { params }: Ctx) {
          ac.id, ac.name, ac."trainerName", ac.duration,
          ac."startDate", ac."endDate", ac."seatsAvailable",
          ac."applicationsReceived", ac.status,
+         ac."zoomLink",
          sa."createdAt" AS "enrolledAt", sa.id AS "applicationId",
          sa."firstName", sa."lastName"
        FROM "AdminCourse" ac

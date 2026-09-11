@@ -14,6 +14,7 @@ interface Course {
   seatsAvailable: number;
   applicationsReceived: number;
   status: Status;
+  zoomLink?: string | null;
   createdAt: string;
 }
 
@@ -70,7 +71,7 @@ function SkeletonRow() {
   );
 }
 
-const EMPTY_FORM = { name: '', trainerName: '', duration: '', startDate: '', endDate: '', seatsAvailable: 0 };
+const EMPTY_FORM = { name: '', trainerName: '', duration: '', startDate: '', endDate: '', seatsAvailable: 0, zoomLink: '' };
 
 function toInputDate(iso: string) {
   return iso ? iso.slice(0, 10) : '';
@@ -142,6 +143,7 @@ export default function AdminCoursesPage() {
       name: course.name, trainerName: course.trainerName, duration: course.duration,
       startDate: toInputDate(course.startDate), endDate: toInputDate(course.endDate),
       seatsAvailable: course.seatsAvailable,
+      zoomLink: course.zoomLink ?? '',
     } : EMPTY_FORM);
     setEditModal({ course });
   };
@@ -216,6 +218,7 @@ export default function AdminCoursesPage() {
             <a href="/dashboard/admin/volunteers"   className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Volunteers</a>
             <a href="/dashboard/admin/instructors"  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Instructors</a>
             <a href="/dashboard/admin/courses"      className="rounded-lg bg-brand-100 px-3 py-2 text-sm font-medium text-brand-700">Courses</a>
+            <a href="/dashboard/admin/students"     className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Students</a>
             <button
               onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}
               className="ml-2 flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100"
@@ -381,6 +384,14 @@ export default function AdminCoursesPage() {
                               <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
                             </button>
                           </Tip>
+                          {/* Test Zoom Link */}
+                          {course.zoomLink && (
+                            <Tip label="Test Zoom Link">
+                              <a href={course.zoomLink} target="_blank" rel="noopener noreferrer" className="rounded-lg border border-blue-200 bg-blue-50 p-1.5 text-blue-600 hover:bg-blue-100 inline-flex">
+                                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" /></svg>
+                              </a>
+                            </Tip>
+                          )}
                           {/* Toggle */}
                           <Tip label={course.status === 'ACTIVE' ? 'Disable' : 'Enable'}>
                             <button onClick={() => setConfirm({ type: 'toggle', course })} className={`rounded-lg border p-1.5 ${course.status === 'ACTIVE' ? 'border-amber-200 bg-amber-50 text-amber-600 hover:bg-amber-100' : 'border-emerald-200 bg-emerald-50 text-emerald-600 hover:bg-emerald-100'}`}>
@@ -507,6 +518,21 @@ export default function AdminCoursesPage() {
                 <input type="number" min={0} value={form.seatsAvailable} onChange={(e) => setForm({ ...form, seatsAvailable: Number(e.target.value) })} className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-brand-200 focus:ring-2 focus:ring-brand-500" />
               </div>
             </div>
+
+            {/* Zoom Settings */}
+            <div className="border-t border-slate-100 px-6 py-4 space-y-4">
+              <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+                </svg>
+                Zoom Meeting (optional)
+              </p>
+              <div>
+                <label className="mb-1.5 block text-sm font-medium text-slate-700">Zoom Meeting Link</label>
+                <input type="url" placeholder="https://zoom.us/j/123456789" value={form.zoomLink} onChange={(e) => setForm({ ...form, zoomLink: e.target.value })} className="w-full rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none focus:border-brand-200 focus:ring-2 focus:ring-brand-500" />
+              </div>
+            </div>
+
             <div className="flex gap-3 border-t border-slate-100 px-6 py-4">
               <button onClick={() => setEditModal(null)} className="flex-1 rounded-xl border border-slate-200 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50">Cancel</button>
               <button onClick={handleSave} disabled={formLoading || !form.name || !form.trainerName || !form.duration || !form.startDate || !form.endDate}

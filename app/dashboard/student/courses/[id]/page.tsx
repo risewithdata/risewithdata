@@ -17,6 +17,7 @@ interface CourseDetail {
   applicationId: string;
   firstName: string;
   lastName: string;
+  zoomLink: string | null;
 }
 
 function fmtDate(iso: string) {
@@ -27,7 +28,7 @@ function courseProgress(startDate: string, endDate: string) {
   const now   = Date.now();
   const start = new Date(startDate).getTime();
   const end   = new Date(endDate).getTime();
-  if (now < start) return { label: 'Upcoming', pct: 0, bg: 'bg-brand-600', text: 'text-brand-600', badge: 'bg-brand-600 text-brand-600' };
+  if (now < start) return { label: 'Upcoming', pct: 0, bg: 'bg-brand-600', text: 'text-brand-600', badge: 'bg-brand-100 text-brand-700' };
   if (now > end)   return { label: 'Completed', pct: 100, bg: 'bg-emerald-500', text: 'text-emerald-700', badge: 'bg-emerald-100 text-emerald-700' };
   const pct = Math.round(((now - start) / (end - start)) * 100);
   return { label: 'In Progress', pct, bg: 'bg-amber-500', text: 'text-amber-700', badge: 'bg-amber-100 text-amber-700' };
@@ -140,6 +141,32 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                 </div>
               </div>
 
+              {/* ── Join Class Section ── */}
+              <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h2 className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-500">
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+                  </svg>
+                  Live Class
+                </h2>
+
+                {course.zoomLink ? (
+                  <a
+                    href={course.zoomLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-brand-600 px-6 py-3 text-base font-bold text-white shadow-sm hover:bg-brand-700 transition"
+                  >
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+                    </svg>
+                    Join Class
+                  </a>
+                ) : (
+                  <p className="text-sm text-slate-400 text-center py-2">No meeting link set. Contact your instructor.</p>
+                )}
+              </div>
+
               {/* Info grid */}
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                 <InfoCard
@@ -213,10 +240,10 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                         {course.status === 'ACTIVE' ? 'Active' : 'Inactive'}
                       </span>
                     </div>
-                    <div className="flex justify-between">
+                    {/* <div className="flex justify-between">
                       <span className="text-slate-500">Applications Received</span>
                       <span className="font-medium text-slate-700">{course.applicationsReceived}</span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

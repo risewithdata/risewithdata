@@ -22,7 +22,7 @@ export async function PATCH(req: NextRequest, { params }: Ctx) {
     }
 
     // Full edit
-    const { name, trainerName, duration, startDate, endDate, seatsAvailable } = body;
+    const { name, trainerName, duration, startDate, endDate, seatsAvailable, zoomLink } = body;
     if (!name || !trainerName || !duration || !startDate || !endDate) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
@@ -30,10 +30,11 @@ export async function PATCH(req: NextRequest, { params }: Ctx) {
       `UPDATE "AdminCourse"
        SET name = $1, "trainerName" = $2, duration = $3,
            "startDate" = $4::timestamp, "endDate" = $5::timestamp,
-           "seatsAvailable" = $6, "updatedAt" = NOW()
-       WHERE id = $7`,
+           "seatsAvailable" = $6, "zoomLink" = $7,
+           "updatedAt" = NOW()
+       WHERE id = $8`,
       name, trainerName, duration, startDate, endDate,
-      Number(seatsAvailable) || 0, id
+      Number(seatsAvailable) || 0, zoomLink || null, id
     );
     return NextResponse.json({ ok: true });
   } catch (err) {

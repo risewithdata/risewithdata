@@ -47,7 +47,7 @@ export async function GET(req: NextRequest) {
       prisma.$queryRawUnsafe<Record<string, unknown>[]>(
         `SELECT id, name, "trainerName", duration,
                 "startDate", "endDate", "seatsAvailable",
-                "applicationsReceived", status, "createdAt", "updatedAt"
+                "applicationsReceived", status, "zoomLink", "createdAt", "updatedAt"
          FROM "AdminCourse" ${WHERE}
          ORDER BY ${col} ${dir}
          LIMIT $${idx} OFFSET $${idx + 1}`,
@@ -90,16 +90,17 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, trainerName, duration, startDate, endDate, seatsAvailable } = body;
+    const { name, trainerName, duration, startDate, endDate, seatsAvailable, zoomLink } = body;
     if (!name || !trainerName || !duration || !startDate || !endDate) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
     const id = cuid();
     await prisma.$queryRawUnsafe(
       `INSERT INTO "AdminCourse" (id, name, "trainerName", duration, "startDate", "endDate",
-         "seatsAvailable", "applicationsReceived", status, "createdAt", "updatedAt")
-       VALUES ($1, $2, $3, $4, $5::timestamp, $6::timestamp, $7, 0, 'ACTIVE'::"CourseStatus", NOW(), NOW())`,
-      id, name, trainerName, duration, startDate, endDate, Number(seatsAvailable) || 0
+         "seatsAvailable", "applicationsReceived", status, "zoomLink", "createdAt", "updatedAt")
+       VALUES ($1, $2, $3, $4, $5::timestamp, $6::timestamp, $7, 0, 'ACTIVE'::"CourseStatus", $8, NOW(), NOW())`,
+      id, name, trainerName, duration, startDate, endDate, Number(seatsAvailable) || 0,
+      zoomLink || null
     );
     return NextResponse.json({ ok: true, id });
   } catch (err) {

@@ -46,6 +46,7 @@ const NAV = [
   { href: '/dashboard/admin/volunteers',   label: 'Volunteers',  active: true },
   { href: '/dashboard/admin/instructors',  label: 'Instructors' },
   { href: '/dashboard/admin/courses',      label: 'Courses' },
+  { href: '/dashboard/admin/students',     label: 'Students' },
 ];
 
 function fmtDate(iso: string) {

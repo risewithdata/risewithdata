@@ -122,7 +122,7 @@ export function ApplyForm() {
           }`}
         >
           <option value="" disabled>Select a cohort</option>
-          <option value="Cohort Washington">Cohort Washington (Start date – Aug 1st 2026)</option>
+          <option value="Cohort Lincoln">Next Cohort (Tentative – Oct 2026)</option>
         </select>
         {errors.courseApplied && (
           <p className="mt-1.5 text-xs text-red-600">{errors.courseApplied.message}</p>
