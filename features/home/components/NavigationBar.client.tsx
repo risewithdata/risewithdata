@@ -236,7 +236,7 @@ export function NavigationBar() {
                 Login
               </a>
               <a
-                href="/apply"
+                href="/pricing"
                 className="rounded-xl bg-gradient-to-r from-brand-600 to-brand-500 px-5 py-2 text-sm font-semibold text-white shadow-md shadow-brand-500/20 transition hover:from-brand-700 hover:to-brand-600"
               >
                 Apply Now
@@ -286,7 +286,7 @@ export function NavigationBar() {
             ) : (
               <>
                 <a href="/login" className="flex-1 rounded-xl border border-slate-200 py-2 text-center text-sm font-medium text-slate-700">Login</a>
-                <a href="/apply" className="flex-1 rounded-xl bg-brand-600 py-2 text-center text-sm font-semibold text-white">Apply Now</a>
+                <a href="/pricing" className="flex-1 rounded-xl bg-brand-600 py-2 text-center text-sm font-semibold text-white">Apply Now</a>
               </>
             )}
           </div>

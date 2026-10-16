@@ -132,6 +132,33 @@ model AdminCourse {
 }
 
 // ============================================================================
+// Section: Certificates
+// ============================================================================
+
+enum CertificateStatus {
+  ACTIVE
+  REVOKED
+}
+
+model Certificate {
+  id                String            @id @default(cuid())
+  certificateNumber String            @unique
+  studentName       String
+  studentEmail      String
+  courseName        String
+  courseShortCode   String
+  trainerName       String
+  issuedDate        DateTime
+  status            CertificateStatus @default(ACTIVE)
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+
+  @@index([certificateNumber])
+  @@index([studentEmail])
+  @@index([status])
+}
+
+// ============================================================================
 // Section: Users & Authentication
 // ============================================================================
 

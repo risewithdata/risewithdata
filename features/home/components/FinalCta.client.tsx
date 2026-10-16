@@ -48,7 +48,7 @@ export function FinalCta() {
 
               <div className="mt-8 space-y-4">
                 <a
-                  href="/apply"
+                  href="/pricing"
                   className="block w-full rounded-xl bg-brand-500 py-4 text-center text-sm font-bold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-500"
                 >
                   Apply Now

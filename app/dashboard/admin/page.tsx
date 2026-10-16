@@ -117,6 +117,7 @@ export default function AdminDashboardPage() {
             <a href="/dashboard/admin/instructors"  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Instructors</a>
             <a href="/dashboard/admin/courses"      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Courses</a>
             <a href="/dashboard/admin/students"     className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Students</a>
+            <a href="/dashboard/admin/certificates" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Certificates</a>
             <button
               onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}
               className="ml-2 flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100"

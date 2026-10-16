@@ -11,7 +11,7 @@ export async function GET() {
       `SELECT
          ac.id, ac.name, ac."trainerName", ac.duration,
          ac."startDate", ac."endDate", ac."seatsAvailable",
-         ac."applicationsReceived", ac.status,
+         ac."applicationsReceived", ac.status, ac."zoomLink",
          sa."createdAt" AS "enrolledAt", sa.id AS "applicationId"
        FROM "StudentApplication" sa
        JOIN "AdminCourse" ac ON ac.name = sa."courseApplied"

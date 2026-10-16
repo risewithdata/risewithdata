@@ -62,7 +62,7 @@ export function PricingSection() {
                 </ul>
 
                 <a
-                  href="/apply"
+                  href="/pricing"
                   className={`mt-10 block rounded-xl py-3.5 text-center text-sm font-semibold transition ${
                     plan.popular
                       ? 'bg-white text-brand-600 hover:bg-brand-500'
@@ -75,11 +75,6 @@ export function PricingSection() {
             </article>
           ))}
         </div>
-
-        {/* Guarantee note */}
-        <p className="mt-10 text-center text-sm text-slate-400">
-          All plans include a <span className="font-semibold text-slate-700">7-day full refund guarantee</span> · Secure checkout · No hidden fees
-        </p>
 
       </div>
     </section>
