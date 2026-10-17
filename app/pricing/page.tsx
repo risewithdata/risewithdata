@@ -32,7 +32,7 @@ const plans = [
     priceNote: 'one-time',
     popular: false,
     cta: 'Enroll Now',
-    href: '/apply',
+    href: '/checkout?plan=Core',
     perks: [
       { text: '7 weeks of live, instructor-led training', highlight: false },
       { text: '14 live sessions (60 min class + 15 min practice) — 17.5 hours total', highlight: false },
@@ -57,8 +57,8 @@ const plans = [
     price: '$139',
     priceNote: 'one-time',
     popular: true,
-    cta: 'Apply Now',
-    href: '/apply',
+    cta: 'Enroll Now',
+    href: '/checkout?plan=Advanced',
     perks: [
       { text: '10 weeks of live, instructor-led training', highlight: false },
       { text: '20 live sessions (60 min class + 15 min practice) — 25 hours total', highlight: false },
@@ -83,8 +83,8 @@ const plans = [
     price: '$250',
     priceNote: 'one-time',
     popular: false,
-    cta: 'Apply Now',
-    href: '/apply',
+    cta: 'Enroll Now',
+    href: '/checkout?plan=Elite',
     perks: [
       { text: 'Everything included in Advanced', highlight: false },
       { text: 'Certification of Training', highlight: false },

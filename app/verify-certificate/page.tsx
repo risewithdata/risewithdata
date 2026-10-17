@@ -68,7 +68,7 @@ export default function VerifyCertificatePage() {
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyDown={e => e.key === 'Enter' && handleVerify()}
-                placeholder="e.g. RWD-ADV-2026-0001"
+
                 className="flex-1 rounded-xl border border-slate-200 px-4 py-3 font-mono text-sm uppercase tracking-wider outline-none focus:border-brand-300 focus:ring-2 focus:ring-brand-200"
               />
               <button
