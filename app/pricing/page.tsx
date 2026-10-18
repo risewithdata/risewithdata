@@ -104,7 +104,7 @@ export default function PricingPage() {
       <NavigationBar />
 
       <main className="min-h-screen" style={{ backgroundColor: '#f5f0e8' }}>
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-screen-2xl px-6 py-20 lg:px-12">
 
           {/* Header */}
           <div className="text-center">
