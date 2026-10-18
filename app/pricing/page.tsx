@@ -16,7 +16,7 @@ const plans = [
     badge: null,
     perks: [
       { text: '5 weeks of live, instructor-led training', highlight: false },
-      { text: '10 live sessions (60 min class + 15 min practice) — 12.5 hours total', highlight: false },
+      { text: '10 live sessions (60 min class + 15 min practice) — 12.5 hours total', highlight: true },
       { text: '1 hands-on Power BI project', highlight: true },
       { text: 'Slide decks + 5 homework assignments', highlight: false },
       { text: 'Fixed number of seats allocated to this plan', highlight: false },
@@ -37,7 +37,7 @@ const plans = [
     badge: null,
     perks: [
       { text: '7 weeks of live, instructor-led training', highlight: false },
-      { text: '14 live sessions (60 min class + 15 min practice) — 17.5 hours total', highlight: false },
+      { text: '14 live sessions (60 min class + 15 min practice) — 17.5 hours total', highlight: true },
       { text: '3 hands-on Power BI projects', highlight: true },
       { text: 'Slide decks + 7 homework assignments', highlight: false },
       { text: 'Resume review & feedback', highlight: true },
@@ -64,7 +64,7 @@ const plans = [
     badge: null,
     perks: [
       { text: '10 weeks of live, instructor-led training', highlight: false },
-      { text: '20 live sessions (60 min class + 15 min practice) — 25 hours total', highlight: false },
+      { text: '20 live sessions (60 min class + 15 min practice) — 25 hours total', highlight: true },
       { text: '3 Power BI projects + 3 Microsoft Fabric Data Engineering projects', highlight: true },
       { text: 'Resume review & feedback', highlight: false },
       { text: 'Slide decks + 10 homework assignments', highlight: false },
