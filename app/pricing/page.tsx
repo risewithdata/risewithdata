@@ -104,20 +104,20 @@ export default function PricingPage() {
       <NavigationBar />
 
       <main className="min-h-screen" style={{ backgroundColor: '#f5f0e8' }}>
-        <div className="mx-auto max-w-screen-2xl px-6 py-20 lg:px-12">
+        <div className="mx-auto max-w-screen-2xl px-6 py-10 lg:px-12">
 
           {/* Header */}
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+            <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               Choose your learning path
             </h1>
-            <p className="mt-4 text-lg text-slate-500">
+            <p className="mt-2 text-base text-slate-500">
               Live instruction, real projects, real results.
             </p>
           </div>
 
           {/* Cards */}
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {plans.map((plan) => (
               <div
                 key={plan.name}
@@ -136,45 +136,45 @@ export default function PricingPage() {
                   </div>
                 )}
 
-                <div className="flex flex-1 flex-col p-7 pt-10">
+                <div className="flex flex-1 flex-col p-5 pt-8">
 
                   {/* Icon */}
-                  <div className={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl text-xl ${plan.iconBg}`}>
+                  <div className={`mb-3 flex h-9 w-9 items-center justify-center rounded-xl text-lg ${plan.iconBg}`}>
                     {plan.icon}
                   </div>
 
                   {/* Plan name */}
-                  <h2 className="text-lg font-bold text-slate-900">{plan.name}</h2>
+                  <h2 className="text-base font-bold text-slate-900">{plan.name}</h2>
 
                   {/* Price */}
-                  <div className="mt-2 flex items-baseline gap-2">
-                    <span className={`font-extrabold text-slate-900 ${plan.price === 'Free' ? 'text-3xl' : 'text-4xl'}`}>
+                  <div className="mt-1 flex items-baseline gap-2">
+                    <span className={`font-extrabold text-slate-900 ${plan.price === 'Free' ? 'text-2xl' : 'text-3xl'}`}>
                       {plan.price}
                     </span>
-                    <span className="text-sm text-slate-400">{plan.priceNote}</span>
+                    <span className="text-xs text-slate-400">{plan.priceNote}</span>
                   </div>
 
                   {/* Description */}
-                  <p className="mt-2 text-sm leading-relaxed text-slate-500">{plan.description}</p>
+                  <p className="mt-1.5 text-xs leading-relaxed text-slate-500">{plan.description}</p>
 
                   {/* CTA */}
                   <a
                     href={plan.href}
-                    className="mt-6 block rounded-xl bg-slate-900 py-3 text-center text-sm font-bold text-white transition hover:bg-slate-700"
+                    className="mt-4 block rounded-xl bg-slate-900 py-2.5 text-center text-sm font-bold text-white transition hover:bg-slate-700"
                   >
                     {plan.cta}
                   </a>
 
                   {/* Divider */}
-                  <hr className="my-5 border-slate-100" />
+                  <hr className="my-3 border-slate-100" />
 
                   {/* Features — regular first, highlighted at bottom, no gap */}
-                  <ul className="flex-1 space-y-2">
+                  <ul className="flex-1 space-y-1">
                     {[...plan.perks.filter(p => !p.highlight), ...plan.perks.filter(p => p.highlight)].map((perk) => (
-                      <li key={perk.text} className={`flex items-start gap-2.5 rounded-lg px-2 py-1 text-sm ${
+                      <li key={perk.text} className={`flex items-start gap-2 rounded-lg px-2 py-0.5 text-xs ${
                         perk.highlight ? 'bg-amber-50 font-semibold text-slate-800' : 'text-slate-600'
                       }`}>
-                        <svg className={`mt-0.5 h-4 w-4 flex-shrink-0 ${perk.highlight ? 'text-amber-500' : 'text-amber-400'}`} viewBox="0 0 20 20" fill="currentColor">
+                        <svg className={`mt-0.5 h-3.5 w-3.5 flex-shrink-0 ${perk.highlight ? 'text-amber-500' : 'text-amber-400'}`} viewBox="0 0 20 20" fill="currentColor">
                           <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clipRule="evenodd" />
                         </svg>
                         {perk.text}
@@ -184,11 +184,11 @@ export default function PricingPage() {
 
                   {/* Additions vs previous plan */}
                   {plan.additions && (
-                    <div className="mt-5 rounded-xl border border-brand-100 bg-brand-50 p-4">
-                      <p className="mb-2 text-xs font-bold uppercase tracking-wider text-brand-600">
+                    <div className="mt-3 rounded-xl border border-brand-100 bg-brand-50 p-3">
+                      <p className="mb-1.5 text-xs font-bold uppercase tracking-wider text-brand-600">
                         ✦ Added vs {plan.name === 'Core' ? 'Starter' : plan.name === 'Advanced' ? 'Core' : 'Advanced'}
                       </p>
-                      <ul className="space-y-1.5">
+                      <ul className="space-y-1">
                         {plan.additions.map((item) => (
                           <li key={item} className="flex items-start gap-2 text-xs font-medium text-brand-700">
                             <span className="mt-0.5 text-brand-500">+</span>
@@ -201,7 +201,7 @@ export default function PricingPage() {
 
                   {/* Footnote */}
                   {plan.footnote && (
-                    <p className="mt-6 border-t border-slate-100 pt-4 text-xs leading-relaxed text-slate-400">
+                    <p className="mt-3 border-t border-slate-100 pt-3 text-xs leading-relaxed text-slate-400">
                       *Selected applicants place a fully refundable{' '}
                       <strong className="font-semibold text-slate-600">$50 deposit</strong>
                       {' '}— returned in full once you&apos;ve attended 60%+ of sessions, or if you withdraw before Week 2. It just makes sure every seat goes to someone who&apos;ll show up.
