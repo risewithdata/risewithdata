@@ -32,7 +32,7 @@ export function Footer() {
               </li>
               <li>
                 <a href="/fellowships/cohort-washington" className="hover:text-white">
-                  Cohort Washington
+                  November Cohort
                 </a>
               </li>
             </ul>

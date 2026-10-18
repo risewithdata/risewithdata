@@ -6,7 +6,7 @@ export const companyLogos = [
 
 export const featuredPrograms = [
   {
-    title: 'Power BI Data Analyst Fellowship',
+    title: 'Data Analyst Fellowship',
     slug: 'power-bi-data-analyst-fellowship',
     format: 'Live Online',
     duration: '10 weeks',
@@ -19,7 +19,7 @@ export const featuredPrograms = [
     desc: 'Master Power BI reports, DAX, and data modeling through live instruction and real-world projects.',
   },
   {
-    title: 'Cohort Washington',
+    title: 'November Cohort',
     slug: 'cohort-washington',
     format: 'Live Online',
     duration: '10 weeks',
@@ -28,7 +28,7 @@ export const featuredPrograms = [
     rating: 4.9,
     enrollments: '20 seats available',
     price: '$1,297',
-    badge: 'Starts October 1st',
+    badge: 'Starts November 14th',
     desc: 'Summer cohort of the Power BI fellowship. Intensive, cohort-based, with twice-weekly live sessions.',
   },
   {
@@ -64,7 +64,7 @@ export const journeySteps = [
   {
     step: '03',
     title: 'Launch Your Data Career',
-    description: 'Graduate with a portfolio of 5+ reports, a verified certificate.',
+    description: 'Graduate with a portfolio of 6 projects, a verified certificate.',
     icon: '🚀',
     cta: 'See Outcomes',
   },
@@ -220,12 +220,12 @@ export const faqs = [
   {
     question: 'How many hours per week does this take?',
     answer:
-      'Plan for 8–10 hours per week: two live 2-hour sessions plus hands-on project work. All sessions are recorded so you can catch up if you miss one.',
+      'Plan for 5–6 hours per week: two live 75-minutes sessions plus hands-on project work. All sessions are recorded so you can catch up if you miss one.',
   },
   {
     question: 'What do I get when I finish?',
     answer:
-      'A verified RiseWithData Fellowship Certificate, a shareable portfolio of 5+ real reports, career coaching, and access to our alumni network and job board.',
+      'A verified RiseWithData Fellowship Certificate, a shareable portfolio of 6+ real projects, career coaching, and access to our alumni network.',
   },
   {
     question: 'What tools do I need?',

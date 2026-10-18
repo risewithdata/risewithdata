@@ -9,7 +9,7 @@ console.log('🗑️  Cleared all existing courses');
 const courses = [
   {
     id:                   'course_001',
-    name:                 'Power BI Data Analyst Fellowship',
+    name:                 'Data Analyst Fellowship',
     trainerName:          'Sarah Johnson',
     duration:             '10 weeks',
     startDate:            '2026-07-04T00:00:00',
@@ -20,7 +20,7 @@ const courses = [
   },
   {
     id:                   'course_002',
-    name:                 'Cohort Washington',
+    name:                 'November Cohort',
     trainerName:          'Ranjana B',
     duration:             '10 weeks',
     startDate:            '2026-07-04T00:00:00',

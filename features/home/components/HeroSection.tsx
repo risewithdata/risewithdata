@@ -10,7 +10,7 @@ export function HeroSection() {
         <div className="flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-700">
             <span className="h-2 w-2 rounded-full bg-brand-500" />
-            Apply for next cohort · Dates will be announced soon.
+            Apply for next cohort · Starts on Nov-14.
           </span>
         </div>
 
@@ -24,27 +24,12 @@ export function HeroSection() {
             in 10 weeks
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-500">
-            Free, live, project-based training — not just teaching. Build real Power
-            BI reports, get hands-on instructor feedback every week, and
-            finish job-ready.
+            Live, project-based training — not just teaching. Build real Power BI reports and Microsoft End-to-End Projects, get hands-on instructor feedback every week, and finish job-ready.
           </p>
         </div>
 
         {/* CTAs */}
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="/pricing"
-            className="rounded-xl bg-brand-600 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 transition hover:bg-brand-700"
-          >
-            Apply Now
-          </a>
-          <a
-            href="/fellowships/power-bi-data-analyst-fellowship"
-            className="rounded-xl border border-slate-200 bg-white px-8 py-3.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-          >
-            View Fellowship Details →
-          </a>
-        </div>
+    
 
         {/* Stats bar */}
      {/*    <div className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-4">

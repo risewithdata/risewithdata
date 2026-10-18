@@ -14,10 +14,10 @@ import { FinalCta } from '@features/home/components/FinalCta.client';
 import { Footer } from '@features/home/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'RiseWithData | Power BI Data Analyst Fellowship',
+  title: 'RiseWithData | Data Analyst Fellowship',
   description: 'Become a job-ready data analyst in 10 weeks. Live, cohort-based Power BI training with real projects, instructor feedback, and career coaching.',
   openGraph: {
-    title: 'RiseWithData | Power BI Data Analyst Fellowship',
+    title: 'RiseWithData | Data Analyst Fellowship',
     description: 'Become a job-ready data analyst in 10 weeks. Live, cohort-based Power BI training with real projects, instructor feedback, and career coaching.',
     type: 'website',
   },

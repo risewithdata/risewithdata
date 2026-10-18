@@ -212,7 +212,7 @@ export default function AdminCertificatesPage() {
                 <span className="font-mono font-semibold text-slate-700">
                   RWD-{form.courseName ? (
                     { Starter: 'STR', Core: 'COR', Advanced: 'ADV', Elite: 'ELT',
-                      'Cohort Lincoln': 'LIN', 'Cohort Washington': 'WAS' }[form.courseName]
+                      'Cohort Lincoln': 'LIN', 'November Cohort': 'WAS' }[form.courseName]
                     ?? form.courseName.slice(0,3).toUpperCase()
                   ) : '???'}-{form.issuedDate?.slice(0,4) ?? '????'}-####
                 </span>

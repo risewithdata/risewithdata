@@ -4,7 +4,7 @@ import { ApplyForm } from '@features/apply/components/ApplyForm.client';
 
 export const metadata = {
   title: 'Apply — RiseWithData',
-  description: 'Apply to join the RiseWithData Power BI Data Analyst Fellowship program.',
+  description: 'Apply to join the RiseWithData Data Analyst Fellowship program.',
 };
 
 const steps = [

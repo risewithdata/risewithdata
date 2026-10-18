@@ -11,7 +11,7 @@ const COURSE_SHORT_CODES: Record<string, string> = {
   'Advanced':          'ADV',
   'Elite':             'ELT',
   'Cohort Lincoln':    'LIN',
-  'Cohort Washington': 'WAS',
+  'November Cohort': 'WAS',
 };
 
 function getCourseShortCode(courseName: string): string {

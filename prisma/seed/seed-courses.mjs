@@ -5,8 +5,8 @@ const prisma = new PrismaClient();
 function d(y, m, day) { return new Date(y, m - 1, day); }
 
 const courses = [
-  { name: 'Power BI Data Analyst Fellowship – Cohort Washington', trainerName: 'Sarah Johnson',  duration: '10 weeks',  startDate: d(2026,7,4),   endDate: d(2026,8,29),  seatsAvailable: 30, applicationsReceived: 24, status: 'ACTIVE'   },
-  { name: 'Power BI Data Analyst Fellowship – Cohort Lincoln',    trainerName: 'Ranjana B',   duration: '10 weeks',  startDate: d(2026,9,5),   endDate: d(2026,10,31), seatsAvailable: 25, applicationsReceived: 18, status: 'ACTIVE'   },
+  { name: 'Data Analyst Fellowship – November Cohort', trainerName: 'Sarah Johnson',  duration: '10 weeks',  startDate: d(2026,7,4),   endDate: d(2026,8,29),  seatsAvailable: 30, applicationsReceived: 24, status: 'ACTIVE'   },
+  { name: 'Data Analyst Fellowship – Cohort Lincoln',    trainerName: 'Ranjana B',   duration: '10 weeks',  startDate: d(2026,9,5),   endDate: d(2026,10,31), seatsAvailable: 25, applicationsReceived: 18, status: 'ACTIVE'   },
   { name: 'Data Analytics Fundamentals – Spring 2026',            trainerName: 'Priya Patel',    duration: '6 weeks',  startDate: d(2026,3,1),   endDate: d(2026,4,12),  seatsAvailable: 40, applicationsReceived: 40, status: 'INACTIVE' },
   { name: 'SQL for Business Intelligence',                        trainerName: 'David Williams', duration: '4 weeks',  startDate: d(2026,5,10),  endDate: d(2026,6,7),   seatsAvailable: 20, applicationsReceived: 15, status: 'INACTIVE' },
   { name: 'Advanced DAX & Power BI Modeling',                     trainerName: 'Sarah Johnson',  duration: '5 weeks',  startDate: d(2026,8,3),   endDate: d(2026,9,7),   seatsAvailable: 20, applicationsReceived: 11, status: 'ACTIVE'   },

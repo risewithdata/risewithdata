@@ -51,7 +51,7 @@ export default function AboutPage() {
                   <p>
                     Rise with Data is an education-focused platform dedicated to helping motivated
                     individuals develop the skills needed to succeed in today's evolving job market.
-                    We provide <span className="font-semibold text-slate-800">free, live, online training</span> designed
+                    We provide <span className="font-semibold text-slate-800">live, online training</span> designed
                     to bridge the gap between traditional education and the practical skills employers seek.
                   </p>
                   <p>

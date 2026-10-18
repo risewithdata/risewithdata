@@ -21,14 +21,14 @@ export function FinalCta() {
                 Start your data analyst career this summer
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                Apply for next cohort · Dates will be announced soon.
+                Apply for next cohort · Starts on Nov-14.
               </p>
 
               <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {[
                   { v: '20',           l: 'Seats total' },
                   { v: '10 wks',        l: 'Duration' },
-                  { v: 'No Cost',      l: 'All Participants' },
+                  { v: '6',      l: 'Projects' },
                   { v: '10 - 11:15 AM', l: 'Live, Sat & Sun (EST)', small: true },
                 ].map((s) => (
                   <div key={s.l} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
@@ -43,7 +43,7 @@ export function FinalCta() {
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
               <p className="text-lg font-bold text-white">Reserve your seat today</p>
               <p className="mt-2 text-sm text-slate-400">
-                No application, Training fees.
+                No application, Training fees for Starter Pack.
               </p>
 
               <div className="mt-8 space-y-4">

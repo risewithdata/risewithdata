@@ -3,8 +3,8 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const courses  = [
-  'Power BI Data Analyst Fellowship',
-  'Cohort Washington',
+  'Data Analyst Fellowship',
+  'November Cohort',
   'Cohort Lincoln',
 ];
 const trainers = ['Sarah Johnson', 'Ranjana B', 'Priya Patel', 'David Williams', null];

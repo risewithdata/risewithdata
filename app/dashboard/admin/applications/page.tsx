@@ -37,8 +37,8 @@ interface ConfirmDialog {
 const PAGE_SIZE = 10;
 
 const COURSES = [
-  'Power BI Data Analyst Fellowship',
-  'Cohort Washington',
+  'Data Analyst Fellowship',
+  'November Cohort',
   'Cohort Lincoln',
 ];
 

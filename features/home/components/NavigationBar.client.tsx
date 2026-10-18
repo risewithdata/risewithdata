@@ -19,16 +19,16 @@ const navigation = [
     label: 'Fellowships',
     megaMenu: true,
     main: {
-      name: 'Power BI Data Analyst Fellowship',
+      name: 'Data Analyst Fellowship',
       href: '/fellowships/power-bi-data-analyst-fellowship',
       meta: 'Most Popular',
-      desc: 'Go from zero to job-ready Power BI analyst in 10 weeks.',
+      desc: 'Go from zero to job-ready Data analyst in 10 weeks.',
     },
     cohorts: [
       {
-        name: 'Cohort Washington',
+        name: 'November Cohort',
         href: '/fellowships/cohort-washington',
-        meta: 'Starts October 1st',
+        meta: 'Starts November 14th',
       },
       /* {
         name: 'Cohort Lincoln',

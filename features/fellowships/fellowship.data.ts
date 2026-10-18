@@ -272,10 +272,10 @@ const sharedCurriculum: Module[] = [
 export const fellowships: Fellowship[] = [
   {
     slug: 'power-bi-data-analyst-fellowship',
-    name: 'Power BI Data Analyst Fellowship',
-    tagline: 'Go from zero to job-ready Power BI analyst in 10 weeks.',
+    name: 'Data Analyst Fellowship',
+    tagline: 'Go from zero to job-ready Data analyst in 10 weeks.',
     description:
-      'A live, cohort-based fellowship designed to take you from data novice to confident Power BI analyst. Work on real industry datasets, get weekly instructor feedback, and graduate with a portfolio that gets you hired.',
+      'A live, cohort-based fellowship designed to take you from data novice to confident Data analyst. Work on real industry datasets, get weekly instructor feedback, and graduate with a portfolio that gets you hired.',
     badge: 'Most Popular',
     format: 'Live Online',
     duration: '10 weeks',
@@ -298,11 +298,11 @@ export const fellowships: Fellowship[] = [
   },
   {
     slug: 'cohort-washington',
-    name: 'Cohort Washington',
-    tagline: 'Power BI Data Analyst Fellowship — Summer 2026 cohort.',
+    name: 'November Cohort',
+    tagline: 'Data Analyst Fellowship — Summer 2026 cohort.',
     description:
-      'Cohort Washington is our October intake of the Power BI Data Analyst Fellowship. Join a tight-knit group of 30 analysts, get live instruction twice a week, and build a portfolio of real reports by October.',
-    badge: 'Starts October 1st',
+      'November Cohort is our October intake of the Data Analyst Fellowship. Join a tight-knit group of 30 analysts, get live instruction twice a week, and build a portfolio of real reports by October.',
+    badge: 'Starts November 14th',
     format: 'Live Online',
     duration: '10 weeks',
     startDate: 'October 1, 2026',
@@ -325,9 +325,9 @@ export const fellowships: Fellowship[] = [
   {
     slug: 'cohort-lincoln',
     name: 'Cohort Lincoln',
-    tagline: 'Power BI Data Analyst Fellowship — Fall 2026 cohort.',
+    tagline: 'Data Analyst Fellowship — Fall 2026 cohort.',
     description:
-      'Cohort Lincoln is our September intake of the Power BI Data Analyst Fellowship. A focused cohort of 30 learners working through the full curriculum together, with dedicated office hours and peer accountability.',
+      'Cohort Lincoln is our September intake of the Data Analyst Fellowship. A focused cohort of 30 learners working through the full curriculum together, with dedicated office hours and peer accountability.',
     badge: 'Starts Sep 5',
     format: 'Live Online',
     duration: '10 weeks',
