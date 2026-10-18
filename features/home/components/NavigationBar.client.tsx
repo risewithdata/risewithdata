@@ -51,7 +51,8 @@ const navigation = [
       },
     ],
   },
-  { label: 'Contact Us', href: '/contact' },
+  { label: 'Contact Us',         href: '/contact' },
+  { label: 'Verify Certificate', href: '/verify-certificate' },
   /* { label: 'Donate', href: '/donate' }, */
 ];
 
