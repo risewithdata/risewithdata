@@ -13,6 +13,7 @@ const plans = [
     popular: false,
     cta: 'Apply Free',
     href: '/apply',
+    badge: null,
     perks: [
       { text: '5 weeks of live, instructor-led training', highlight: false },
       { text: '10 live sessions (60 min class + 15 min practice) — 12.5 hours total', highlight: false },
@@ -27,12 +28,13 @@ const plans = [
     name: 'Core',
     icon: '📘',
     iconBg: 'bg-blue-50',
-    description: 'A fuller curriculum with more projects and more practice.',
+    description: 'A fuller curriculum with more projects, more practice, and Certificate.',
     price: '$89',
     priceNote: 'one-time',
     popular: false,
     cta: 'Enroll Now',
     href: '/checkout?plan=Core',
+    badge: null,
     perks: [
       { text: '7 weeks of live, instructor-led training', highlight: false },
       { text: '14 live sessions (60 min class + 15 min practice) — 17.5 hours total', highlight: false },
@@ -42,7 +44,7 @@ const plans = [
       { text: 'Certification of Training', highlight: true },
     ],
     additions: [
-      '+2 extra weeks & 4 more sessions vs Starter',
+      '+2 extra weeks & 4 more sessions',
       '+2 additional Power BI projects',
       'Resume review & feedback',
       'Certification of Training',
@@ -59,6 +61,7 @@ const plans = [
     popular: true,
     cta: 'Enroll Now',
     href: '/checkout?plan=Advanced',
+    badge: null,
     perks: [
       { text: '10 weeks of live, instructor-led training', highlight: false },
       { text: '20 live sessions (60 min class + 15 min practice) — 25 hours total', highlight: false },
@@ -69,7 +72,7 @@ const plans = [
       { text: 'Portfolio website building guidance', highlight: true },
     ],
     additions: [
-      '+3 extra weeks & 6 more sessions vs Core',
+      '+3 extra weeks & 6 more sessions',
       '3 Microsoft Fabric Data Engineering projects',
       'Portfolio website building guidance',
     ],
@@ -83,15 +86,16 @@ const plans = [
     price: '$250',
     priceNote: 'one-time',
     popular: false,
+    badge: 'Best Value + 1:1 Coaching',
     cta: 'Enroll Now',
     href: '/checkout?plan=Elite',
     perks: [
       { text: 'Everything included in Advanced', highlight: false },
       { text: 'Certification of Training', highlight: false },
-      { text: '4 sessions of 1:1 training (45 mins each) on Power BI & Microsoft Fabric Data Engineering', highlight: true },
+      { text: '6 sessions of 1:1 training (45 mins each) on Power BI & Microsoft Fabric Data Engineering', highlight: true },
     ],
     additions: [
-      '4 × 45-min personal 1:1 coaching sessions',
+      '6 × 45-min personal 1:1 coaching sessions',
       'Direct feedback on your Power BI & Data Engineering work',
     ],
     footnote: null,
@@ -132,6 +136,15 @@ export default function PricingPage() {
                   <div className="absolute -top-4 left-0 right-0 flex justify-center">
                     <span className="whitespace-nowrap rounded-full bg-amber-400 px-5 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow">
                       Most Popular
+                    </span>
+                  </div>
+                )}
+
+                {/* Custom badge (e.g. Elite) */}
+                {(plan as any).badge && (
+                  <div className="absolute -top-4 left-0 right-0 flex justify-center">
+                    <span className="whitespace-nowrap rounded-full bg-purple-600 px-5 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow">
+                      {(plan as any).badge}
                     </span>
                   </div>
                 )}
@@ -185,8 +198,8 @@ export default function PricingPage() {
                   {/* Additions vs previous plan */}
                   {plan.additions && (
                     <div className="mt-3 rounded-xl border border-brand-100 bg-brand-50 p-3">
-                      <p className="mb-1.5 text-xs font-bold uppercase tracking-wider text-brand-600">
-                        ✦ Added vs {plan.name === 'Core' ? 'Starter' : plan.name === 'Advanced' ? 'Core' : 'Advanced'}
+                      <p className="mb-1.5 text-xs font-bold tracking-wider text-brand-600">
+                        vs {plan.name === 'Core' ? 'Starter' : plan.name === 'Advanced' ? 'Core' : 'Advanced'}
                       </p>
                       <ul className="space-y-1">
                         {plan.additions.map((item) => (
