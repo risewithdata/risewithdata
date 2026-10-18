@@ -23,7 +23,7 @@ export const featuredPrograms = [
     slug: 'cohort-washington',
     format: 'Live Online',
     duration: '10 weeks',
-    startDate: 'October 1, 2026',
+    startDate: 'November 14, 2026',
     level: 'Beginner – Intermediate',
     rating: 4.9,
     enrollments: '20 seats available',

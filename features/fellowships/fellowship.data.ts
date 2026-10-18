@@ -299,13 +299,13 @@ export const fellowships: Fellowship[] = [
   {
     slug: 'cohort-washington',
     name: 'November Cohort',
-    tagline: 'Data Analyst Fellowship — Summer 2026 cohort.',
+    tagline: 'Data Analyst Fellowship — November 2026 cohort.',
     description:
-      'November Cohort is our October intake of the Data Analyst Fellowship. Join a tight-knit group of 30 analysts, get live instruction twice a week, and build a portfolio of real reports by October.',
+      'November Cohort is our November intake of the Data Analyst Fellowship. Join a tight-knit group of 20 students, get live instruction twice a week, and build a portfolio of real projects.',
     badge: 'Starts November 14th',
     format: 'Live Online',
     duration: '10 weeks',
-    startDate: 'October 1, 2026',
+    startDate: 'November 14, 2026',
     level: '10 - 11:15 AM Live, Sat & Sun (EST)',
     price: '$1,297',
     originalPrice: '$1,897',

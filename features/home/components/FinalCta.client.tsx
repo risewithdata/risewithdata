@@ -26,7 +26,7 @@ export function FinalCta() {
 
               <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {[
-                  { v: '20',           l: 'Seats total' },
+                  { v: '20',           l: 'Total seats' },
                   { v: '10 wks',        l: 'Duration' },
                   { v: '6',      l: 'Projects' },
                   { v: '10 - 11:15 AM', l: 'Live, Sat & Sun (EST)', small: true },
