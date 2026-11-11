@@ -11,7 +11,7 @@ export function LearningJourney() {
             How It Works
           </p>
           <h2 className="mt-3 text-4xl font-bold tracking-tight">
-            Three steps to your data analyst career
+            Three steps to build data analyst skills
           </h2>
           <p className="mt-4 text-lg text-slate-400">
             A clear, structured path from application to your first or next analytics role.
@@ -48,7 +48,7 @@ export function LearningJourney() {
           {[
             { value: '10 weeks', label: 'Structured curriculum' },
             { value: '20',      label: 'Live sessions per cohort' },
-            { value: '5+',      label: 'Portfolio reports' },
+            { value: '6',      label: 'Portfolio projects' },
           ].map((item) => (
             <div key={item.label} className="bg-slate-950 px-8 py-8 text-center">
               <p className="text-3xl font-bold text-white">{item.value}</p>

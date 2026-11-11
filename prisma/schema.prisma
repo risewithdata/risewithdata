@@ -52,6 +52,7 @@ model VolunteerApplication {
   email               String
   zipcode             String
   linkedinName        String
+  role                String?
   resumeFileName      String
   resumeFileType      String
   resumeFileSizeBytes Int
@@ -147,9 +148,10 @@ model Enrollment {
   fullName               String
   email                  String
   phone                  String
-  city                   String
+  zipcode                String
   courseName             String
   amount                 Int
+  couponCode             String?
   stripeSessionId        String?          @unique
   stripePaymentIntentId  String?
   status                 EnrollmentStatus @default(PENDING)
@@ -161,6 +163,19 @@ model Enrollment {
   @@index([status])
   @@index([courseName])
   @@index([createdAt])
+}
+
+model Coupon {
+  id              String    @id @default(cuid())
+  code            String    @unique
+  discountPercent Int
+  isActive        Boolean   @default(true)
+  maxUses         Int?
+  usedCount       Int       @default(0)
+  expiresAt       DateTime?
+  createdAt       DateTime  @default(now())
+
+  @@index([code])
 }
 
 // ============================================================================

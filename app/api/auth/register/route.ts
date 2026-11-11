@@ -14,18 +14,56 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Password must be at least 8 characters.' }, { status: 400 });
     }
 
-    // Email must belong to an approved application
-    const approved = await prisma.$queryRawUnsafe<{ id: string }[]>(
+    // Email must belong to an approved application.
+    // Fallback: if the webhook hasn't fired yet (race condition) or no ACTIVE
+    // course existed at payment time, check for a PAID Enrollment and create
+    // the StudentApplication on the spot so registration succeeds.
+    let approved = await prisma.$queryRawUnsafe<{ id: string }[]>(
       `SELECT id FROM "StudentApplication"
        WHERE LOWER(email) = LOWER($1) AND status = 'APPROVED'::"ApplicationStatus"
        LIMIT 1`,
       email
     );
+
     if (!approved.length) {
-      return NextResponse.json(
-        { error: 'No approved application found for this email address.' },
-        { status: 403 }
+      const paidEnrollment = await prisma.$queryRawUnsafe<{
+        id: string; fullName: string; courseName: string;
+      }[]>(
+        `SELECT id, "fullName", "courseName"
+         FROM "Enrollment"
+         WHERE LOWER(email) = LOWER($1) AND status = 'PAID'::"EnrollmentStatus"
+         ORDER BY "paidAt" DESC LIMIT 1`,
+        email
       );
+
+      if (!paidEnrollment.length) {
+        return NextResponse.json(
+          { error: 'No approved application found for this email address.' },
+          { status: 403 }
+        );
+      }
+
+      // Create the StudentApplication now (webhook was too slow or missed a course)
+      const nameParts   = (paidEnrollment[0].fullName ?? '').trim().split(' ');
+      const fn          = nameParts[0] ?? firstName;
+      const ln          = nameParts.slice(1).join(' ') || fn;
+
+      const courses = await prisma.$queryRawUnsafe<{ name: string }[]>(
+        `SELECT name FROM "AdminCourse"
+         WHERE status = 'ACTIVE'::"CourseStatus"
+         ORDER BY "createdAt" DESC LIMIT 1`
+      );
+      const courseApplied = courses[0]?.name ?? null;
+
+      const appId = 'c' + Math.random().toString(36).slice(2, 12) + Date.now().toString(36);
+      await prisma.$queryRawUnsafe(
+        `INSERT INTO "StudentApplication"
+           (id, "firstName", "lastName", email, zipcode, "linkedinName", "courseApplied",
+            "resumeFileName", "resumeFileType", "resumeFileSizeBytes", status, "createdAt", "updatedAt")
+         VALUES ($1,$2,$3,$4,'','',$5,'','',0,'APPROVED'::"ApplicationStatus",NOW(),NOW())`,
+        appId, fn, ln, email.toLowerCase().trim(), courseApplied
+      );
+      approved = [{ id: appId }];
     }
 
     // Check if account already exists

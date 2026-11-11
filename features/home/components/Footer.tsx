@@ -11,13 +11,12 @@ export function Footer() {
               RiseWithData
             </a>
             <p className="mt-4 max-w-xs text-sm leading-relaxed">
-              Live, cohort-based Power BI and data analytics training designed to get
-              you job-ready in 10 weeks.
+              Live, project-based Power BI and data analytics training. Build in-demand skills in 10 weeks.
             </p>
             <div className="mt-6 flex gap-4 text-sm">
-              <a href="#" className="hover:text-white">Twitter</a>
-              <a href="#" className="hover:text-white">LinkedIn</a>
-              <a href="#" className="hover:text-white">Instagram</a>
+              <a href="https://www.linkedin.com/company/rise-with-data/posts/" className="hover:text-white" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
             </div>
           </div>
 
@@ -31,7 +30,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/fellowships/cohort-washington" className="hover:text-white">
+                <a href="/fellowships/power-bi-data-analyst-fellowship" className="hover:text-white">
                   November Cohort
                 </a>
               </li>
@@ -44,7 +43,6 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm">
               <li><a href="/about" className="hover:text-white">About Us</a></li>
               <li><a href="/contact" className="hover:text-white">Contact</a></li>
-              <li><a href="#" className="hover:text-white">Blog</a></li>
             </ul>
           </div>
 
@@ -53,7 +51,7 @@ export function Footer() {
             <p className="font-semibold text-white">Support</p>
             <ul className="mt-4 space-y-3 text-sm">
               <li><a href="/contact" className="hover:text-white">Help Center</a></li>
-              <li><a href="/terms" className="hover:text-white">Terms of Service</a></li>
+              <li><a href="/terms" className="hover:text-white">Terms &amp; Conditions</a></li>
               <li><a href="/privacy" className="hover:text-white">Privacy Policy</a></li>
               <li><a href="/cookies" className="hover:text-white">Cookie Policy</a></li>
             </ul>

@@ -16,7 +16,7 @@ const steps = [
   {
     step: '02',
     title: 'Application Review',
-    body: 'Our team reviews your application within 3–5 business days and reaches out via email.',
+    body: 'Our team reviews your application within 2 weeks and reaches out via email.',
   },
   {
     step: '03',
@@ -43,52 +43,8 @@ export default function ApplyPage() {
     <NavigationBar />
     <main className="bg-slate-50">
 
-      {/* ── Hero ── */}
-      <section className="bg-[#0f172a] px-6 py-20 text-center text-white lg:px-8">
-        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-brand-400">
-          Applications Open
-        </p>
-        <h1 className="mx-auto max-w-2xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-          Apply to the <span className="text-brand-400">RiseWithData</span> Fellowship
-        </h1>
-        <p className="mx-auto mt-5 max-w-xl text-base text-slate-300">
-          Gain real-world Power BI skills, hands-on project experience, and career support — at no cost to you.
-        </p>
-
-        {/* stats */}
-        <div className="mx-auto mt-10 flex max-w-lg flex-wrap justify-center gap-8">
-          {[
-            { value: '100%', label: 'Free Fellowship' },
-            { value: '10 wks', label: 'Program Duration' },
-            { value: 'Free Certification', label: 'Upon completion' },
-          ].map((s) => (
-            <div key={s.label} className="text-center">
-              <p className="text-3xl font-bold text-white">{s.value}</p>
-              <p className="mt-1 text-xs text-slate-400">{s.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Perks ── */}
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <h2 className="mb-10 text-center text-2xl font-bold text-slate-900">What You'll Get</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {perks.map((p) => (
-            <div
-              key={p.label}
-              className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm"
-            >
-              <div className="mb-3 text-4xl">{p.icon}</div>
-              <h3 className="font-semibold text-slate-900">{p.label}</h3>
-              <p className="mt-2 text-sm text-slate-500">{p.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ── Main content: form + sidebar ── */}
-      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+      <section className="mx-auto max-w-7xl px-6 pb-24 pt-10 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-5">
 
           {/* LEFT: process + what happens next */}
@@ -142,7 +98,7 @@ export default function ApplyPage() {
             <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
               <h2 className="mb-1 text-xl font-bold text-slate-900">Student Application</h2>
               <p className="mb-7 text-sm text-slate-500">
-                All fields are required. We'll review and get back to you within 3–5 business days.
+                All fields are required. We'll review and get back to you within 2 weeks.
               </p>
               <ApplyForm />
             </div>

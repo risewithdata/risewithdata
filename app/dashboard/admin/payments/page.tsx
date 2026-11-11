@@ -1,13 +1,14 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import { AdminLayout } from '@features/admin/components/AdminLayout';
 
 interface Enrollment {
   id: string;
   fullName: string;
   email: string;
   phone: string;
-  city: string;
+  zipcode: string;
   courseName: string;
   amount: number;
   stripeSessionId: string | null;
@@ -75,36 +76,8 @@ export default function AdminPaymentsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-
-      {/* Navbar */}
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm">
-        <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3">
-          <div className="flex items-center gap-3">
-            <a href="/" className="no-underline"><img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
-            <span className="hidden rounded-md bg-brand-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 sm:block">Admin</span>
-          </div>
-          <nav className="flex flex-wrap items-center gap-1">
-            <a href="/dashboard/admin"              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Dashboard</a>
-            <a href="/dashboard/admin/applications" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Student Apps</a>
-            <a href="/dashboard/admin/volunteers"   className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Volunteers</a>
-            <a href="/dashboard/admin/instructors"  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Instructors</a>
-            <a href="/dashboard/admin/courses"      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Courses</a>
-            <a href="/dashboard/admin/students"     className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Students</a>
-            <a href="/dashboard/admin/certificates" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Certificates</a>
-            <a href="/dashboard/admin/payments"     className="rounded-lg bg-brand-100 px-3 py-2 text-sm font-medium text-brand-700">Payments</a>
-            <button
-              onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}
-              className="ml-2 flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100"
-            >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
-              Logout
-            </button>
-          </nav>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-screen-xl px-6 py-8">
+    <AdminLayout>
+      <div className="mx-auto max-w-screen-xl px-6 py-8">
 
         <div className="mb-6">
           <h1 className="text-2xl font-bold text-slate-900">Payments</h1>
@@ -160,7 +133,7 @@ export default function AdminPaymentsPage() {
             <table className="w-full min-w-[760px] border-collapse text-sm">
               <thead>
                 <tr className="border-b border-slate-100 bg-slate-50">
-                  {['Student', 'Email', 'Phone', 'City', 'Course', 'Amount', 'Status', 'Date'].map(h => (
+                  {['Student', 'Email', 'Phone', 'Zipcode', 'Course', 'Amount', 'Status', 'Date'].map(h => (
                     <th key={h} className="px-4 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">{h}</th>
                   ))}
                 </tr>
@@ -181,7 +154,7 @@ export default function AdminPaymentsPage() {
                     <td className="px-4 py-3 font-medium text-slate-800">{e.fullName}</td>
                     <td className="px-4 py-3 text-slate-500">{e.email}</td>
                     <td className="px-4 py-3 text-slate-500">{e.phone}</td>
-                    <td className="px-4 py-3 text-slate-500">{e.city}</td>
+                    <td className="px-4 py-3 text-slate-500">{e.zipcode}</td>
                     <td className="px-4 py-3 text-slate-600">{e.courseName}</td>
                     <td className="px-4 py-3 font-semibold text-slate-800">{fmtAmount(e.amount)}</td>
                     <td className="px-4 py-3">
@@ -213,7 +186,7 @@ export default function AdminPaymentsPage() {
             </div>
           )}
         </div>
-      </main>
-    </div>
+      </div>
+    </AdminLayout>
   );
 }

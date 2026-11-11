@@ -23,13 +23,13 @@ export const featuredPrograms = [
     slug: 'cohort-washington',
     format: 'Live Online',
     duration: '10 weeks',
-    startDate: 'November 14, 2026',
+    startDate: 'November 28, 2026',
     level: 'Beginner – Intermediate',
     rating: 4.9,
     enrollments: '20 seats available',
     price: '$1,297',
-    badge: 'Starts November 14th',
-    desc: 'Summer cohort of the Power BI fellowship. Intensive, cohort-based, with twice-weekly live sessions.',
+    badge: 'Starts November 28th',
+    desc: 'November cohort of the Power BI fellowship. Intensive, cohort-based, with twice-weekly live sessions.',
   },
   {
     title: 'Cohort Lincoln',
@@ -50,7 +50,7 @@ export const journeySteps = [
   {
     step: '01',
     title: 'Apply & Get Accepted',
-    description: 'Fill out a short application and secure your seat in the next cohort. No prior data experience required.',
+    description: 'For Starter track — fill out a short application. We\'ll let you know the result within 2 weeks. For other tracks — pay now and get instant confirmation.',
     icon: '📋',
     cta: 'Apply Now',
   },
@@ -64,7 +64,7 @@ export const journeySteps = [
   {
     step: '03',
     title: 'Launch Your Data Career',
-    description: 'Graduate with a portfolio of 6 projects, a verified certificate.',
+    description: 'Graduate with 6 portfolio projects, a verified certificate, and career coaching.',
     icon: '🚀',
     cta: 'See Outcomes',
   },
@@ -107,28 +107,20 @@ export const testimonials = [
 
 export const instructors = [
   {
-    name: 'Aisha Patel',
-    title: 'Senior Data Analyst',
-    company: 'Microsoft',
-    experience: '10+ years',
-    bio: 'Certified Power BI expert who has built enterprise reports at Microsoft and trained 3,000+ analysts globally.',
+    name: 'Ranjana Chowdaiah',
+    title: 'Business Intelligence & Analytics Consultant',
+    company: 'Xerox',
+    experience: 'Lead Trainer',
+    bio: 'Business Intelligence and Analytics Consultant at Xerox. Brings real-world enterprise BI experience to every live session.',
     social: { twitter: '#', linkedin: '#' },
   },
   {
-    name: 'Marcus Williams',
-    title: 'BI Architect',
-    company: 'Deloitte',
-    experience: '12 years',
-    bio: 'Led data transformation projects across finance, healthcare, and retail. Specializes in DAX optimization and scalable data modeling.',
-    social: { twitter: '#', linkedin: '#' },
-  },
-  {
-    name: 'Priya Nair',
-    title: 'Analytics Manager',
-    company: 'Amazon',
-    experience: '9 years',
-    bio: 'Built Amazon\'s internal analytics training program and is passionate about visual storytelling for non-technical stakeholders.',
-    social: { twitter: '#', linkedin: '#' },
+    name: 'Lokesh Penugonda',
+    title: 'Senior Business Intelligence Analyst',
+    company: 'Support Trainer',
+    experience: 'Support Trainer',
+    bio: 'Senior Business Intelligence Analyst with hands-on Power BI expertise. Dedicated to helping students build actionable insights.',
+    social: { twitter: '#', linkedin: 'https://www.linkedin.com/in/lokesh-penugonda' },
   },
 ];
 
@@ -220,12 +212,12 @@ export const faqs = [
   {
     question: 'How many hours per week does this take?',
     answer:
-      'Plan for 5–6 hours per week: two live 75-minutes sessions plus hands-on project work. All sessions are recorded so you can catch up if you miss one.',
+      'Plan for 5–6 hours per week: two live 75-minute sessions plus hands-on project work. All sessions are recorded so you can catch up if you miss one.',
   },
   {
     question: 'What do I get when I finish?',
     answer:
-      'A verified RiseWithData Fellowship Certificate, a shareable portfolio of 6+ real projects, career coaching, and access to our alumni network.',
+      'A verified RiseWithData Fellowship Certificate, a shareable portfolio of 6 real projects, career coaching, and access to our alumni network.',
   },
   {
     question: 'What tools do I need?',

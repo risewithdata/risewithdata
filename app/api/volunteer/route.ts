@@ -12,6 +12,7 @@ export async function POST(req: NextRequest) {
     const firstName    = String(formData.get('firstName')    ?? '').trim();
     const lastName     = String(formData.get('lastName')     ?? '').trim();
     const email        = String(formData.get('email')        ?? '').trim();
+    const role         = String(formData.get('role')         ?? '').trim() || null;
     const zipcode      = String(formData.get('zipcode')      ?? '').trim();
     const linkedinName = String(formData.get('linkedinName') ?? '').trim();
     const file         = formData.get('resume') as File | null;
@@ -26,6 +27,7 @@ export async function POST(req: NextRequest) {
         firstName,
         lastName,
         email,
+        role,
         zipcode,
         linkedinName,
         resumeFileName:      file.name,
@@ -42,7 +44,7 @@ export async function POST(req: NextRequest) {
       to:      [TO_EMAIL],
       replyTo: undefined,
       subject: `New Instructor/Volunteer Application — ${firstName} ${lastName}`,
-      html:    buildEmailHtml({ firstName, lastName, zipcode, linkedinName, fileName: file.name, fileSize: file.size }),
+      html:    buildEmailHtml({ firstName, lastName, role, zipcode, linkedinName, fileName: file.name, fileSize: file.size }),
       attachments: [{ filename: file.name, content: fileBuffer }],
     });
 
@@ -54,7 +56,7 @@ export async function POST(req: NextRequest) {
 }
 
 function buildEmailHtml(d: {
-  firstName: string; lastName: string;
+  firstName: string; lastName: string; role: string | null;
   zipcode: string; linkedinName: string; fileName: string; fileSize: number;
 }) {
   const sizeMb = (d.fileSize / 1024 / 1024).toFixed(2);
@@ -78,6 +80,7 @@ function buildEmailHtml(d: {
               <td style="padding:32px 36px;">
                 <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
                   ${row('Name',      `${d.firstName} ${d.lastName}`)}
+                  ${d.role ? row('Role', d.role) : ''}
                   ${row('Zipcode',   d.zipcode)}
                   ${row('LinkedIn',  `<a href="https://linkedin.com/in/${d.linkedinName}" style="color:#2563eb;">linkedin.com/in/${d.linkedinName}</a>`)}
                   ${row('Resume',    `${d.fileName} <span style="color:#64748b;font-size:12px;">(${sizeMb} MB — attached)</span>`)}

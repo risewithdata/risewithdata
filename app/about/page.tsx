@@ -120,12 +120,7 @@ export default function AboutPage() {
         <section className="bg-white py-16">
           <div className="mx-auto max-w-6xl px-6">
 
-            <div className="flex items-center gap-3 mb-10">
-              <div className="h-px w-10 bg-brand-500" />
-              <span className="text-xs font-bold uppercase tracking-widest text-brand-600">Advisors</span>
-            </div>
-
-            <h2 className="text-3xl font-bold text-slate-900 mb-10">Meet Our Advisors</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-5">Our Team</h2>
 
             <div className="flex flex-wrap gap-8">
               {/* Leland Shamo */}
@@ -136,11 +131,61 @@ export default function AboutPage() {
                   className="h-24 w-24 rounded-full object-cover ring-2 ring-brand-200 flex-shrink-0"
                 />
                 <div>
-                  <p className="text-lg font-semibold text-slate-900">Leland Shamo</p>
-                  <p className="text-sm text-brand-600 font-medium mt-0.5">Sr. Manager, Labor Planning &amp; Analytics</p>
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-lg font-semibold text-slate-900">Leland Shamo</p>
+                    <a href="https://www.linkedin.com/in/leland-c-shamo/" target="_blank" rel="noreferrer" aria-label="Leland Shamo on LinkedIn" className="flex-shrink-0 text-[#0A66C2] hover:opacity-75 transition-opacity">
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                  </div>
+                  <p className="text-sm text-brand-600 font-medium mt-0.5">CEO, Rise With Data, <br/>
+Sr. Manager, Talent Acquisition Operations & People Analytics, Renuity</p>
                   <p className="mt-3 text-sm leading-relaxed text-slate-600">
-                    Seasoned analytics leader with deep expertise in workforce planning, data strategy,
-                    and translating complex data insights into actionable business decisions.
+                    Ex-Marine and workforce planning leader with 25+ years of experience building recruiting teams and People Analytics models at Renuity, Chewy, Misfits Market, and Carvana.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h2 className="text-3xl font-bold text-slate-900 mb-5 mt-10">Our Advisors</h2>
+
+            <div className="flex flex-wrap gap-8">
+              {/* Leland Shamo */}
+              <div className="flex items-center gap-6 rounded-2xl border border-slate-100 bg-slate-50 p-6 shadow-sm w-full max-w-md">
+                <img
+                  src="/Chay.png"
+                  alt="Chay Farrell Matney"
+                  className="h-24 w-24 rounded-full object-cover ring-2 ring-brand-200 flex-shrink-0"
+                />
+                <div>
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-lg font-semibold text-slate-900">Chay Farrell Matney</p>
+                    <a href="https://www.linkedin.com/in/cpieper/" target="_blank" rel="noreferrer" aria-label="Chay Farrell Matney on LinkedIn" className="flex-shrink-0 text-[#0A66C2] hover:opacity-75 transition-opacity">
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                  </div>
+                  <p className="text-sm text-brand-600 font-medium mt-0.5">Director, Human Resources, Griffith Foods</p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    Strategic HR executive with 17+ years aligning people strategy with business growth and operational transformation across manufacturing, fulfillment, and retail, including roles at Chewy, Ingredion, and Target.
+                  </p>
+                </div>
+              </div>
+               <div className="flex items-center gap-6 rounded-2xl border border-slate-100 bg-slate-50 p-6 shadow-sm w-full max-w-md">
+                <img
+                  src="/Headshot.png"
+                  alt="Chay Farrell Matney"
+                  className="h-24 w-24 rounded-full object-cover ring-2 ring-brand-200 flex-shrink-0"
+                />
+                <div>
+                  <div className="flex items-center justify-between gap-2">
+                    <p className="text-lg font-semibold text-slate-900">Brack Sullivan</p>
+                    <a href="https://www.linkedin.com/in/brack-s-3882722/" target="_blank" rel="noreferrer" aria-label="Brack Sullivan on LinkedIn" className="flex-shrink-0 text-[#0A66C2] hover:opacity-75 transition-opacity">
+                      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                  </div>
+                  <p className="text-sm text-brand-600 font-medium mt-0.5">Head of Talent Acquisition, Lyric
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    Global talent acquisition executive with 20+ years of experience in enterprise talent strategy, workforce planning, and building high-performing recruiting teams across GitHub, Chewy, Disney, and The Home Depot.
                   </p>
                 </div>
               </div>

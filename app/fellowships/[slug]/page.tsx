@@ -55,7 +55,7 @@ export default function FellowshipPage({ params }: Props) {
                   { icon: '📡', label: fellowship.format },
                   { icon: '⏱', label: fellowship.duration },
                   { icon: '📅', label: fellowship.startDate },
-                  { icon: '📊', label: fellowship.level },
+                  { icon: '🕙', label: fellowship.level },
                 ].map((pill) => (
                   <span
                     key={pill.label}
@@ -95,7 +95,7 @@ export default function FellowshipPage({ params }: Props) {
       <section className="border-b border-slate-100 bg-white py-6">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <p className="mb-4 text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
-            Our graduates work at
+            Technologies covered are used by most Fortune 500 companies
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {fellowship.hiringPartners.map((co) => (
@@ -117,7 +117,7 @@ export default function FellowshipPage({ params }: Props) {
             <section id="outcomes">
               <SectionLabel>What You&apos;ll Learn</SectionLabel>
               <h2 className="mt-2 text-3xl font-bold text-slate-900">
-                Skills that get you hired
+                Skills employers look for
               </h2>
               <p className="mt-3 text-slate-500">
                 Every outcome is drawn from real job descriptions across top analytics teams.
@@ -155,7 +155,7 @@ export default function FellowshipPage({ params }: Props) {
                 {fellowship.curriculum.length}-week program, week by week
               </h2>
               <p className="mt-3 text-slate-500">
-                Live sessions every Saturday & Sunday, 10 - 11:15 AM EST.
+                🕙 10:00 – 11:15 AM ET, Sat & Sun
               </p>
               <div className="mt-8 space-y-3">
                 {fellowship.curriculum.map((mod, i) => {
@@ -181,7 +181,7 @@ export default function FellowshipPage({ params }: Props) {
                             <p className="mt-0.5 font-semibold text-slate-900">{mod.title}</p>
                           </div>
                         </div>
-                        <span className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border text-sm transition ${isOpen ? 'border-brand-200 bg-brand-600 text-brand-600' : 'border-slate-200 text-slate-400'}`}>
+                        <span className={`flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border text-sm transition ${isOpen ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-200 text-slate-400'}`}>
                           {isOpen ? '−' : '+'}
                         </span>
                       </button>
@@ -218,9 +218,21 @@ export default function FellowshipPage({ params }: Props) {
                     <div className="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-brand-500 text-xl font-bold text-white">
                       {ins.initials}
                     </div>
-                    <div>
-                      <p className="font-bold text-slate-900">{ins.name}</p>
-                      <p className="text-sm text-brand-600">{ins.title} · {ins.company}</p>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="font-bold text-slate-900">
+                          {ins.name}
+                          {ins.role && (
+                            <span className="ml-2 font-semibold text-brand-600"> — {ins.role}</span>
+                          )}
+                        </p>
+                        {ins.linkedin && (
+                          <a href={ins.linkedin} target="_blank" rel="noreferrer" aria-label={`${ins.name} on LinkedIn`} className="flex-shrink-0 text-[#0A66C2] hover:opacity-75 transition-opacity">
+                            <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                          </a>
+                        )}
+                      </div>
+                      <p className="text-sm text-brand-600">{ins.title}, {ins.company}</p>
                       <p className="mt-3 text-sm leading-relaxed text-slate-500">{ins.bio}</p>
                     </div>
                   </div>
@@ -282,7 +294,7 @@ export default function FellowshipPage({ params }: Props) {
                         aria-expanded={isOpen}
                       >
                         {faq.question}
-                        <span className={`ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border text-sm transition ${isOpen ? 'border-brand-200 bg-brand-600 text-brand-600' : 'border-slate-200 text-slate-400'}`}>
+                        <span className={`ml-4 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full border text-sm transition ${isOpen ? 'border-brand-600 bg-brand-600 text-white' : 'border-slate-200 text-slate-400'}`}>
                           {isOpen ? '−' : '+'}
                         </span>
                       </button>
@@ -317,7 +329,7 @@ export default function FellowshipPage({ params }: Props) {
             </div>
           )}
           <a
-            href="/apply"
+            href="/pricing"
             className="flex-1 rounded-xl bg-brand-600 py-3 text-center text-sm font-semibold text-white hover:bg-brand-600"
           >
             Enroll Now
@@ -348,7 +360,7 @@ function EnrollCard({ fellowship }: { fellowship: ReturnType<typeof getFellowshi
 
       <div className="p-6">
         <a
-          href="/apply"
+          href="/pricing"
           className="block w-full rounded-xl bg-brand-600 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-brand-600"
         >
           Enroll Now
@@ -370,9 +382,7 @@ function EnrollCard({ fellowship }: { fellowship: ReturnType<typeof getFellowshi
             '20 live sessions',
             'Real-world capstone project',
             'Instructor & peer feedback',
-            'Career coaching + resume review',
             'Fellowship certificate',
-            'Alumni community access',
           ].map((item) => (
             <div key={item} className="flex items-center gap-2 text-sm text-slate-600">
               <span className="text-brand-600">✓</span>

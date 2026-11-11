@@ -2,6 +2,7 @@
 
 import { useState, useEffect, use } from 'react';
 import { useToast } from '@shared/ui/ToastProvider';
+import { AdminLayout } from '@features/admin/components/AdminLayout';
 
 type Status = 'PENDING' | 'APPROVED' | 'REJECTED';
 
@@ -194,53 +195,33 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
   const shortId = (s: string) => s.slice(-8).toUpperCase();
 
   if (loading) return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-      <div className="flex flex-col items-center gap-3">
-        <svg className="h-8 w-8 animate-spin text-brand-500" fill="none" viewBox="0 0 24 24">
-          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
-        </svg>
-        <p className="text-sm text-slate-500">Loading application…</p>
+    <AdminLayout>
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+          <svg className="h-8 w-8 animate-spin text-brand-500" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/>
+          </svg>
+          <p className="text-sm text-slate-500">Loading application…</p>
+        </div>
       </div>
-    </div>
+    </AdminLayout>
   );
 
   if (error || !app) return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-      <div className="text-center">
-        <p className="text-red-600 font-medium">{error || 'Application not found'}</p>
-        <a href="/dashboard/admin/applications" className="mt-4 inline-block text-sm text-brand-600 hover:underline">← Back to Applications</a>
+    <AdminLayout>
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-600 font-medium">{error || 'Application not found'}</p>
+          <a href="/dashboard/admin/applications" className="mt-4 inline-block text-sm text-brand-600 hover:underline">← Back to Applications</a>
+        </div>
       </div>
-    </div>
+    </AdminLayout>
   );
 
   return (
-    <div className="min-h-screen bg-slate-50">
-
-      {/* ── Navbar ── */}
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm">
-        <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3">
-          <div className="flex items-center gap-3">
-            <a href="/" className="no-underline"><img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
-            <span className="hidden rounded-md bg-brand-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 sm:block">Admin</span>
-          </div>
-          <nav className="flex items-center gap-1">
-            <a href="/dashboard/admin"              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Dashboard</a>
-            <a href="/dashboard/admin/applications" className="rounded-lg bg-brand-50 px-3 py-2 text-sm font-medium text-brand-700">Student Apps</a>
-            <a href="/dashboard/admin/volunteers"   className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Volunteers</a>
-            <a href="/dashboard/admin/instructors"  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Instructors</a>
-            <a href="/dashboard/admin/courses"      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Courses</a>
-            <a href="/dashboard/admin/students"     className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">Students</a>
-            <button onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}
-              className="ml-2 flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
-              Logout
-            </button>
-          </nav>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-screen-xl px-6 py-8">
+    <AdminLayout>
+      <div className="mx-auto max-w-screen-xl px-6 py-8">
 
         {/* ── Back + heading ── */}
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
@@ -492,7 +473,7 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
 
           </div>
         </div>
-      </main>
+      </div>
 
       {/* ── Confirm Dialog ── */}
       {confirm && (
@@ -594,6 +575,6 @@ export default function ApplicationReviewPage({ params }: { params: Promise<{ id
           </div>
         </div>
       )}
-    </div>
+    </AdminLayout>
   );
 }

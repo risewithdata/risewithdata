@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { useToast } from '@shared/ui/ToastProvider';
+import { AdminLayout } from '@features/admin/components/AdminLayout';
 
 interface Instructor {
   id: string;
@@ -49,15 +50,6 @@ interface Stats {
   totalAnnouncements: number;
   totalMaterials: number;
 }
-
-const NAV = [
-  { href: '/dashboard/admin',              label: 'Dashboard' },
-  { href: '/dashboard/admin/applications', label: 'Student Apps' },
-  { href: '/dashboard/admin/volunteers',   label: 'Volunteers' },
-  { href: '/dashboard/admin/instructors',  label: 'Instructors', active: true },
-  { href: '/dashboard/admin/courses',      label: 'Courses' },
-  { href: '/dashboard/admin/students',     label: 'Students' },
-];
 
 function fmtDate(iso: string | null) {
   if (!iso) return '—';
@@ -146,34 +138,8 @@ export default function InstructorDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
-
-      {/* Navbar */}
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white shadow-sm">
-        <div className="mx-auto flex max-w-screen-xl items-center justify-between px-6 py-3">
-          <div className="flex items-center gap-3">
-            <a href="/" className="no-underline"><img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" /></a>
-            <span className="hidden rounded-md bg-brand-100 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 sm:block">Admin</span>
-          </div>
-          <nav className="flex items-center gap-1">
-            {NAV.map((n) => (
-              <a key={n.href} href={n.href}
-                className={`rounded-lg px-3 py-2 text-sm font-medium ${n.active ? 'bg-brand-100 text-brand-700' : 'text-slate-600 hover:bg-slate-100'}`}>
-                {n.label}
-              </a>
-            ))}
-            <button onClick={async () => { await fetch('/api/auth/logout', { method: 'POST' }); window.location.href = '/login'; }}
-              className="ml-2 flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-slate-600 hover:bg-slate-100">
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-              </svg>
-              Logout
-            </button>
-          </nav>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-screen-xl px-6 py-8">
+    <AdminLayout>
+      <div className="mx-auto max-w-screen-xl px-6 py-8">
 
         {/* Back */}
         <a href="/dashboard/admin/instructors"
@@ -367,7 +333,7 @@ export default function InstructorDetailPage() {
 
           </div>
         ) : null}
-      </main>
+      </div>
 
       {/* ── Confirm Dialog ── */}
       {confirm && instructor && (
@@ -425,6 +391,6 @@ export default function InstructorDetailPage() {
           </div>
         </div>
       )}
-    </div>
+    </AdminLayout>
   );
 }

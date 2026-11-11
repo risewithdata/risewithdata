@@ -1,9 +1,11 @@
 export type Instructor = {
   name: string;
+  role?: string;
   title: string;
   company: string;
   initials: string;
   bio: string;
+  linkedin?: string;
 };
 
 export type Module = {
@@ -54,25 +56,21 @@ export type Fellowship = {
 
 const sharedInstructors: Instructor[] = [
   {
-    name: 'Aisha Patel',
-    title: 'Senior Data Analyst',
-    company: 'Microsoft',
-    initials: 'AP',
-    bio: '10+ years building enterprise Power BI reports at Microsoft and Fortune 500 companies. Certified Microsoft Power BI expert who has trained over 3,000 analysts globally.',
+    name: 'Ranjana Chowdaiah',
+    role: 'Lead Trainer',
+    title: 'Business Intelligence & Analytics Consultant',
+    company: 'Xerox',
+    initials: 'RC',
+    bio: 'Lead Trainer at RiseWithData. Business Intelligence and Analytics Consultant at Xerox with deep expertise in Power BI, data modeling, and enterprise reporting. Brings real-world BI project experience to every session.',
+    linkedin: 'https://www.linkedin.com/in/ranjana-b-8b109027/',
   },
   {
-    name: 'Marcus Williams',
-    title: 'BI Architect',
-    company: 'Deloitte',
-    initials: 'MW',
-    bio: 'Led data transformation projects across finance, healthcare, and retail at Deloitte. Specializes in DAX optimization, data modeling, and scalable reporting pipelines.',
-  },
-  {
-    name: 'Priya Nair',
-    title: 'Analytics Manager',
-    company: 'Amazon',
-    initials: 'PN',
-    bio: 'Built Amazon\'s internal analytics training program. Passionate about making data accessible to non-technical stakeholders through visual storytelling.',
+    name: 'Lokesh Penugonda',
+    role: 'Support Trainer',
+    title: 'Senior Business Intelligence Analyst',
+    company: 'RiseWithData',
+    initials: 'LP',
+    bio: 'Support Trainer at RiseWithData. Senior Business Intelligence Analyst with hands-on experience building scalable Power BI solutions. Dedicated to helping students turn data into clear, actionable insights.',
   },
 ];
 
@@ -156,115 +154,120 @@ const sharedWhoIsThisFor = [
 ];
 
 const sharedOutcomes = [
-  'Build production-ready Power BI reports from scratch',
-  'Master DAX formulas and calculated measures',
-  'Design star-schema data models for performance',
-  'Connect and transform data with Power Query (M language)',
-  'Create real-time reports with DirectQuery and incremental refresh',
-  'Apply advanced visual storytelling and UX principles',
-  'Publish, share, and manage reports in Power BI Service',
-  'Present insights to executive stakeholders with confidence',
+  'Clean and prepare messy data with Power Query',
+  'Build star-schema models and DAX measures that calculate KPIs correctly',
+  'Design and publish business dashboards for HR, marketing, and retail',
+  'Ingest data into a Fabric Lakehouse and Warehouse, and clean it with notebooks',
+  'Apply medallion architecture with Bronze, Silver, and Gold layers',
+  'Build end-to-end Fabric projects with pipelines, notebooks, and a semantic model',
+  'Learn from five senior industry professionals and get their feedback',
+  'Present six real projects on a portfolio website, backed by a reviewed resume',
 ];
 
 const sharedCurriculum: Module[] = [
   {
     week: 'Week 1',
-    title: 'Power BI Fundamentals',
+    title: 'Core BI Concepts & Power BI Fundamentals',
     topics: [
-      'Navigating the Power BI ecosystem',
-      'Connecting to Excel, CSV, and SQL sources',
-      'Building your first interactive report',
-      'Publishing to Power BI Service',
+      'What BI is and how data becomes insight',
+      'Power BI Desktop vs. Service; Report, Table, and Model views',
+      'Connecting to Excel, CSV, web, and databases (Import vs. DirectQuery)',
+      'Core visuals, filters, and slicers',
+      'Outcome: you can build reports in Power BI',
     ],
   },
   {
     week: 'Week 2',
-    title: 'Data Modeling & Relationships',
+    title: 'Power Query: Cleaning & Shaping Data',
     topics: [
-      'Star schema vs. flat file design',
-      'Defining table relationships',
-      'Creating date tables and time intelligence',
-      'Best practices for scalable models',
+      'Fixing data types, removing duplicates and errors',
+      'Splitting and merging columns, filtering rows',
+      'Pivot and unpivot, append and merge queries',
+      'Applied steps for repeatable transformations',
+      'Outcome: a clean, analysis-ready dataset',
     ],
   },
   {
     week: 'Week 3',
-    title: 'Power Query & Data Transformation',
+    title: 'Data Modeling: Star Schema & Relationships',
     topics: [
-      'ETL fundamentals in Power Query',
-      'Cleaning and reshaping messy data',
-      'Merging and appending queries',
-      'M language basics for custom transforms',
+      'Fact and dimension tables, star schema',
+      'Primary and foreign keys',
+      'Relationships: cardinality and filter direction',
+      'Building a date table and organizing the model for speed and accuracy',
+      'Outcome: a star-schema model with a date table',
     ],
   },
   {
     week: 'Week 4',
-    title: 'DAX Deep Dive',
+    title: 'DAX Essentials & Dashboard Design',
     topics: [
-      'Calculated columns vs. measures',
-      'CALCULATE, FILTER, and context transition',
-      'Time intelligence: YTD, MoM, rolling averages',
-      'Advanced DAX patterns used in production',
+      'DAX measures: SUM, CALCULATE, IF, filter context',
+      'Basic time intelligence to build KPIs',
+      'Choosing visuals, drill-through, and tooltips',
+      'Layout and color principles, publishing to Power BI Service',
+      'Outcome: a KPI dashboard published to Power BI Service',
     ],
   },
   {
     week: 'Week 5',
-    title: 'Advanced Visualizations',
+    title: 'Project 1: HR & People Analytics',
     topics: [
-      'Choosing the right chart for the story',
-      'Custom visuals and AppSource marketplace',
-      'Conditional formatting and dynamic titles',
-      'Drill-through, tooltips, and bookmarks',
+      'Workforce metrics: headcount, attrition, hiring, and tenure',
+      'Cleaning, modeling, and DAX applied end to end',
+      'Answering the questions HR leaders ask',
+      'Outcome: an HR dashboard for your portfolio',
     ],
   },
   {
     week: 'Week 6',
-    title: 'Power BI Service & Administration',
+    title: 'Project 2: Marketing Analytics',
     topics: [
-      'Workspaces, apps, and sharing permissions',
-      'Scheduled refresh and gateway setup',
-      'Row-level security (RLS)',
-      'Monitoring usage and performance',
+      'Campaign performance across channels',
+      'Spend, conversions, cost per acquisition, and ROI',
+      'Showing which campaigns and audiences are worth the budget',
+      'Outcome: a marketing performance dashboard',
     ],
   },
   {
     week: 'Week 7',
-    title: 'Real-World Capstone Project',
+    title: 'Project 3: Retail & Sales Analytics',
     topics: [
-      'End-to-end dashboard from raw data',
-      'Industry dataset: finance, retail, or HR track',
-      'Peer review and instructor feedback',
-      'Portfolio presentation prep',
+      'Sales, products, stores, and customers',
+      'Revenue trends, best and worst sellers, basket behavior, seasonality',
+      'Time intelligence to compare periods and spot growth',
+      'Outcome: a retail sales dashboard',
     ],
   },
   {
     week: 'Week 8',
-    title: 'Career Launch & Certification',
+    title: 'Fabric Core Concepts: OneLake, Lakehouse & the Bronze Layer',
     topics: [
-      'Demo Day: live portfolio presentations',
-      'Resume and LinkedIn profile review',
-      'Interview prep: data case studies',
-      'Fellowship certificate & next steps',
+      'What Microsoft Fabric is: OneLake, workspaces, and the lakehouse',
+      'Ingesting files and databases with Data Factory pipelines and Dataflows Gen2',
+      'Landing raw data in the Bronze layer as Delta tables',
+      'Outcome: a lakehouse with raw data landed in Bronze',
     ],
   },
   {
     week: 'Week 9',
-    title: 'Real-World Capstone Project',
+    title: 'Medallion Architecture: Silver & Gold with Notebooks',
     topics: [
-      'End-to-end dashboard from raw data',
-      'Industry dataset: finance, retail, or HR track',
-      'Peer review and instructor feedback',
-      'Portfolio presentation prep',
+      'Fabric notebooks with PySpark and SQL',
+      'Cleaning and validating data into the Silver layer',
+      'Modeling business-ready Gold tables',
+      'Scheduled pipelines to automate the flow',
+      'Outcome: an automated Bronze-to-Silver-to-Gold pipeline',
     ],
   },
   {
     week: 'Week 10',
-    title: 'Career Launch & Certification',
+    title: 'End-to-End Solution & Portfolio Launch',
     topics: [
-      'Demo Day: live portfolio presentations',
-      'Resume and LinkedIn profile review',
-      'Interview prep: data case studies',
-      'Fellowship certificate & next steps',
+      'The full medallion pipeline: Bronze to Silver to Gold',
+      'Fabric Warehouse, semantic model, and a Power BI report on top',
+      'Turning all six projects into a portfolio website with case studies',
+      'Outcome: a complete Fabric solution and your portfolio website',
     ],
   },
 ];
@@ -273,17 +276,17 @@ export const fellowships: Fellowship[] = [
   {
     slug: 'power-bi-data-analyst-fellowship',
     name: 'Data Analyst Fellowship',
-    tagline: 'Go from zero to job-ready Data analyst in 10 weeks.',
+    tagline: '',
     description:
-      'A live, cohort-based fellowship designed to take you from data novice to confident Data analyst. Work on real industry datasets, get weekly instructor feedback, and graduate with a portfolio that gets you hired.',
+      'A live, cohort-based fellowship designed to take you from data novice to confident data analyst. Work on real industry datasets, get weekly instructor feedback, and graduate with a portfolio that gets you hired.',
     badge: 'Most Popular',
     format: 'Live Online',
     duration: '10 weeks',
     startDate: 'Rolling Cohorts',
-    level: '10 - 11:15 AM Live, Sat & Sun (EST)',
+    level: '10:00 – 11:15 AM ET, Saturdays & Sundays',
     price: '$1,297',
     originalPrice: '$1,897',
-    enrollmentDeadline: 'Limited seats per cohort',
+    enrollmentDeadline: '20 seats per cohort',
     showPrice: false,
     totalLearners: '3,400+',
     rating: '4.9',
@@ -302,11 +305,11 @@ export const fellowships: Fellowship[] = [
     tagline: 'Data Analyst Fellowship — November 2026 cohort.',
     description:
       'November Cohort is our November intake of the Data Analyst Fellowship. Join a tight-knit group of 20 students, get live instruction twice a week, and build a portfolio of real projects.',
-    badge: 'Starts November 14th',
+    badge: 'Starts November 28st',
     format: 'Live Online',
     duration: '10 weeks',
-    startDate: 'November 14, 2026',
-    level: '10 - 11:15 AM Live, Sat & Sun (EST)',
+    startDate: 'November 28, 2026',
+    level: '10:00 – 11:15 AM ET, Saturdays & Sundays',
     price: '$1,297',
     originalPrice: '$1,897',
     enrollmentDeadline: 'July 27, 2026',

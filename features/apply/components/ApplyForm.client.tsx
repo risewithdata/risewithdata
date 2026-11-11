@@ -36,7 +36,7 @@ export function ApplyForm() {
         const json = await res.json().catch(() => ({}));
         throw new Error(json.error ?? 'Submission failed');
       }
-      showSuccess('Application submitted! We\'ll review it and reach out within 3–5 business days.');
+      showSuccess('Application submitted! We\'ll review it and reach out within 2 weeks.');
       reset();
     } catch (err) {
       showError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
@@ -122,7 +122,7 @@ export function ApplyForm() {
           }`}
         >
           <option value="" disabled>Select a cohort</option>
-          <option value="Cohort Lincoln">Next Cohort (Tentative – Oct 2026)</option>
+          <option value="Cohort Lincoln">Next Cohort (Tentative – Nov 2026)</option>
         </select>
         {errors.courseApplied && (
           <p className="mt-1.5 text-xs text-red-600">{errors.courseApplied.message}</p>
@@ -190,6 +190,27 @@ export function ApplyForm() {
         </label>
         {errors.resume && (
           <p className="mt-1.5 text-xs text-red-600">{errors.resume.message as string}</p>
+        )}
+      </div>
+
+      {/* Terms & Conditions */}
+      <div>
+        <label className="flex items-start gap-3 cursor-pointer">
+          <input
+            {...register('termsAccepted')}
+            type="checkbox"
+            className="mt-0.5 h-4 w-4 flex-shrink-0 rounded border-slate-300 accent-brand-600"
+          />
+          <span className="text-sm text-slate-600">
+            I have read and agree to the{' '}
+            <a href="/terms" target="_blank" className="font-medium text-brand-600 hover:underline">
+              Terms &amp; Conditions
+            </a>
+            <span className="text-red-500"> *</span>
+          </span>
+        </label>
+        {errors.termsAccepted && (
+          <p className="mt-1.5 text-xs text-red-600">{errors.termsAccepted.message as string}</p>
         )}
       </div>
 

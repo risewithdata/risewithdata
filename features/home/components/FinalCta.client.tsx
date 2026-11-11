@@ -15,21 +15,19 @@ export function FinalCta() {
             {/* Left */}
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">
-                Limited seats per cohort
+                20 seats per cohort
               </p>
-              <h2 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                Start your data analyst career this summer
+              <h2 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-4xl">
+                Build in-demand Power BI and analytics skills in 10 weeks
               </h2>
-              <p className="mt-5 text-lg leading-relaxed text-slate-300">
-                Apply for next cohort · Starts on Nov-14.
-              </p>
+             
 
               <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
                 {[
                   { v: '20',           l: 'Total seats' },
                   { v: '10 wks',        l: 'Duration' },
                   { v: '6',      l: 'Projects' },
-                  { v: '10 - 11:15 AM', l: 'Live, Sat & Sun (EST)', small: true },
+                  { v: '10:00 – 11:15 AM ET', l: 'Sat & Sun', small: true },
                 ].map((s) => (
                   <div key={s.l} className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
                     <p className={`font-bold text-white ${s.small ? 'text-[12px]' : 'text-xl'}`}>{s.v}</p>
@@ -41,7 +39,7 @@ export function FinalCta() {
 
             {/* Right — CTA card */}
             <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm">
-              <p className="text-lg font-bold text-white">Reserve your seat today</p>
+              <p className="text-lg font-bold text-white">Reserve your seat · <span className="text-brand-600">Starts at Nov 28th</span></p>
               <p className="mt-2 text-sm text-slate-400">
                 No application, Training fees for Starter Pack.
               </p>

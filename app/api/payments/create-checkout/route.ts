@@ -16,15 +16,35 @@ const PLAN_PRICES: Record<string, number> = {
 
 export async function POST(req: NextRequest) {
   try {
-    const { fullName, email, phone, city, courseName } = await req.json();
+    const { fullName, email, phone, zipcode, courseName, couponCode } = await req.json();
 
-    if (!fullName || !email || !phone || !city || !courseName) {
+    if (!fullName || !email || !phone || !zipcode || !courseName) {
       return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
     }
 
-    const amount = PLAN_PRICES[courseName];
-    if (!amount) {
+    const baseAmount = PLAN_PRICES[courseName];
+    if (!baseAmount) {
       return NextResponse.json({ error: 'Invalid course selected' }, { status: 400 });
+    }
+
+    // Validate coupon server-side (never trust frontend discount)
+    let finalAmount = baseAmount;
+    let validatedCouponCode: string | null = null;
+
+    if (couponCode && typeof couponCode === 'string') {
+      const normalized = couponCode.trim().toUpperCase();
+      const coupon = await prisma.coupon.findUnique({ where: { code: normalized } });
+
+      if (
+        coupon &&
+        coupon.isActive &&
+        (!coupon.expiresAt || coupon.expiresAt > new Date()) &&
+        (coupon.maxUses === null || coupon.usedCount < coupon.maxUses)
+      ) {
+        const discounted = Math.round(baseAmount * (1 - coupon.discountPercent / 100));
+        finalAmount = Math.max(50, discounted); // minimum 50 cents (Stripe requirement)
+        validatedCouponCode = normalized;
+      }
     }
 
     const appUrl = process.env.APP_URL ?? 'https://www.risewithdata.com';
@@ -32,9 +52,9 @@ export async function POST(req: NextRequest) {
     // Save enrollment as PENDING before redirecting to Stripe
     const id = cuid();
     await prisma.$queryRawUnsafe(
-      `INSERT INTO "Enrollment" (id, "fullName", email, phone, city, "courseName", amount, status, "createdAt", "updatedAt")
-       VALUES ($1, $2, $3, $4, $5, $6, $7, 'PENDING'::"EnrollmentStatus", NOW(), NOW())`,
-      id, fullName, email, phone, city, courseName, amount
+      `INSERT INTO "Enrollment" (id, "fullName", email, phone, zipcode, "courseName", amount, "couponCode", status, "createdAt", "updatedAt")
+       VALUES ($1, $2, $3, $4, $5, $6, $7, $8, 'PENDING'::"EnrollmentStatus", NOW(), NOW())`,
+      id, fullName, email, phone, zipcode, courseName, finalAmount, validatedCouponCode
     );
 
     // Create Stripe Checkout Session
@@ -45,7 +65,7 @@ export async function POST(req: NextRequest) {
           quantity: 1,
           price_data: {
             currency: 'usd',
-            unit_amount: amount,
+            unit_amount: finalAmount,
             product_data: {
               name: `RiseWithData — ${courseName} Plan`,
               description: `Enrollment for ${fullName}`,
@@ -64,6 +84,14 @@ export async function POST(req: NextRequest) {
       `UPDATE "Enrollment" SET "stripeSessionId" = $1, "updatedAt" = NOW() WHERE id = $2`,
       session.id, id
     );
+
+    // Increment coupon usedCount (non-blocking — failure should not break checkout)
+    if (validatedCouponCode) {
+      prisma.coupon.update({
+        where: { code: validatedCouponCode },
+        data:  { usedCount: { increment: 1 } },
+      }).catch((e) => console.error('[create-checkout] coupon increment failed:', e));
+    }
 
     return NextResponse.json({ url: session.url });
   } catch (err) {

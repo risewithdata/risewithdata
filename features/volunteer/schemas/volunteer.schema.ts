@@ -6,10 +6,13 @@ const ACCEPTED_TYPES = [
   'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
 ];
 
+const ROLES = ['Cohort Instructor', 'Guest Instructor', 'Global Ambassador', 'Advisor'] as const;
+
 export const VolunteerSchema = z.object({
   firstName:    z.string().min(1, 'First name is required'),
   lastName:     z.string().min(1, 'Last name is required'),
   email:        z.string().email('Enter a valid email address'),
+  role:         z.enum(ROLES, { message: 'Please select a role' }),
   zipcode:      z.string().min(1, 'Zipcode is required').max(10, 'Invalid zipcode'),
   linkedinName: z.string().min(1, 'LinkedIn name is required'),
   resume: z

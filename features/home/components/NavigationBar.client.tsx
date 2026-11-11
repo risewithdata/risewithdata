@@ -22,13 +22,13 @@ const navigation = [
       name: 'Data Analyst Fellowship',
       href: '/fellowships/power-bi-data-analyst-fellowship',
       meta: 'Most Popular',
-      desc: 'Go from zero to job-ready Data analyst in 10 weeks.',
+      desc: '',
     },
     cohorts: [
       {
         name: 'November Cohort',
-        href: '/fellowships/cohort-washington',
-        meta: 'Starts November 14th',
+        href: '/fellowships/power-bi-data-analyst-fellowship',
+        meta: 'Starts Nov 28th',
       },
       /* {
         name: 'Cohort Lincoln',
@@ -45,8 +45,8 @@ const navigation = [
       {
         title: 'Get Involved',
         items: [
-          { name: 'Join as Instructor', href: '/instructor' },
-          { name: 'Volunteer with us',  href: '/volunteer' },
+          { name: 'Join us', href: '/instructor' },
+          /* { name: 'Volunteer with us',  href: '/volunteer' }, */
         ],
       },
     ],
@@ -79,7 +79,7 @@ export function NavigationBar() {
 
         {/* ── Logo ── */}
         <a href="/" className="flex-shrink-0">
-          <img src="/logo.svg" alt="RiseWithData" className="h-14 w-auto mix-blend-multiply" />
+          <img src="/rise-with-data-logo_3.svg" alt="RiseWithData" className="h-20 w-auto mix-blend-multiply" />
         </a>
 
         {/* ── Desktop Nav ── */}

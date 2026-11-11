@@ -17,20 +17,20 @@ const roles = [
   {
     title: 'Guest Instructor',
     desc: 'Deliver a focused 1–2 session deep dive on a specific Power BI topic — DAX, data modeling, report design, or storytelling.',
-    time: '2–4 hrs / session',
+    time: '1–2 hrs / session',
     badge: 'Low Commitment',
   },
   {
-    title: 'Curriculum Designer',
-    desc: 'Help build and refine course materials, project briefs, and assessment rubrics that stay current with industry standards.',
-    time: '3–5 hrs / module',
+    title: 'Global Ambassador',
+    desc: 'Promote RiseWithData’s programs and values. Represent us in your network, on social media, and at events to help more learners discover careers in data and tech.',
+    time: '1–2 hrs / week',
     badge: 'Behind the Scenes',
   },
   {
-    title: '1-on-1 Mentor',
-    desc: 'Guide individual fellows through their capstone projects and career transitions with scheduled office-hour sessions.',
-    time: '1–2 hrs / week',
-    badge: 'High Touch',
+    title: 'Advisor',
+    desc: 'Atend live sessions, engage with fellows, and share experience and candid feedback on their progress to keep the learning experience strong.',
+    time: '1-2 hrs / Month',
+    badge: 'Guiding Voice',
   },
 ];
 
@@ -42,10 +42,9 @@ const benefits = [
 ];
 
 const requirements = [
-  '7+ years of hands-on Power BI, data analytics, or BI reporting experience',
+  '7+ years of hands-on Power BI, data analytics, data engineering, or BI reporting experience',
   'Ability to explain technical concepts clearly to non-technical learners',
-  'Availability for at least one of the roles listed above',
-  'Professional LinkedIn profile and resume',
+  'Commitment to fellow’s success',
 ];
 
 export default function InstructorPage() {
@@ -60,7 +59,7 @@ export default function InstructorPage() {
         <div className="absolute -top-40 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-brand-500/15 blur-3xl" />
         <div className="absolute bottom-0 right-0 h-[400px] w-[500px] rounded-full bg-violet-500/10 blur-3xl" />
 
-        <div className="relative mx-auto max-w-4xl px-6 py-28 text-center text-white">
+        <div className="relative mx-auto max-w-4xl px-6 py-12 text-center text-white">
           <span className="inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-300">
             Teach With Us
           </span>
@@ -78,12 +77,12 @@ export default function InstructorPage() {
       </section>
 
       {/* ── Roles ── */}
-      <section className="bg-slate-50 py-20">
+      <section className="bg-slate-50 py-10">
         <div className="mx-auto max-w-6xl px-6 lg:px-8">
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-brand-600">Teaching Roles</p>
             <h2 className="mt-3 text-3xl font-bold text-slate-900">Find the right fit for your schedule</h2>
-            <p className="mx-auto mt-3 max-w-xl text-slate-500">
+            <p className="mt-3 whitespace-nowrap text-slate-500">
               Whether you have a full cohort to give or just an afternoon, we have a role for you.
             </p>
           </div>
@@ -106,7 +105,7 @@ export default function InstructorPage() {
       </section>
 
       {/* ── Form + Benefits ── */}
-      <section className="mx-auto grid max-w-6xl gap-16 px-6 py-24 lg:grid-cols-5 lg:px-8">
+      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-10 lg:grid-cols-5 lg:px-8">
 
         {/* Left */}
         <div className="space-y-10 lg:col-span-2">
@@ -120,7 +119,7 @@ export default function InstructorPage() {
             </p>
           </div>
 
-          <div className="space-y-5">
+          {/* <div className="space-y-5">
             {benefits.map((b) => (
               <div key={b.title} className="flex items-start gap-4">
                 <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-brand-50 text-xl">
@@ -132,7 +131,7 @@ export default function InstructorPage() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Requirements */}
           <div className="rounded-2xl border border-brand-100 bg-brand-50 p-6">
@@ -153,7 +152,7 @@ export default function InstructorPage() {
             <ol className="mt-5 space-y-4">
               {[
                 'Submit your application below',
-                'We review your profile within 3–5 business days',
+                'We review your profile within 2 weeks',
                 'Intro call with our program director',
                 'Onboarding, prep materials & your first session',
               ].map((step, i) => (
@@ -172,9 +171,9 @@ export default function InstructorPage() {
         <div className="lg:col-span-3">
           <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
             <div className="bg-gradient-to-br from-brand-950 to-brand-900 px-8 py-7 text-white">
-              <h2 className="text-xl font-bold">Instructor Application</h2>
+              <h2 className="text-xl font-bold">Application</h2>
               <p className="mt-1 text-sm text-slate-300">
-                Takes less than 2 minutes. We'll reach out within 3–5 business days.
+                Takes less than 2 minutes. We'll reach out within 2 weeks.
               </p>
             </div>
             <div className="p-8">

@@ -4,27 +4,22 @@ export function HeroSection() {
       {/* Subtle background gradient */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(59,130,246,0.08),transparent)]" />
 
-      <div className="mx-auto max-w-7xl px-6 pb-20 pt-16 lg:px-8 lg:pt-24">
+      <div className="mx-auto max-w-7xl px-6 pb-8 pt-8 lg:px-8 lg:pt-12">
 
         {/* Eyebrow */}
-        <div className="flex justify-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand-700">
-            <span className="h-2 w-2 rounded-full bg-brand-500" />
-            Apply for next cohort · Starts on Nov-14.
-          </span>
-        </div>
+       
 
         {/* Headline */}
-        <div className="mx-auto mt-8 max-w-4xl text-center">
-          <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
-            Become a Job-Ready{' '}
+        <div className="mx-auto max-w-4xl text-center">
+          <h1 className="whitespace-nowrap text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-5xl">
+            Build Real {' '}
             <span className="bg-gradient-to-r from-brand-600 to-brand-500 bg-clip-text text-transparent">
               Data Analyst
             </span>{' '}
-            in 10 weeks
+            Skills in 10 weeks
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-500">
-            Live, project-based training — not just teaching. Build real Power BI reports and Microsoft End-to-End Projects, get hands-on instructor feedback every week, and finish job-ready.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-500">
+            Learn live, build real projects. Create Power BI reports and end-to-end fabric projects hands-on.
           </p>
         </div>
 

@@ -28,6 +28,7 @@ export function VolunteerForm() {
     formData.append('firstName',    data.firstName);
     formData.append('lastName',     data.lastName);
     formData.append('email',        data.email);
+    formData.append('role',         data.role);
     formData.append('zipcode',      data.zipcode);
     formData.append('linkedinName', data.linkedinName);
     formData.append('resume',       (data.resume as FileList)[0]);
@@ -85,6 +86,21 @@ export function VolunteerForm() {
           className={field(!!errors.email)}
         />
         {errors.email && <p className="mt-1.5 text-xs text-red-600">{errors.email.message}</p>}
+      </div>
+
+      {/* Role */}
+      <div>
+        <label className="mb-1.5 block text-sm font-medium text-slate-700">
+          Role <span className="text-red-500">*</span>
+        </label>
+        <select {...register('role')} className={field(!!errors.role)}>
+          <option value="">Select a role…</option>
+          <option value="Cohort Instructor">Cohort Instructor</option>
+          <option value="Guest Instructor">Guest Instructor</option>
+          <option value="Global Ambassador">Global Ambassador</option>
+          <option value="Advisor">Advisor</option>
+        </select>
+        {errors.role && <p className="mt-1.5 text-xs text-red-600">{errors.role.message}</p>}
       </div>
 
       {/* Zipcode + LinkedIn row */}
@@ -171,7 +187,7 @@ export function VolunteerForm() {
           <p className="text-2xl">🎉</p>
           <p className="mt-2 font-semibold text-green-800">Application received!</p>
           <p className="mt-1 text-sm text-green-600">
-            We'll review your application and reach out within 3–5 business days.
+            We'll review your application and reach out within 2 weeks.
           </p>
         </div>
       )}

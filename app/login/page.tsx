@@ -156,7 +156,7 @@ export default function LoginPage() {
           {/* Bottom note */}
           <p className="mt-6 text-center text-xs text-slate-600">
             By signing in you agree to our{' '}
-            <a href="#" className="text-slate-500 hover:text-slate-400 underline">Terms of Service</a>
+            <a href="#" className="text-slate-500 hover:text-slate-400 underline">Terms &amp; Conditions</a>
             {' '}and{' '}
             <a href="#" className="text-slate-500 hover:text-slate-400 underline">Privacy Policy</a>.
           </p>

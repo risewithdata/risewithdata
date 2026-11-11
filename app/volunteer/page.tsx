@@ -154,7 +154,7 @@ export default function VolunteerPage() {
             <ol className="mt-5 space-y-4">
               {[
                 'Submit your application below',
-                'We review your profile within 3–5 business days',
+                'We review your profile within 2 weeks',
                 'Brief welcome call with our volunteer coordinator',
                 'Orientation, team intro & your first assignment',
               ].map((step, i) => (
@@ -175,7 +175,7 @@ export default function VolunteerPage() {
             <div className="bg-gradient-to-br from-brand-950 to-brand-900 px-8 py-7 text-white">
               <h2 className="text-xl font-bold">Volunteer Application</h2>
               <p className="mt-1 text-sm text-slate-300">
-                Takes less than 2 minutes. We'll reach out within 3–5 business days.
+                Takes less than 2 minutes. We'll reach out within 2 weeks.
               </p>
             </div>
             <div className="p-8">

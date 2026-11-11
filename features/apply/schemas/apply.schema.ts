@@ -22,6 +22,7 @@ export const ApplySchema = z.object({
       (files) => ACCEPTED_TYPES.includes(files?.[0]?.type),
       'Only PDF, DOC, and DOCX files are accepted'
     ),
+  termsAccepted: z.literal(true, { message: 'You must accept the Terms & Conditions to proceed' }),
 });
 
 export type ApplyInput = z.infer<typeof ApplySchema>;
